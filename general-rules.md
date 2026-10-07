@@ -11,7 +11,7 @@ nav_order: 2
 **Connecting Minds, Shaping Sustainable Futures: Alumni and Students in Collaborative Innovation and Research**
 
 ## When & where
-- **Dates:** 11-12 November 2026, 9:00 AM start each day *(marked "proposed" in planning notes -- confirm and remove this note once locked)*
+- **Dates:** 12th–13th November 2026, 9:00 AM start each day *(marked "proposed" in planning notes -- confirm and remove this note once locked)*
 - **Venue:** Zetech University, Ruiru Campus Auditorium, plus two breakout rooms
 - **Capacity:** ~150 participants
 

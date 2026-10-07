@@ -10,7 +10,7 @@ nav_order: 1
 
 A two-day hackathon bringing Zetech University students and alumni together to build real solutions, side by side. Teams of 3-4 -- each with at least one alumni or finalist member -- pick one track, align their solution with a UN Sustainable Development Goal, and build a working prototype in 48 hours.
 
-📅 **11-12 November 2026**, 9:00 AM each day *(proposed in planning notes -- confirm before final publish)* · 📍 **Ruiru Campus Auditorium, Zetech University**
+📅 **12th–13th November 2026**, 9:00 AM each day *(proposed in planning notes -- confirm before final publish)* · 📍 **Ruiru Campus Auditorium, Zetech University**
 
 ## Pick your track
 
