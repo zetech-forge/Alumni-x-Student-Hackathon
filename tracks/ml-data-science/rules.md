@@ -4,6 +4,8 @@ parent: Machine Learning & Data Science
 nav_order: 3
 ---
 
+> **This track feeds the "Best AI / Data Science Solution" award.** Every team is also automatically eligible for Overall Hackathon Winner, Most Innovative Solution, Best Social Impact Solution, and Best Pitch. Remember: challenges must tie to a UN Sustainable Development Goal and fit the two-day build window (Day 1 build, Day 2 pitch).
+
 # Machine Learning & Data Science: Track Rules & How to Compete
 
 *(This is the track's own rulebook. [General Rules](/general-rules.md)
