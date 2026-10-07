@@ -4,7 +4,7 @@ layout: home
 nav_order: 1
 ---
 
-# [Bootcamp Name] -- Tracks & Challenges
+# Zetech Forge -- Tracks & Challenges
 
 Welcome! This site has everything you need for competition day: pre-event
 learning content, curated resources, and the challenges for each track.

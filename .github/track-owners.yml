@@ -1,15 +1,11 @@
-# Maps each track to the GitHub usernames allowed to edit it.
-# Consumed by .github/workflows/path-guard.yml -- replace the placeholder
-# usernames with real ones. Add more than one username per track if a
-# track has co-leads.
-
 software-development:
-  - tl-software-development
+  - tl-software-development   # TODO: replace once this Technical Lead is confirmed
 web3-blockchain:
-  - tl-web3-blockchain
+  - abdul-abdi
 iot-robotics:
-  - tl-iot-robotics
+  - khansamuel
 ml-data-science:
-  - tl-ml-data-science
+  - wakoTheDev
 cybersecurity:
-  - tl-cybersecurity
+  - johnie-musyoki
+  - wandera-chris

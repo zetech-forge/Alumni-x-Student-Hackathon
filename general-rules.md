@@ -10,7 +10,7 @@ rules live on each track's "Track Rules & How to Compete" page.*
 
 ## Team composition
 - Teams must have **3-4 members**.
-- Each team must include **at least one alumni** of [Bootcamp Name] or
+- Each team must include **at least one alumni** of Zetech Forge or
   [organizing institution].
 - A participant may only be on one team.
 - *(Add: can teams be cross-track, or must everyone on a team pick the same
