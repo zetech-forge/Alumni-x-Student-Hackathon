@@ -106,10 +106,13 @@ what's specific to your track:
 
 | Criterion | Weight |
 |---|---|
-| Functionality / correctness | 40% |
-| Code quality / documentation | 20% |
-| Creativity / approach | 20% |
-| Presentation | 20% |
+| Functionality / correctness | 30% |
+| Code quality / documentation | 15% |
+| Creativity / approach | 15% |
+| SDG / social-impact alignment | 15% |
+| Pitch / presentation | 25% |
+
+Every team must tie their solution to at least one UN Sustainable Development Goal — build that expectation into your scenario and judging notes. Day 2 ends with live demonstrations and pitches, so a presentation/pitch criterion belongs in every track's rubric, not just as an afterthought.
 
 - **Scoring and tie-breakers**
 - **Day-of timeline** specific to your track, if it differs from the
@@ -129,8 +132,11 @@ nav_order: 4
 ```
 
 Design challenges in tiers so teams of different skill levels can engage
-(Beginner / Intermediate / Advanced, or sequential stages that unlock). For
-**each** challenge include:
+(Beginner / Intermediate / Advanced, or sequential stages that unlock).
+
+Design every challenge to be achievable as a working prototype within the two-day window — Day 1 is ideation and initial build, Day 2 is continued development, testing, and pitch prep. Don't design a challenge that assumes more build time than that. Each challenge should also leave room for a team to connect their solution to a Sustainable Development Goal of their choosing.
+
+For **each** challenge include:
 
 - **Title**
 - **Scenario / problem statement** — enough context to understand the task
