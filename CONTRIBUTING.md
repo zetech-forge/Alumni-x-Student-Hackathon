@@ -20,7 +20,7 @@ the general rules (team size, eligibility, code of conduct) in
 1. Accept the collaborator invite you received by email/GitHub notification.
 2. Clone the repo:
    ```bash
-   git clone https://github.com/<org>/<repo>.git
+   git clone https://github.com/zetech-forge/Alumni-x-Student-Hackathon.git
    cd <repo>
    ```
 3. Confirm your GitHub username is listed under your track in

@@ -7,7 +7,7 @@ color_scheme: light
 
 aux_links:
   "Repo on GitHub":
-    - "https://github.com/<org>/<repo>"
+    - "https://github.com/zetech-forge/Alumni-x-Student-Hackathon"
 
 # Keep contributor-only / behind-the-scenes docs out of the published site.
 exclude:
