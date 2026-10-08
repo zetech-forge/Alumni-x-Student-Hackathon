@@ -4,36 +4,37 @@ parent: Software Development
 nav_order: 3
 ---
 
-> **This track feeds the "Best Software Solution" award.** Every team is also automatically eligible for Overall Hackathon Winner, Most Innovative Solution, Best Social Impact Solution, and Best Pitch. Remember: challenges must tie to a UN Sustainable Development Goal and fit the two-day build window (Day 1 build, Day 2 pitch).
+> **This track feeds the "Best Software Solution" award.** Every team is also automatically eligible for Overall Hackathon Winner, Most Innovative Solution, Best Social Impact Solution, and Best Pitch.
 
 # Software Development: Track Rules & How to Compete
 
-*(This is the track's own rulebook. [General Rules](/general-rules.md)
-already covers team size, eligibility, and conduct -- don't repeat that
-here.)*
-
 ## Format
-*(Individual deliverable? Live demo? Submitted repo? CTF-style flags?)*
+Each team picks **one** of the three challenges in Challenges and builds it for the full two days. You do not need to attempt all three.
 
-## Allowed tools / tech
-*(Any restrictions -- e.g. "any language", "no pre-built ML models",
-"no public CVE databases".)*
+## Allowed tools & tech
+- Any programming language, framework, or library.
+- AI coding assistants (e.g. Copilot, Cursor, ChatGPT, Claude) are allowed. Disclose which tools you used and roughly how much of the codebase they helped produce in your submission README -- this is for transparency, not penalized unless undisclosed.
+- You may use any third-party library or API as long as it's publicly available or provided by organizers.
 
 ## Submission requirements
-*(Exactly what must be submitted, how, and the deadline/time window on the
-day.)*
+- A public (or judge-accessible) GitHub repository containing your code.
+- A README that includes: setup/run instructions, which challenge you attempted, which Sustainable Development Goal your solution targets and why, and your AI-tool disclosure (see above).
+- A live demo and pitch on Day 2 (see general schedule) -- *(TBD: exact submission cutoff time and demo slot length -- confirm with organizing committee)*.
 
 ## Judging criteria
 
 | Criterion | Weight |
 |---|---|
-| Functionality / correctness | 40% |
-| Code quality / documentation | 20% |
-| Creativity / approach | 20% |
-| Presentation | 20% |
+| Functionality / correctness | 30% |
+| Code quality / documentation | 15% |
+| Creativity / approach | 15% |
+| SDG / social-impact alignment | 15% |
+| Pitch / presentation | 25% |
+
+A working, modest solution that does what it claims beats an ambitious one that doesn't run -- score "functionality" on what you actually see demonstrated, not what the team claims it can do.
 
 ## Scoring and tie-breakers
-*(How ties are broken.)*
+*(TBD: how ties are broken -- e.g. highest "Functionality" sub-score wins, or judges' panel discussion)*
 
 ## Day-of timeline
-*(Only if it differs from the general schedule in General Rules.)*
+Follows the general two-day schedule. No track-specific deviations beyond: teams targeting Challenge C (Agentic AI/RAG) should confirm model/API access with organizers during the Day 1 "Technology bootcamps" session, before committing to that challenge.
