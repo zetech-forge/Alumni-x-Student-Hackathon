@@ -32,7 +32,7 @@ Follow the standard submission package in [General Rules](/general-rules.md) (re
 A working, modest solution that does what it claims beats an ambitious one that doesn't run -- score "functionality" on what you actually see demonstrated, not what the team claims it can do.
 
 ## Scoring and tie-breakers
-*(TBD: how ties are broken -- e.g. highest "Functionality" sub-score wins, or judges' panel discussion)*
+Follows the tie-break rule in [General Rules](/general-rules.md): highest "Functional prototype" sub-score on the overall rubric, then judges' panel discussion.
 
 ## Day-of timeline
 Follows the general two-day schedule -- submission freeze is 15:00-15:30 on Day 2 (see [Schedule](/schedule.md)). Teams targeting Challenge C (Agentic AI/RAG) should confirm model/API access with organizers during the Day 1 "Technology bootcamps" session, before committing to that challenge.
