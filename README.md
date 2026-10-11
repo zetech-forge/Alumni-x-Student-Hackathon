@@ -1,7 +1,7 @@
 # Zetech Forge: Alumni x Student Hackathon 2026 — Tracks Repo
 
 Source repo for the Zetech Forge hackathon site, published via GitHub Pages at:
-`https://github.com/zetech-forge/Alumni-x-Student-Hackathon`
+`https://zetech-forge.github.io/Alumni-x-Student-Hackathon/`
 
 ## What's in here
 - `general-rules.md` — organizer-owned general competition rules (team size,
