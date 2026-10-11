@@ -1,6 +1,6 @@
 ---
 title: General Rules
-nav_order: 2
+nav_order: 5
 ---
 
 # General Rules & Regulations
