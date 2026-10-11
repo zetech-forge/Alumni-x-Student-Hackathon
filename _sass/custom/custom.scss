@@ -1,7 +1,3 @@
----
----
-@import "./color_schemes/{{ site.color_scheme | default: 'light' }}";
-
 .ztf-hero {
   text-align: center;
   padding: 2rem 1rem 2.5rem;
