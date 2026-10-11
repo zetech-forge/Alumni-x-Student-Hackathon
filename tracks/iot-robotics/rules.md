@@ -4,7 +4,7 @@ parent: IoT & Robotics
 nav_order: 3
 ---
 
-> **This track feeds the "Best IoT / Robotics Solution" award.** Every team is also automatically eligible for Overall Hackathon Winner, Most Innovative Solution, Best Social Impact Solution, and Best Pitch. Remember: challenges must tie to a UN Sustainable Development Goal and fit the two-day build window (Day 1 build, Day 2 pitch).
+> **This track feeds the "Best IoT / Robotics Solution" award.** Every team is also automatically eligible for Overall Hackathon Winner, Most Innovative Solution, Best Social Impact Solution, and Best Alumni-Student Collaboration. Remember: challenges must tie to a UN Sustainable Development Goal and fit the two-day build window (Day 1 build, Day 2 pitch).
 
 # IoT & Robotics: Track Rules & How to Compete
 
@@ -19,9 +19,21 @@ here.)*
 *(Any restrictions -- e.g. "any language", "no pre-built ML models",
 "no public CVE databases".)*
 
+## Physical safety (mandatory)
+This track involves real hardware -- every team must:
+- Follow organizer guidance on power, soldering, and battery safety
+- Report damaged or malfunctioning equipment immediately rather than
+  attempting repairs mid-competition
+- Keep moving parts (motors, servos) secured when not actively being
+  tested, especially around other teams
+- Not bring personal hardware that hasn't been safety-checked by
+  organizers at check-in
+
+See the Organizer Playbook's IoT physical logistics checklist for what
+organizers are responsible for providing.
+
 ## Submission requirements
-*(Exactly what must be submitted, how, and the deadline/time window on the
-day.)*
+Follow the standard submission package in [General Rules](/general-rules.md). Technical Leads: add anything specific to this track here (e.g. whether hardware must be returned, how to submit a video of physical functionality).
 
 ## Judging criteria
 
