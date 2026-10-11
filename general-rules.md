@@ -28,7 +28,12 @@ nav_order: 2
 
 ## Choosing a track
 - Each team competes in **one** track for the full event: Software Development, Web3 & Blockchain, IoT & Robotics, Machine Learning & Data Science, or Cybersecurity.
-- **Every team must align its solution with at least one UN Sustainable Development Goal (SDG)** and be able to explain that link during judging.
+- **Every team must align its solution with at least one UN Sustainable Development Goal (SDG)**, and must answer three questions in their submission, not just name the SDG:
+  - **Problem** -- what real problem are you solving?
+  - **Beneficiary** -- who experiences this problem?
+  - **Impact** -- what measurable change could your solution create?
+
+  "Our app relates to SDG 9" is not enough on its own. "Our solution reduces stock-out detection delays for rural health facilities by giving clinic staff an offline inventory and sync workflow" is the bar.
 - Track-specific rules, judging criteria, and challenges are under each track's own section of this site.
 
 ## Registration
