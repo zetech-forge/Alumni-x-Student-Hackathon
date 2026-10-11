@@ -1,5 +1,81 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-<!-- Swap these two lines for Zetech's real brand color once you have it -->
 <style>
   :root { --ztf-brand: #1e4d8c; }
+
+  /* Hero */
+  .ztf-hero {
+    text-align: center;
+    padding: 2rem 1rem 2.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .ztf-hero h1 { margin-bottom: 0; letter-spacing: 0.05em; }
+  .ztf-hero h3 { margin-top: 0.25rem; font-weight: 400; color: #5c5c5c; }
+
+  /* Card grids: "Why this hackathon?", "Who should participate?", "Pick your track" */
+  .ztf-cards {
+    display: grid;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  .ztf-cards--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .ztf-cards--tracks {
+    grid-template-columns: repeat(3, 1fr); /* change to repeat(5, 1fr) for one row of 5 instead */
+  }
+  @media (max-width: 800px) {
+    .ztf-cards--3, .ztf-cards--tracks {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 500px) {
+    .ztf-cards--3, .ztf-cards--tracks {
+      grid-template-columns: 1fr;
+    }
+  }
+  .ztf-card {
+    background: #f8f9fb;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 1.25rem 1.25rem 1.4rem;
+  }
+  .ztf-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+  }
+  .ztf-card p:last-child { margin-bottom: 0; }
+
+  /* "How it works": forced single row of 4 on desktop, per request */
+  .ztf-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  @media (max-width: 800px) {
+    .ztf-steps { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 500px) {
+    .ztf-steps { grid-template-columns: 1fr; }
+  }
+  .ztf-step {
+    background: #f8f9fb;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 1.1rem 1.1rem 1.3rem;
+  }
+  .ztf-step-num {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ztf-brand);
+    margin-bottom: 0.35rem;
+  }
+
+  .ztf-icon {
+    color: var(--ztf-brand);
+    margin-right: 0.35em;
+  }
 </style>
