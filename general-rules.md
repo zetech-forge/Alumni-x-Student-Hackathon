@@ -5,24 +5,24 @@ nav_order: 2
 
 # General Rules & Regulations
 
-*Draft -- organizer-edited, based on the 30 Sept 2026 concept meeting. Applies to every track; track-specific rules live on each track's "Track Rules & How to Compete" page.*
+*Applies to every track. Track-specific rules live on each track's own "Track Rules & How to Compete" page.*
 
 ## Event theme
 **Connecting Minds, Shaping Sustainable Futures: Alumni and Students in Collaborative Innovation and Research**
 
 ## When & where
-- **Dates:** 12th–13th November 2026, 9:00 AM start each day *(marked "proposed" in planning notes -- confirm and remove this note once locked)*
+- **Dates:** 12-13 November 2026, 9:00 AM start each day
 - **Venue:** Zetech University, Ruiru Campus Auditorium, plus two breakout rooms
 - **Capacity:** ~150 participants
 
 ## Eligibility
-- **Students:** any Zetech student pursuing ICT or Engineering, plus other interested student developers.
+- **Students:** any currently enrolled Zetech University student, any year, pursuing ICT or Engineering, plus other interested student developers.
 - **Alumni:** Zetech ICT and Engineering alumni, and final-year ("finalist") students.
-- *(TBD: any age, enrollment-status, or prior-participation restrictions your committee wants to add)*
+- No separate age restriction beyond current enrollment or alumni status.
 
 ## Team composition
 - Teams must have **3-4 members**.
-- Each team must include **at least one alumni or finalist**.
+- Each team must include **at least one Alumni/Finalist Collaborator**, responsible for contributing at least one of: domain knowledge, problem validation, industry perspective, product feedback, technical mentorship, pitch feedback, or industry feasibility assessment. This is a working role, not just an eligibility checkbox -- see the submission requirements below.
 - Each team selects **one team lead** from among its own members.
 - A participant may only be on one team.
 
