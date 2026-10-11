@@ -13,7 +13,7 @@ nav_order: 1
 
 A two-day collaborative innovation sprint bringing Zetech students and alumni together to solve real-world challenges across Software Development, AI & Data Science, Cybersecurity, Web3 & Blockchain, and IoT & Robotics.
 
-📅 **12-13 November 2026** &nbsp;·&nbsp; 📍 **Zetech University, Ruiru Campus**
+<i class="fa-solid fa-calendar-days ztf-icon" aria-hidden="true"></i> **12-13 November 2026** &nbsp;·&nbsp; <i class="fa-solid fa-location-dot ztf-icon" aria-hidden="true"></i> **Zetech University, Ruiru Campus**
 
 [Register Now](register.md){: .btn .btn-primary } [Explore Tracks](#pick-your-track){: .btn }
 
@@ -23,13 +23,13 @@ A two-day collaborative innovation sprint bringing Zetech students and alumni to
 
 <div class="ztf-cards" markdown="1">
 
-### 🔨 Build
+### <i class="fa-solid fa-hammer ztf-icon" aria-hidden="true"></i> Build
 Turn ideas into working prototypes over two intensive days, not slides.
 
-### 🤝 Connect
+### <i class="fa-solid fa-handshake ztf-icon" aria-hidden="true"></i> Connect
 Work directly with Zetech alumni and industry professionals as part of your own team, not just as spectators.
 
-### 🌍 Impact
+### <i class="fa-solid fa-earth-africa ztf-icon" aria-hidden="true"></i> Impact
 Every solution ties to a real problem and a UN Sustainable Development Goal.
 
 </div>
@@ -54,19 +54,19 @@ Bring challenges, mentor teams, sponsor prizes, and connect with high-potential 
 
 <div class="ztf-cards" markdown="1">
 
-### 💻 Software Development
+### <i class="fa-solid fa-laptop-code ztf-icon" aria-hidden="true"></i> Software Development
 Build production-minded software solutions. [Explore track →](tracks/software-development/)
 
-### 🤖 AI & Data Science
+### <i class="fa-solid fa-robot ztf-icon" aria-hidden="true"></i> AI & Data Science
 Turn real-world data into predictive, intelligent systems. [Explore track →](tracks/ml-data-science/)
 
-### 🔐 Cybersecurity
+### <i class="fa-solid fa-lock ztf-icon" aria-hidden="true"></i> Cybersecurity
 Defend systems, analyze threats, and build secure technology. [Explore track →](tracks/cybersecurity/)
 
-### ⚙️ IoT & Robotics
+### <i class="fa-solid fa-gears ztf-icon" aria-hidden="true"></i> IoT & Robotics
 Connect physical systems to intelligent software. [Explore track →](tracks/iot-robotics/)
 
-### ⛓️ Web3 & Blockchain
+### <i class="fa-solid fa-link ztf-icon" aria-hidden="true"></i> Web3 & Blockchain
 Explore decentralized systems, trust, and digital infrastructure. [Explore track →](tracks/web3-blockchain/)
 
 </div>
@@ -91,10 +91,10 @@ Demonstrate your working solution to technical and industry judges.
 
 ## Schedule, prizes & more
 
-- 🗓️ **[Full schedule](schedule.md)** -- hour-by-hour for both days
-- 🏆 **[Prizes](prizes.md)** -- the Grand Prize, Track Champions, and Special Awards
-- 👥 **[Mentors & Judges](mentors-judges.md)** -- the alumni and experts helping you build
-- ❓ **[FAQ](faq.md)** -- answers to the most common questions
+- <i class="fa-solid fa-calendar-days ztf-icon" aria-hidden="true"></i> **[Full schedule](schedule.md)** -- hour-by-hour for both days
+- <i class="fa-solid fa-trophy ztf-icon" aria-hidden="true"></i> **[Prizes](prizes.md)** -- the Grand Prize, Track Champions, and Special Awards
+- <i class="fa-solid fa-user-group ztf-icon" aria-hidden="true"></i> **[Mentors & Judges](mentors-judges.md)** -- the alumni and experts helping you build
+- <i class="fa-solid fa-circle-question ztf-icon" aria-hidden="true"></i> **[FAQ](faq.md)** -- answers to the most common questions
 
 Before you compete, read the **[General Rules](general-rules.md)** -- they apply to every team, regardless of track. Each track page also has its own curriculum, resources, rules, and challenges in the sidebar.
 

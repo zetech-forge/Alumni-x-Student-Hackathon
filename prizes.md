@@ -8,7 +8,7 @@ nav_order: 4
 *(Exact physical prizes and sponsors to confirm before publishing -- the
 structure and categories below are ready.)*
 
-## 🏆 Grand Prize
+## <i class="fa-solid fa-trophy ztf-icon" aria-hidden="true"></i> Grand Prize
 **Overall Hackathon Winner** -- selected from the five Track Champions using
 the overall cross-track rubric (see [General Rules](general-rules.md)).
 Trophy, a mechanical keyboard per team member, certificates, a feature in
@@ -16,18 +16,18 @@ university media, and priority introductions to partner organizations.
 
 ## Track Champions
 One per track, judged on that track's own rubric:
-- 💻 Best Software Solution
-- 🤖 Best AI / Data Science Solution
-- 🔐 Best Cybersecurity Solution
-- ⛓️ Best Web3 / Blockchain Solution
-- ⚙️ Best IoT / Robotics Solution
+- <i class="fa-solid fa-laptop-code ztf-icon" aria-hidden="true"></i> Best Software Solution
+- <i class="fa-solid fa-robot ztf-icon" aria-hidden="true"></i> Best AI / Data Science Solution
+- <i class="fa-solid fa-lock ztf-icon" aria-hidden="true"></i> Best Cybersecurity Solution
+- <i class="fa-solid fa-link ztf-icon" aria-hidden="true"></i> Best Web3 / Blockchain Solution
+- <i class="fa-solid fa-gears ztf-icon" aria-hidden="true"></i> Best IoT / Robotics Solution
 
 Medal, plaque, branded hoodie/T-shirt, and a laptop sleeve.
 
 ## Special Recognition
-- 🌍 **Best Social Impact Solution**
-- 💡 **Most Innovative Solution**
-- 🤝 **Best Alumni-Student Collaboration** -- judged on the Alumni
+- <i class="fa-solid fa-earth-africa ztf-icon" aria-hidden="true"></i> **Best Social Impact Solution**
+- <i class="fa-solid fa-lightbulb ztf-icon" aria-hidden="true"></i> **Most Innovative Solution**
+- <i class="fa-solid fa-handshake ztf-icon" aria-hidden="true"></i> **Best Alumni-Student Collaboration** -- judged on the Alumni
   Contribution each team submits (see General Rules), not just on having
   an alumni on the roster.
 
