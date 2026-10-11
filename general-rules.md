@@ -32,8 +32,29 @@ nav_order: 2
 - Track-specific rules, judging criteria, and challenges are under each track's own section of this site.
 
 ## Registration
-- *(TBD: registration opening/closing dates and process)*
-- *(TBD: what happens if a team is short a member, or loses one before the event)*
+Registration opens via [REGISTRATION LINK] and closes [DATE]. See the [Register](register.md) page for the current status and link.
+
+If a team is short a member or loses one before the event, they may add a replacement up to 48 hours before the event starts, provided the team still meets the 3-4 member and Alumni/Finalist Collaborator requirements. After that point, incomplete teams compete as-is or are merged with organizer approval.
+
+## What every team submits
+Regardless of track, every team's final submission must include:
+1. A GitHub repository with their code
+2. A README with setup/run instructions
+3. A 2-3 minute demo video (required as a backup even if you also demo live -- live demos can fail on flaky wifi or APIs)
+4. A short pitch deck
+5. A live demo URL, if applicable
+6. Team member details, including who served as the Alumni/Finalist Collaborator
+7. An **Alumni Contribution** note: what did your alumni/finalist member actually contribute? (see Team composition above)
+8. An SDG impact statement (see SDG alignment below)
+9. The technology stack used
+10. An AI-tool disclosure (see below)
+11. Known limitations
+
+## AI usage
+AI-assisted development is permitted across every track. Teams must disclose significant use of AI coding assistants, generative AI systems, pretrained models, and APIs in their submission -- which tools, and roughly how much they contributed. This is for transparency; it is not penalized unless undisclosed.
+
+## Intellectual property
+Participants retain ownership of their original intellectual property unless a separate written agreement states otherwise. If your solution depends on a sponsor-provided API, open-source license, or dataset, note that dependency and its license in your README. By participating, teams agree that Zetech University may photograph, film, and showcase their project (including after the event) for university and partner communications.
 
 ## How the two days flow
 
