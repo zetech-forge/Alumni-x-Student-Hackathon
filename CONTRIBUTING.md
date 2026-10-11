@@ -16,6 +16,11 @@ rules and judging criteria, and design the challenges. The organizer owns
 the general rules (team size, eligibility, code of conduct) in
 `general-rules.md` — you don't need to touch that file.
 
+Don't edit `general-rules.md`, `schedule.md`, `prizes.md`, `faq.md`,
+`mentors-judges.md`, `register.md`, or `get-involved.md` directly -- these
+are organizer-owned. If something on one of them needs to change for your
+track, open an issue instead.
+
 ## One-time setup
 1. Accept the collaborator invite you received by email/GitHub notification.
 2. Clone the repo:
