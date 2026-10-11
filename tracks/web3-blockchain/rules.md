@@ -1,6 +1,7 @@
 ---
 title: Track Rules & How to Compete
 parent: Web3 & Blockchain
+grandparent: Hackathon Tracks
 nav_order: 3
 ---
 

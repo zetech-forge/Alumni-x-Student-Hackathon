@@ -1,6 +1,7 @@
 ---
 title: Curated Resources
 parent: Software Development
+grandparent: Hackathon Tracks
 nav_order: 2
 ---
 

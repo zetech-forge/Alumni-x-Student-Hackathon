@@ -1,6 +1,7 @@
 ---
 title: Curated Resources
 parent: Cybersecurity
+grandparent: Hackathon Tracks
 nav_order: 2
 ---
 

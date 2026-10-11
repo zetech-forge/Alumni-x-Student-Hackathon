@@ -1,6 +1,7 @@
 ---
 title: Content & Curriculum
 parent: Web3 & Blockchain
+grandparent: Hackathon Tracks
 nav_order: 1
 ---
 

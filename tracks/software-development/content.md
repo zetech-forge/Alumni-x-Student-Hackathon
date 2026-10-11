@@ -1,6 +1,7 @@
 ---
 title: Content & Curriculum
 parent: Software Development
+grandparent: Hackathon Tracks
 nav_order: 1
 ---
 

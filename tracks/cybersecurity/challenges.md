@@ -1,6 +1,7 @@
 ---
 title: Challenges
 parent: Cybersecurity
+grandparent: Hackathon Tracks
 nav_order: 4
 ---
 

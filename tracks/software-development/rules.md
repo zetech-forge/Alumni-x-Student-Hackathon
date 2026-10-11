@@ -1,6 +1,7 @@
 ---
 title: Track Rules & How to Compete
 parent: Software Development
+grandparent: Hackathon Tracks
 nav_order: 3
 ---
 

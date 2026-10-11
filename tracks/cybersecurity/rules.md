@@ -1,6 +1,7 @@
 ---
 title: Track Rules & How to Compete
 parent: Cybersecurity
+grandparent: Hackathon Tracks
 nav_order: 3
 ---
 

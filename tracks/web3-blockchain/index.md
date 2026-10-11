@@ -1,6 +1,7 @@
 ---
 title: Web3 & Blockchain
-nav_order: 10
+nav_order: 2
+parent: Hackathon Tracks
 has_children: true
 ---
 

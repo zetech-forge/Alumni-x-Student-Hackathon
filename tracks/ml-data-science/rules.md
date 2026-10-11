@@ -1,6 +1,7 @@
 ---
 title: Track Rules & How to Compete
 parent: Machine Learning & Data Science
+grandparent: Hackathon Tracks
 nav_order: 3
 ---
 

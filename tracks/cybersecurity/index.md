@@ -1,6 +1,7 @@
 ---
 title: Cybersecurity
-nav_order: 13
+nav_order: 5
+parent: Hackathon Tracks
 has_children: true
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Curated Resources
 parent: IoT & Robotics
+grandparent: Hackathon Tracks
 nav_order: 2
 ---
 

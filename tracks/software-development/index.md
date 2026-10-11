@@ -1,6 +1,7 @@
 ---
 title: Software Development
-nav_order: 9
+nav_order: 1
+parent: Hackathon Tracks
 has_children: true
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Challenges
 parent: Web3 & Blockchain
+grandparent: Hackathon Tracks
 nav_order: 4
 ---
 

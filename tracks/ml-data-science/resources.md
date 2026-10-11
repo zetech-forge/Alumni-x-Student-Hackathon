@@ -1,6 +1,7 @@
 ---
 title: Curated Resources
 parent: Machine Learning & Data Science
+grandparent: Hackathon Tracks
 nav_order: 2
 ---
 
