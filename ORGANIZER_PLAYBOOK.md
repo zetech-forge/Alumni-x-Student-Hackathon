@@ -53,6 +53,28 @@ Unlike the other four tracks, IoT & Robotics needs physical planning:
 - Equipment responsibility: who's accountable for damaged or missing
   hardware, and the process for reporting it
 
+## Venue & space plan
+
+Ruiru Campus Auditorium + two breakout rooms needs to hold five tracks
+plus every supporting function at once -- this needs solving before the
+event is advertised as a 150-person experience, not improvised on the day.
+At minimum, assign a space for each of:
+- Each of the 5 tracks (IoT & Robotics likely needs the dedicated lab
+  space noted above, not auditorium floor space)
+- Registration & check-in
+- Mentor areas (where floating alumni mentors circulate/are found)
+- Parallel judging areas, one per track, for Day 2 demos (see Judging
+  logistics above)
+- Meals/catering
+- Sponsor/partner booths, if any partners are confirmed
+- Device charging
+- A quiet space for pitch prep
+- Equipment storage (especially for IoT hardware)
+
+A simple room-assignment table or floor plan, even a rough one, resolves
+this -- the point is making sure it's been thought through, not any
+particular format.
+
 ## Success metrics — proposed
 
 | Metric | Proposed target |
