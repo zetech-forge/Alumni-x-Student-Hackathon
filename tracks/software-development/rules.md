@@ -4,7 +4,7 @@ parent: Software Development
 nav_order: 3
 ---
 
-> **This track feeds the "Best Software Solution" award.** Every team is also automatically eligible for Overall Hackathon Winner, Most Innovative Solution, Best Social Impact Solution, and Best Pitch.
+> **This track feeds the "Best Software Solution" award.** Every team is also automatically eligible for Overall Hackathon Winner, Most Innovative Solution, Best Social Impact Solution, and Best Alumni-Student Collaboration.
 
 # Software Development: Track Rules & How to Compete
 
@@ -13,13 +13,11 @@ Each team picks **one** of the three challenges in Challenges and builds it for 
 
 ## Allowed tools & tech
 - Any programming language, framework, or library.
-- AI coding assistants (e.g. Copilot, Cursor, ChatGPT, Claude) are allowed. Disclose which tools you used and roughly how much of the codebase they helped produce in your submission README -- this is for transparency, not penalized unless undisclosed.
 - You may use any third-party library or API as long as it's publicly available or provided by organizers.
+- AI tool use follows the hackathon-wide policy in [General Rules](/general-rules.md) -- disclose what you used.
 
 ## Submission requirements
-- A public (or judge-accessible) GitHub repository containing your code.
-- A README that includes: setup/run instructions, which challenge you attempted, which Sustainable Development Goal your solution targets and why, and your AI-tool disclosure (see above).
-- A live demo and pitch on Day 2 (see general schedule) -- *(TBD: exact submission cutoff time and demo slot length -- confirm with organizing committee)*.
+Follow the standard submission package in [General Rules](/general-rules.md) (repo, README, demo video, pitch deck, SDG statement, Alumni Contribution note, AI disclosure, and the rest). In addition for this track: state in your README which of the three challenges you attempted.
 
 ## Judging criteria
 
@@ -37,4 +35,4 @@ A working, modest solution that does what it claims beats an ambitious one that 
 *(TBD: how ties are broken -- e.g. highest "Functionality" sub-score wins, or judges' panel discussion)*
 
 ## Day-of timeline
-Follows the general two-day schedule. No track-specific deviations beyond: teams targeting Challenge C (Agentic AI/RAG) should confirm model/API access with organizers during the Day 1 "Technology bootcamps" session, before committing to that challenge.
+Follows the general two-day schedule -- submission freeze is 15:00-15:30 on Day 2 (see [Schedule](/schedule.md)). Teams targeting Challenge C (Agentic AI/RAG) should confirm model/API access with organizers during the Day 1 "Technology bootcamps" session, before committing to that challenge.
