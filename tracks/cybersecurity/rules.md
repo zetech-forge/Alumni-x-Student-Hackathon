@@ -4,7 +4,7 @@ parent: Cybersecurity
 nav_order: 3
 ---
 
-> **This track feeds the "Best Cybersecurity Solution" award.** Every team is also automatically eligible for Overall Hackathon Winner, Most Innovative Solution, Best Social Impact Solution, and Best Pitch. Remember: challenges must tie to a UN Sustainable Development Goal and fit the two-day build window (Day 1 build, Day 2 pitch).
+> **This track feeds the "Best Cybersecurity Solution" award.** Every team is also automatically eligible for Overall Hackathon Winner, Most Innovative Solution, Best Social Impact Solution, and Best Alumni-Student Collaboration. Remember: challenges must tie to a UN Sustainable Development Goal and fit the two-day build window (Day 1 build, Day 2 pitch).
 
 # Cybersecurity: Track Rules & How to Compete
 
@@ -19,18 +19,29 @@ here.)*
 *(Any restrictions -- e.g. "any language", "no pre-built ML models",
 "no public CVE databases".)*
 
+## Authorized targets (mandatory)
+All offensive security testing must target only systems, applications,
+containers, and datasets provided or created by the participant/team, or
+explicitly authorized by the organizers in writing. This means no:
+- Scanning or testing university infrastructure
+- Attacking public websites not provided for this event
+- Testing external IP addresses
+- Exploiting third-party systems
+
+This rule is non-negotiable and applies regardless of what a challenge
+otherwise allows.
+
 ## Submission requirements
-*(Exactly what must be submitted, how, and the deadline/time window on the
-day.)*
+Follow the standard submission package in [General Rules](/general-rules.md). Technical Leads: add anything specific to this track here (e.g. whether CTF-style flags are used, scope of the authorized target environment).
 
 ## Judging criteria
 
 | Criterion | Weight |
 |---|---|
-| Functionality / correctness | 40% |
-| Code quality / documentation | 20% |
-| Creativity / approach | 20% |
-| Presentation | 20% |
+| Detection (finding real vulnerabilities/threats) | 25% |
+| Security controls implemented | 25% |
+| Threat modeling | 25% |
+| Robustness (does it hold up under adversarial testing) | 25% |
 
 ## Scoring and tie-breakers
 *(How ties are broken.)*
