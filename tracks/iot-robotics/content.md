@@ -6,21 +6,6 @@ nav_order: 1
 
 # IoT & Robotics: Content & Curriculum
 
-## Learning objectives
-- *(What should a participant know/be able to do by the end?)*
+*Content for this track is still being finalized by its Technical Lead(s) -- check back soon.*
 
-## Prerequisite knowledge
-- *(What should they already know coming in?)*
-
-## Topic breakdown
-### Module 1: *(name)*
-*(Short description, estimated time)*
-
-### Module 2: *(name)*
-*(Short description, estimated time)*
-
-## Suggested timeline
-*(If there's a prep period before the event, suggest a pace, e.g.
-"Week 1: Modules 1-2".)*
-
-See [Curated Resources](resources.md) for the actual learning materials.
+In the meantime, see [Curated Resources](resources.md) and [Challenges](challenges.md) for what's already published, or [General Rules](/general-rules.md) for how the competition works across every track.
