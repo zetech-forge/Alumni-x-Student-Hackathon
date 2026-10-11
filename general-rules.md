@@ -69,36 +69,41 @@ Opening session → Keynote → Technology bootcamps (per-track crash courses) �
 **Day 2 — Build & Pitch**
 Continued development → Mentor consultations → Prototype testing & pitch prep → Demonstrations → Judging → Awards → Networking → Closing (with a Chief Guest closing the event)
 
-## Awards & prizes
-*Draft -- for the organizing committee to approve or edit before publishing.*
+## Awards & judging
 
-**Categories** (one winning team per category; a team can win more than one):
-- Overall Hackathon Winner
-- Most Innovative Solution
-- Best Social Impact Solution
-- Best Pitch
-- Best Software Solution
-- Best AI / Data Science Solution
-- Best Cybersecurity Solution
-- Best Web3 / Blockchain Solution
-- Best IoT / Robotics Solution
+Every team is scored on a **track-level rubric** (specific to their track --
+see that track's own Rules page) and, for teams whose track win puts them
+in contention for the Overall Hackathon Winner, an **overall rubric** applied
+the same way across all five tracks:
 
-**Proposed prizes** *(draft -- confirm budget and suppliers before publishing)*:
-
-| Who | Proposed prize |
+| Overall criterion | Weight |
 |---|---|
-| Every participant | Certificate of participation, lanyard, stickers |
-| Each track's category winner (5 teams) | Medal + plaque + branded hoodie/T-shirt + laptop sleeve |
-| Most Innovative / Best Social Impact / Best Pitch (3 teams) | Plaque + university tote bag + small tech accessory (e.g. power bank) |
-| Overall Hackathon Winner (1 team) | Trophy + mechanical keyboard per member + certificates + feature in university media + priority introduction to partner organizations |
+| Problem relevance & impact | 20% |
+| Functional prototype | 25% |
+| Technical execution | 20% |
+| Innovation | 15% |
+| User experience / usability | 10% |
+| Pitch & demonstration | 10% |
+
+This keeps an IoT prototype and a cybersecurity system from being compared
+on incompatible raw scores. Across every track: **a working, modest
+solution that does what it claims beats an ambitious one that doesn't run.**
+
+See the [Prizes](prizes.md) page for the full award structure and what
+winners receive.
 
 ## Code of conduct
 - Teams must do their own work; plagiarism or submitting a pre-existing project as new work is disqualifying.
 - Be respectful to organizers, Technical Leads, alumni, and other teams.
-- *(Add any further academic-integrity specifics)*
+- Track-specific safety rules (see Cybersecurity, Web3, and IoT & Robotics' own Rules pages) are part of this code of conduct and are enforced the same way.
 
 ## Disqualification
-- *(List the conditions that disqualify a team)*
+A team may be disqualified for:
+- Plagiarism, or submitting work that predates the event as new work
+- Violating a track's safety rules (e.g. testing outside Cybersecurity's authorized targets, or Web3 transactions outside the designated sandbox)
+- Exceeding the 3-4 member team size or competing without an Alumni/Finalist Collaborator
+- Undisclosed, substantial misrepresentation of AI tool use
+- Abusive conduct toward organizers, judges, alumni, or other teams
 
----
-*Technical Leads: please don't edit this page directly -- it's organizer-owned. Put track-specific rules in your own track's `rules.md`.*
+## Scoring and tie-breakers
+Ties are broken first by the highest "Functional prototype" sub-score on the overall rubric, then by judges' panel discussion.
