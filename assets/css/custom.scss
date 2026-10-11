@@ -1,0 +1,38 @@
+---
+---
+@import "./color_schemes/{{ site.color_scheme | default: 'light' }}";
+
+.ztf-hero {
+  text-align: center;
+  padding: 2rem 1rem 2.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid $border-color;
+}
+.ztf-hero h1 { margin-bottom: 0; letter-spacing: 0.05em; }
+.ztf-hero h3 { margin-top: 0.25rem; font-weight: 400; color: $grey-dk-000; }
+
+.ztf-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.ztf-cards > h3, .ztf-cards > h2 {
+  grid-column: 1 / -1;
+}
+.ztf-cards h3 {
+  margin-top: 0;
+}
+
+.ztf-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.ztf-steps p strong:first-child {
+  display: block;
+  font-size: 1.1rem;
+  color: $link-color;
+  margin-bottom: 0.25rem;
+}
