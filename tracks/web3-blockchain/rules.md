@@ -4,7 +4,7 @@ parent: Web3 & Blockchain
 nav_order: 3
 ---
 
-> **This track feeds the "Best Web3 / Blockchain Solution" award.** Every team is also automatically eligible for Overall Hackathon Winner, Most Innovative Solution, Best Social Impact Solution, and Best Pitch.
+> **This track feeds the "Best Web3 / Blockchain Solution" award.** Every team is also automatically eligible for Overall Hackathon Winner, Most Innovative Solution, Best Social Impact Solution, and Best Alumni-Student Collaboration. Remember: challenges must tie to a UN Sustainable Development Goal and fit the two-day build window (Day 1 build, Day 2 pitch).
 
 # Web3 & Blockchain: Track Rules & How to Compete
 
@@ -17,13 +17,18 @@ Each team picks **one** of the three challenges in [Challenges](challenges.md) a
 - Deploy only to a practice chain (Remix's built-in chain or the starter kit's local chain) or a public testnet such as Sepolia. No mainnet deploys, no real money, and no real personal data.
 - Any publicly available library or API is allowed.
 
-## Submission requirements
-- A public (or judge-accessible) GitHub repository containing your code.
-- A README with setup and run steps, your chosen challenge, your Sustainable Development Goal and why, your AI-tool disclosure, and where your contracts are deployed (network and addresses).
-- A live demo and pitch on Day 2.
-- Challenge C teams also submit a recorded backup demo (60 seconds is enough), in case the model misbehaves live.
+## Safe sandbox (mandatory)
+This is a university event -- every build must stay inside a safe sandbox:
+- Testnets only. No real-money transactions.
+- No real financial accounts or production wallets containing meaningful assets.
+- Any smart contract risk must be disclosed in your submission.
+- No unauthorized interaction with third-party contracts.
 
-*(TBD: exact submission cutoff time and demo slot length; confirm with organizing committee)*
+This rule is non-negotiable and applies regardless of what a challenge
+otherwise allows.
+
+## Submission requirements
+Follow the standard submission package in [General Rules](/general-rules.md). Technical Leads: add anything specific to this track here.
 
 ## Judging criteria
 
