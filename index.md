@@ -4,30 +4,98 @@ layout: home
 nav_order: 1
 ---
 
-# Zetech Forge: Alumni x Student Hackathon 2026
+<div class="ztf-hero" markdown="1">
 
-**Connecting Minds, Shaping Sustainable Futures: Alumni and Students in Collaborative Innovation and Research**
+# ZETECH FORGE
+### Alumni × Student Hackathon 2026
 
-A two-day hackathon bringing Zetech University students and alumni together to build real solutions, side by side. Teams of 3-4 -- each with at least one alumni or finalist member -- pick one track, align their solution with a UN Sustainable Development Goal, and build a working prototype in 48 hours.
+**Build real solutions. Learn from experience. Create sustainable impact.**
 
-📅 **12th–13th November 2026**, 9:00 AM each day *(proposed in planning notes -- confirm before final publish)* · 📍 **Ruiru Campus Auditorium, Zetech University**
+A two-day collaborative innovation sprint bringing Zetech students and alumni together to solve real-world challenges across Software Development, AI & Data Science, Cybersecurity, Web3 & Blockchain, and IoT & Robotics.
+
+📅 **12-13 November 2026** &nbsp;·&nbsp; 📍 **Zetech University, Ruiru Campus**
+
+[Register Now](register.md){: .btn .btn-primary } [Explore Tracks](#pick-your-track){: .btn }
+
+</div>
+
+## Why this hackathon?
+
+<div class="ztf-cards" markdown="1">
+
+### 🔨 Build
+Turn ideas into working prototypes over two intensive days, not slides.
+
+### 🤝 Connect
+Work directly with Zetech alumni and industry professionals as part of your own team, not just as spectators.
+
+### 🌍 Impact
+Every solution ties to a real problem and a UN Sustainable Development Goal.
+
+</div>
+
+## Who should participate?
+
+<div class="ztf-cards" markdown="1">
+
+### Students
+Build your portfolio, compete, learn, and meet industry professionals. [Register as a student](register.md)
+
+### Alumni
+Mentor emerging talent, share real-world experience, and help solve real problems. [Join as alumni](get-involved.md)
+
+### Industry Partners
+Bring challenges, mentor teams, sponsor prizes, and connect with high-potential talent. [Partner with us](get-involved.md)
+
+</div>
 
 ## Pick your track
+{: #pick-your-track }
 
-| Track | What it covers |
-|---|---|
-| [Software Development](tracks/software-development/) | *(one-line summary -- filled in by that track's Technical Lead)* |
-| [Web3 & Blockchain](tracks/web3-blockchain/) | *(one-line summary)* |
-| [IoT & Robotics](tracks/iot-robotics/) | *(one-line summary)* |
-| [Machine Learning & Data Science](tracks/ml-data-science/) | *(one-line summary)* |
-| [Cybersecurity](tracks/cybersecurity/) | *(one-line summary)* |
+<div class="ztf-cards" markdown="1">
 
-Before you compete, read the **[General Rules](general-rules.md)** -- they apply to every team, regardless of track.
+### 💻 Software Development
+Build production-minded software solutions. [Explore track →](tracks/software-development/)
 
-## How the two days flow
+### 🤖 AI & Data Science
+Turn real-world data into predictive, intelligent systems. [Explore track →](tracks/ml-data-science/)
 
-**Day 1 — Learn & Build:** Opening session · Keynote · Technology bootcamps · Team formation · Challenge briefing · Ideation · Prototype development
+### 🔐 Cybersecurity
+Defend systems, analyze threats, and build secure technology. [Explore track →](tracks/cybersecurity/)
 
-**Day 2 — Build & Pitch:** Continued development · Mentor consultations · Prototype testing & pitch prep · Demonstrations · Judging · Awards · Networking · Closing
+### ⚙️ IoT & Robotics
+Connect physical systems to intelligent software. [Explore track →](tracks/iot-robotics/)
 
-Each track page has its own curriculum, resources, rules, and challenges in the sidebar.
+### ⛓️ Web3 & Blockchain
+Explore decentralized systems, trust, and digital infrastructure. [Explore track →](tracks/web3-blockchain/)
+
+</div>
+
+## How it works
+
+<div class="ztf-steps" markdown="1">
+
+**01 — Form your team**
+3-4 members, including an Alumni/Finalist Collaborator.
+
+**02 — Choose your challenge**
+Select one challenge within your track.
+
+**03 — Build**
+Design, develop, test, and validate your prototype over two days.
+
+**04 — Pitch**
+Demonstrate your working solution to technical and industry judges.
+
+</div>
+
+## Schedule, prizes & more
+
+- 🗓️ **[Full schedule](schedule.md)** -- hour-by-hour for both days
+- 🏆 **[Prizes](prizes.md)** -- the Grand Prize, Track Champions, and Special Awards
+- 👥 **[Mentors & Judges](mentors-judges.md)** -- the alumni and experts helping you build
+- ❓ **[FAQ](faq.md)** -- answers to the most common questions
+
+Before you compete, read the **[General Rules](general-rules.md)** -- they apply to every team, regardless of track. Each track page also has its own curriculum, resources, rules, and challenges in the sidebar.
+
+[Register Now](register.md){: .btn .btn-primary }
