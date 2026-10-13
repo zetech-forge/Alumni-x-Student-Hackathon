@@ -16,7 +16,7 @@ Each challenge is designed to be a working prototype within the two-day event. *
 A team that finishes the core requirements and demonstrates them well will score better than a team that attempts everything and finishes nothing.
 
 | | Challenge 1 | Challenge 2 | Challenge 3 |
-|---|---|---|---|
+
 
 | **Name** | Climate Sentinel | Malaria Atlas Lab | Product Copilot |
 | **Theme** | Cyclones, heavy rain and drought: analysis, early warning and response planning | Malaria mapping, parasite species patterns and drug effectiveness in Africa | A multimodal assistant that replaces printed product manuals for engineers and customers |
@@ -94,7 +94,7 @@ A team that finishes the core requirements and demonstrates them well will score
 
 - **Constraints:**
   - Complete within the two-day event window.
-  - **Data provided** (in `assets/challenge-1/`): pre-downloaded daily weather for 1991 onward at 8 or more locations for 3 example regions, a frozen copy of the El Niño index with its download date and version noted, district boundaries, population rasters, an IBTrACS subset for the coastal example region, and a starter notebook. You may use your own region if you can meet the minimum data requirements.
+  - **Data**  use publicly available data
   - This is a **planning-support tool**, not an official warning system. State this in the app and in your pitch.
 
 - **Deliverable:** Submit all of the following:
@@ -162,7 +162,7 @@ A team that finishes the core requirements and demonstrates them well will score
 
 - **Constraints:**
   - Complete within the two-day event window.
-  - **Data provided** (in `assets/challenge-2/`): a curated, pre-downloaded subset for 3 example country groups, including prevalence surveys, environmental rasters, a table of drug efficacy studies, a table of resistance marker frequencies, species records, district boundaries and a starter notebook. You may use other open data if you document it.
+  - **Data **use publicly available data
   - Only publicly available, aggregated or anonymised data may be used. **No patient-level records.** Do not attempt to re-identify anyone.
   - Predictions are estimates for planning. Do not present a modelled map as a measured one, and do not present a drug-efficacy estimate as a treatment recommendation.
 
@@ -240,7 +240,7 @@ A team that finishes the core requirements and demonstrates them well will score
 
 - **Constraints:**
   - Complete within the two-day event window.
-  - **Data provided** (in `assets/challenge-3/`): a sample fictional company with a product catalogue of 3 categories and 18 products, open-licensed manuals, a price list, 40 labelled images, 20 audio questions, a starter evaluation set of 20 questions and a starter notebook. Teams may use this company or build their own.
+  - **Data** use publicly available data
   - Respect licenses and terms of use. Do not copy proprietary manuals you are not allowed to use.
   - Use **synthetic data** for anything that looks like customer, supplier or cost information. Attacks and tests must target only your own system.
   - The assistant is a **decision-support tool**. It does not replace manufacturer documentation, certified technicians or local safety regulations. State this in the app and in your pitch.
