@@ -5,48 +5,62 @@ grandparent: Hackathon Tracks
 nav_order: 3
 ---
 
-> **This track feeds the "Best IoT / Robotics Solution" award.** Every team is also automatically eligible for Overall Hackathon Winner, Most Innovative Solution, Best Social Impact Solution, and Best Alumni-Student Collaboration. Remember: challenges must tie to a UN Sustainable Development Goal and fit the two-day build window (Day 1 build, Day 2 pitch).
-
-# IoT & Robotics: Track Rules & How to Compete
-
-*(This is the track's own rulebook. [General Rules](/general-rules.md)
-already covers team size, eligibility, and conduct -- don't repeat that
-here.)*
+This track contributes to the **Best IoT / Robotics Solution** award. Teams are also eligible for the overall and other event awards described in the [General Rules](../../general-rules.md). Every project must connect to at least one UN Sustainable Development Goal (SDG), fit the two-day build window, and be presented as an educational prototype.
 
 ## Format
-*(Individual deliverable? Live demo? Submitted repo? CTF-style flags?)*
 
-## Allowed tools / tech
-*(Any restrictions -- e.g. "any language", "no pre-built ML models",
-"no public CVE databases".)*
+- Select one challenge from the [Beginner, Intermediate, or Advanced tiers](challenges.md). Teams may complete the core objectives and add stretch goals if time allows.
+- Build and test a working prototype during the event. A shareable simulation is an acceptable demonstration; physical hardware is optional and is not an automatic scoring advantage.
+- Day 1 is for the challenge briefing, ideation, and initial build. Day 2 is for development, testing, demonstrations, and pitches. Follow the event schedule in the General Rules for exact times and submission deadlines.
+- The rover challenge uses one shared physical rover. Organizers will coordinate test slots; teams can develop and demonstrate rover control logic in simulation while waiting.
+
+## Allowed tools and technology
+
+- Arduino Uno R3 or ESP32 and the components allocated by the organizers.
+- Arduino IDE or another suitable development environment and programming language.
+- Wokwi or another suitable simulator for code and circuit behavior. Clearly identify what was simulated and what was tested physically.
+- Teams may use documentation and code libraries, but must credit external libraries, examples, and other reused material and explain their own contribution.
+- Do not assume that every team will receive a particular sensor or module. Ask organizers about shared parts and schedule scarce equipment before building a design that depends on it. Optional components must not be required for a valid submission.
+- The fingerprint module is optional. Use a simulated access decision if it is unavailable; do not collect or store real fingerprints.
 
 ## Physical safety (mandatory)
-This track involves real hardware -- every team must:
-- Follow organizer guidance on power, soldering, and battery safety
-- Report damaged or malfunctioning equipment immediately rather than
-  attempting repairs mid-competition
-- Keep moving parts (motors, servos) secured when not actively being
-  tested, especially around other teams
-- Not bring personal hardware that hasn't been safety-checked by
-  organizers at check-in
 
-See the Organizer Playbook's IoT physical logistics checklist for what
-organizers are responsible for providing.
+- Follow organizer guidance for power, wiring, batteries, soldering, and equipment use. Report damaged or malfunctioning equipment instead of attempting repairs during the competition.
+- Keep moving parts secured when the rover is not being tested. Run it at controlled speed on a clear, marked course with an accessible stop or power-off method, under organizer supervision.
+- Never connect the relay to mains electricity. Use only a low-voltage demonstration load such as an LED.
+- Do not release gas, create smoke, or use an open flame to test a gas or flame sensor. Use simulator controls or safe, organizer-approved test inputs.
+- Do not bring personal hardware that organizers have not safety-checked.
 
 ## Submission requirements
-Follow the standard submission package in [General Rules](/general-rules.md). Technical Leads: add anything specific to this track here (e.g. whether hardware must be returned, how to submit a video of physical functionality).
+
+Follow the event-wide submission process and deadline in the [General Rules](../../general-rules.md). Each IoT & Robotics team must include:
+
+1. Project title and selected challenge tier.
+2. Source code and a README with setup, run, and demonstration instructions.
+3. A wiring diagram or system diagram showing the main inputs, controller, outputs, and power arrangement.
+4. A live demonstration or a shareable simulation link. If hardware is used, explain which parts were physically tested.
+5. Brief test evidence showing the core behavior under at least three relevant input or route conditions.
+6. A short pitch explaining the user need, design decisions, selected SDG, and limitations of the prototype.
+
+Do not claim that an educational prototype is a certified safety, security, access-control, or emergency-response system. Sensor readings from uncalibrated modules or simulation are not certified measurements.
 
 ## Judging criteria
 
-| Criterion | Weight |
-|---|---|
-| Functionality / correctness | 40% |
-| Code quality / documentation | 20% |
-| Creativity / approach | 20% |
-| Presentation | 20% |
+Each selected challenge is scored out of 100 points. The specific challenge page explains how the criteria apply to that tier.
+
+| Criterion | Weight | What judges look for |
+| --- | ---: | --- |
+| Functionality and correctness | 40% | The required behavior works and can be demonstrated or reproduced in simulation or on hardware. |
+| Code quality, documentation, and testing | 20% | The team can explain its code and system, gives clear run instructions, and shows relevant tests. |
+| Creativity, practical use, and SDG connection | 20% | The idea fits a real campus or community need, has a thoughtful approach, and explains its SDG link. |
+| Demonstration and presentation | 20% | The demo is clear, the pitch is understandable, and the team explains limitations honestly. |
+
+Judges should assess the demonstrated behavior and the team's explanation, not the amount of hardware available to them. A simulation-only submission can earn full marks when it meets the challenge objectives.
 
 ## Scoring and tie-breakers
-*(How ties are broken.)*
 
-## Day-of timeline
-*(Only if it differs from the general schedule in General Rules.)*
+The selected challenge's 100-point breakdown is the scoring sheet. If teams tie, compare their functionality and repeatability first, then their practical use and SDG explanation, then their demonstration and pitch. Judges may ask teams to repeat a test or change a simulated input.
+
+## Timeline
+
+Follow the event-wide schedule in the General Rules. The IoT track briefing introduces the challenge tiers and hardware booking process on Day 1; Day 2 includes time for final testing, demonstrations, and pitches. Organizers will communicate rover test slots and any track-specific submission cut-off during the event.
