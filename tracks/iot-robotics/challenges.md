@@ -50,11 +50,10 @@ A campus room is sometimes left lit or treated as occupied when nobody is using 
 
 ### Points — 100
 
-- Core motion response and correct state changes: 35
-- Clear, useful indicator behavior: 20
-- Reliable operation, including a sensible timeout: 15
-- Campus relevance, SDG connection, and explanation of limitations: 15
-- Demonstration and pitch: 15
+- Functionality and correctness — 40: Motion input triggers the indicator, and the system returns to idle after the stated timeout.
+- Code quality, documentation, and testing — 20: The code is understandable, setup steps are clear, and the team demonstrates repeated tests.
+- Creativity, practical use, and SDG connection — 20: The indicator supports a sensible campus energy-use decision and the team explains its limits.
+- Demonstration and presentation — 20: The team clearly demonstrates the behavior and gives a concise pitch.
 
 **Judging note:** Judges should trigger motion more than once and check that the indicator returns to idle as described. Score a simulation on its demonstrated behavior, not on whether hardware was available.
 
@@ -89,11 +88,10 @@ A campus workshop or shared room needs an affordable way to flag a possible envi
 
 ### Points — 100
 
-- Sensor input and threshold behavior: 30
-- Clear and appropriately differentiated alerts: 20
-- Testing, reliability, and handling of edge cases: 15
-- Responsible safety claims, campus relevance, and SDG connection: 20
-- Demonstration and pitch: 15
+- Functionality and correctness — 40: Sensor thresholds produce the expected normal and alert states, with a clear local warning.
+- Code quality, documentation, and testing — 20: The team documents thresholds and demonstrates at least three relevant test cases.
+- Creativity, practical use, and SDG connection — 20: The alert fits a real campus need and includes sensible user guidance and honest limitations.
+- Demonstration and presentation — 20: The demo clearly shows state changes and the pitch explains the intended response.
 
 **Judging note:** Judges may change the simulated sensor value or use a safe test input. Reward clear state transitions and honest limitations; do not reward claims that the prototype guarantees safety.
 
@@ -128,11 +126,10 @@ A campus support rover must travel through a short route, avoid a simulated or p
 
 ### Points — 100
 
-- Route completion and destination stop: 25
-- Obstacle response and safe operation: 25
-- Repeatability and test evidence: 15
-- Practical campus use, SDG connection, and explanation of limitations: 15
-- Code/system explanation, demonstration, and pitch: 20
+- Functionality and correctness — 40: The rover or simulated controller completes the route, responds to an obstacle, and stops safely.
+- Code quality, documentation, and testing — 20: Setup and control logic are explained, with a log of at least three runs or equivalent simulated tests.
+- Creativity, practical use, and SDG connection — 20: The route task addresses a plausible campus need and the design explains its limitations.
+- Demonstration and presentation — 20: The team demonstrates the sequence clearly and gives a concise pitch.
 
 **Judging note:** Judges should use the same marked route and obstacle placement for each physical run. A simulation-first team can earn full points by demonstrating the required logic clearly; physical access is not a scoring advantage by itself.
 
