@@ -1,0 +1,116 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+#
+# Ransomware behaviour simulation — NOT ransomware.
+#
+# A PowerShell script that walks a directory tree, reads files, and renames
+# extensions inside a lab directory only. Nothing outside /C:\LabFiles is
+# touched, and the script is deliberately slow so a detection window exists.
+#
+# This is the lab where behavioural detection earns its place: the team's
+# Wazuh rules should detect the mass-rename pattern and isolate the host.
+# The detection is behavioural, not signature-based. No rule will fire
+# on the filename alone, which is exactly the lesson.
+#
+# HOW TO RUN IT:
+#   1. Boot the VM. On first boot the provisioning script seeds C:\LabFiles
+#      with 80 filler documents (documents, Finance ledgers, HR records) and
+#      writes the simulation script to C:\LabFiles\simulate-ransomware.ps1.
+#   2. The VM has NO default gateway. It cannot talk to the internet, to your
+#      real machine, or to anything outside the lab. That is by design.
+#   3. Run the simulation inside the VM with:
+#        powershell -ExecutionPolicy Bypass -File C:\LabFiles\simulate-ransomware.ps1
+#      This is a PowerShell script (.ps1), NOT an executable (.exe). It does
+#      NOT encrypt, delete, or exfiltrate anything. It only renames the last
+#      part of each file's name (document_1.docx -> document_1.encrypted),
+#      pausing 400ms between files so a Wazuh detection has time to fire.
+#   4. BEFORE running it: make sure your detection rule or active response is
+#      armed. That is the whole point of the exercise.
+#   5. To reset: rename any .encrypted files back to their original extension,
+#      or delete C:\LabFiles and re-run the provisioning seed. There is
+#      nothing to clean up beyond that — no registry changes, no services.
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "rapid7/metasploitable3-win2k8"
+  config.vm.hostname = "WIN-RANSIM"
+  config.vm.network "private_network", ip: "192.168.56.60", auto_config: false
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = 3072
+    vb.cpus = 2
+  end
+
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+
+  config.vm.provision "reload" do |reload|
+    reload.vm_synced_folder ".", "/vagrant", disabled: true
+  end
+
+  config.vm.provision "shell", inline: <<-POWERSHELL
+    $ErrorActionPreference = "Continue"
+
+    # --- Seed the lab directory with files worth encrypting ---
+    New-Item -Path "C:\LabFiles" -ItemType Directory -Force | Out-Null
+    New-Item -Path "C:\LabFiles\Finance" -ItemType Directory -Force | Out-Null
+    New-Item -Path "C:\LabFiles\HR" -ItemType Directory -Force | Out-Null
+
+    foreach ($i in 1..40) {
+        Set-Content -Path "C:\LabFiles\document_$i.docx" -Value ("Sample document content " * 40)
+    }
+    foreach ($i in 1..20) {
+        Set-Content -Path "C:\LabFiles\Finance\ledger_$i.xlsx" -Value ("Financial record " * 60)
+    }
+    foreach ($i in 1..20) {
+        Set-Content -Path "C:\LabFiles\HR\record_$i.docx" -Value ("Employee record " * 50)
+    }
+
+    Write-Host "Seeded C:\LabFiles with 80 files"
+
+    # --- The simulation script ---
+    # Contained to C:\LabFiles by an explicit root check on every file. Rename
+    # only, no encryption, no deletion, and a deliberate pause so a detection
+    # has time to fire.
+    $script = @'
+# RANSOMWARE BEHAVIOUR SIMULATION
+# Contained to C:\LabFiles. Renames extensions only. No encryption, no
+# deletion, no network activity. Built so that detection and containment can
+# be practised without any real risk.
+
+$Root = "C:\LabFiles"
+$Extension = ".encrypted"
+$DelayMs = 400
+$MaxFiles = 80
+
+$files = Get-ChildItem -Path $Root -Recurse -File | Select-Object -First $MaxFiles
+Write-Host "Simulating encryption behaviour on $($files.Count) files in $Root"
+
+foreach ($file in $files) {
+    # Re-check the root on every iteration. If anything resolves outside it,
+    # stop. This is the containment guarantee.
+    if (-not $file.FullName.StartsWith($Root, [System.StringComparison]::OrdinalIgnoreCase)) {
+        Write-Error "Refusing to touch $($file.FullName): outside $Root"
+        break
+    }
+
+    # Read the file, the way ransomware does. This produces read access that
+    # Sysmon Event ID 11 alone would not reveal.
+    $null = [System.IO.File]::ReadAllBytes($file.FullName)
+
+    # Rename the extension.
+    $newPath = [System.IO.Path]::ChangeExtension($file.FullName, $Extension)
+    Rename-Item -Path $file.FullName -NewName (Split-Path $newPath -Leaf) -Force
+
+    # Slow enough for a rule with a burst threshold to fire mid-run.
+    Start-Sleep -Milliseconds $DelayMs
+}
+
+Write-Host "Simulation complete. This host was not actually encrypted."
+'@
+
+    Set-Content -Path "C:\LabFiles\simulate-ransomware.ps1" -Value $script -Encoding UTF8
+    Write-Host "Simulation script written to C:\LabFiles\simulate-ransomware.ps1"
+    Write-Host ""
+    Write-Host "Run it with:"
+    Write-Host "  powershell -ExecutionPolicy Bypass -File C:\LabFiles\simulate-ransomware.ps1"
+  POWERSHELL
+end
