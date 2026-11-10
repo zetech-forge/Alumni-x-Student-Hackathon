@@ -12,9 +12,7 @@ nav_order: 5
 
 ## When & where
 - **Dates:** 12-13 November 2026, 9:00 AM start each day
-- **Venue:** Zetech University, Ruiru Campus Auditorium, plus two breakout rooms
-- **Capacity:** ~150 participants
-
+- **Venue:** Zetech University, Technology Park Mang'u Campus Auditorium, plus two breakout rooms
 ## Eligibility
 - **Students:** any currently enrolled Zetech University student, any year, pursuing ICT or Engineering, plus other interested student developers.
 - **Alumni:** Zetech ICT and Engineering alumni, and final-year ("finalist") students.

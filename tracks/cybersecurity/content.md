@@ -1,7 +1,7 @@
 ---
 title: Content & Curriculum
 parent: Cybersecurity
-grandparent: Hackathon Tracks
+grand_parent: Hackathon Tracks
 nav_order: 1
 ---
 

@@ -1,3 +1,10 @@
+---
+title: Cyber Defence Hackathon 2026
+parent: Cybersecurity
+grand_parent: Hackathon Tracks
+nav_order: 5
+---
+
 # CYBER DEFENCE HACKATHON 2026
 # Zetech University  |  12–13 November 2026
 

@@ -1,3 +1,10 @@
+---
+title: Wazuh Analyst Playbook
+parent: Cybersecurity
+grand_parent: Hackathon Tracks
+nav_order: 6
+---
+
 # Wazuh Analyst Playbook — Operating Instructions for the Event
 
 This is the day-one working manual for the Wazuh stack. The challenge cards
