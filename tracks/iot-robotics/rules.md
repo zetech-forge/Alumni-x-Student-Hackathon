@@ -64,3 +64,14 @@ The selected challenge's 100-point breakdown is the scoring sheet. If teams tie,
 ## Timeline
 
 Follow the event-wide schedule in the General Rules. The IoT track briefing introduces the challenge tiers and hardware booking process on Day 1; Day 2 includes time for final testing, demonstrations, and pitches. Organizers will communicate rover test slots and any track-specific submission cut-off during the event.
+## Updated overall scoring (100 points)
+This scoring update replaces the earlier 100-point judging table above. Each team is scored on its selected technical tier plus the same mandatory **From Prototype to Real-World Impact** brief; the brief is a planning/presentation task, not a fourth build. Full criteria and examples are in [Challenges](challenges.md#overall-scoring-and-mandatory-real-world-application).
+- **Technical tier: 70 points.** Judges score the selected tier rubric out of 100 and multiply by 0.70.
+- **Mandatory real-world application brief: 30 points.** Use the shared 30-point criteria in the Challenges page.
+- **Final score: 100 points.** A Beginner, Intermediate, or Advanced team has the same maximum final score. Do not give points merely for selecting a harder tier.
+For technical criteria, award 0 for no evidence, approximately half for partial or inconsistent evidence, and full points when the required behavior is clearly demonstrated and supported. Judges should record observed evidence and comments on an individual sheet for every team. Assess physical and simulated builds against equivalent behavior; hardware access alone must not affect marks.
+## Mandatory brief and pitch
+Every team submits a concise real-world application brief identifying a specific problem, sector, intended users, proposed use of the prototype, technical architecture, implementation feasibility, risks and mitigations, relevant SDGs, and measurable success indicators. Teams are not required to deploy in the real world during the event. Label measured prototype results separately from estimates or future-impact projections.
+Suggested pitch: up to five slides and five minutes, subject to the event-wide schedule. Cover (1) problem and users, (2) solution and prototype demonstration, (3) architecture and technology, (4) feasibility, resources, and risks, and (5) SDGs, expected impact, and measurable outcomes. Use diagrams and demo evidence rather than dense text.
+## Hardware allocation reminder
+The [Challenges page](challenges.md#shared-hardware-planning-note) lists the known inventory and quantities. Organizers should publish which parts are mandatory, optional, or replaceable by simulation for each tier, plus a fair allocation or booking plan for scarce equipment. The currently supplied inventory does not confirm jumper wires, USB cables, or battery details; organizers must confirm these before teams are asked to rely on them. Teams are not required to buy hardware.
