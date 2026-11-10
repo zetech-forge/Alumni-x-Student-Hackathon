@@ -145,3 +145,28 @@ Before the track deadline, make sure your team has submitted:
 - A short pitch that names the user need, chosen SDG, and the prototype's limitations.
 
 Teams should follow the event's general submission deadline and the IoT & Robotics track rules for demonstration and judging logistics.
+## Overall scoring and mandatory real-world application
+Every team completes one selected technical tier and the same **From Prototype to Real-World Impact** planning brief. This is not a fourth build: use your existing prototype or simulation to explain how it could address a real need.
+The three tier rubrics above are **raw technical scores out of 100**. Normalize the selected tier to 70 points: **technical contribution = raw tier score × 0.70**. Add the mandatory application brief score (maximum 30) for a **final total of 100 points**. Beginner, Intermediate, and Advanced teams therefore have the same maximum final score. Do not award a numerical advantage solely for choosing a harder tier; assess each tier against its stated checkpoints.
+For each technical criterion, give 0 when there is no demonstrated evidence, about half when the behavior or explanation is partial/inconsistent, and full points when the stated behavior is clearly demonstrated and supported by a test, diagram, or explanation. Record evidence in the judge sheet; do not score claims alone. Apply the same evidence standard to physical and simulated builds.
+### Mandatory brief rubric — 30 points
+| Criterion | Points | Full-credit evidence |
+| --- | ---: | --- |
+| Problem, sector, and intended users | 5 | Specific problem and context, relevant sector, intended beneficiaries, and why it matters. |
+| Solution relevance and suitability | 5 | Clear link to the demonstrated prototype and a plausible value proposition. |
+| Technical architecture and stack | 5 | System diagram and explanation of components, interactions, and simulated versus physical parts. |
+| Feasibility and scalability | 5 | Credible path from prototype to deployment, resources, maintenance/cost considerations, and a realistic scaling or partnership idea. |
+| SDG alignment and societal impact | 4 | Relevant SDG(s), intended benefits, and consideration of inclusion or sustainability. |
+| Risks, safety, and sustainability | 4 | Relevant risks (such as privacy, cybersecurity, connectivity, power, reliability, or safety) with reasonable mitigations. |
+| Measurable outcomes | 2 | Relevant success indicator(s) and a credible way to measure them. |
+| **Total** | **30** | |
+Teams are not expected to deploy in the real world during the hackathon. Separate measured prototype results from estimates about future impact; avoid unsupported cost, scale, or impact claims.
+### Suggested final pitch
+Use up to **five slides** and **five minutes**, subject to the event-wide judging schedule: (1) problem and users; (2) solution and prototype demo; (3) architecture and technology; (4) feasibility, resources, and risks; (5) SDGs, expected impact, and measurable outcomes. Favor diagrams and demo evidence over dense text.
+### Judge checkpoint examples
+- **Beginner:** trigger the PIR input more than once; verify the indicator activates and returns to idle after the stated timeout.
+- **Intermediate:** verify normal and alert states using at least three documented input cases, including threshold behavior and safe response guidance.
+- **Advanced:** use the same marked route and obstacle placement for each physical run; verify route completion, obstacle response, and a safe stop. A simulation may demonstrate equivalent control logic.
+The organizer should provide each judge a separate sheet for every team with team name/ID, selected tier, challenge title, judge name, criterion maximum, score awarded, observed evidence, and comments.
+### Shared hardware planning note
+The organizer publishes allocation before the event. Current inventory includes: 3 Arduino Uno R3, 1 ESP32, 1 PIR sensor, 1 MQ-2 gas sensor, 1 fingerprint module, 1 rover/car chassis set (including motors, motor driver, and battery), 1 thermistor, 1 flame sensor, 1 Bluetooth module, 1 relay, 15 red LEDs, 20 resistors, 5 breadboards, and the listed KY modules. Shared or single-quantity items require a booking/rotation plan. The inventory does not specify jumper wires, USB cables, or battery details; organizers must confirm availability and compatibility. For each tier, treat only its stated core parts as required; teams may substitute simulation for unavailable shared equipment, disclose substitutions, and are not expected to buy hardware.
