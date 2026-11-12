@@ -252,6 +252,9 @@ endpoint, `GET /healthz` and an **organizer-approved persistent remote store**.
 Do not rely on ephemeral container-local files for synchronized records or
 processed-operation IDs.
 
+Follow the [PrimeCloud Deployment Guide](deployment.md) for the application,
+sync-service and approved storage configuration.
+
 Demonstrate loading the deployed app, online create/edit, working offline,
 persisting offline changes across a reload, restoring connectivity and syncing
 with the deployed backend. Then show conflicts, deletion and duplicate/retry
