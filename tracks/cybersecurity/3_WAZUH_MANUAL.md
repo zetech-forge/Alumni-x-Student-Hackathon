@@ -77,14 +77,14 @@ minutes" while testing; widen as needed. Alerts disappear from view simply
 because the window moved — before assuming your rule didn't fire, widen the
 range.
 
-**b) The KQL search bar** — the main filter input. Examples you will use
-today:
+**b) The dashboard query bar** — the main filter input. Query-language
+labels depend on the installed version. Examples:
 
 ```
 # All alerts from your agent
 agent.name: "victim-win-01"
 
-# All alerts above level 10
+# Alerts at level 10 or higher
 rule.level: >= 10
 
 # One rule id
@@ -102,15 +102,16 @@ your assigned agent/rule; inspect actual decoded field names.
 
 **c) The alert fields panel** — left sidebar. Click any field value to
 filter, or click the ▶ expand arrow on an alert row to see every field. The
-fields you will read most:
+common JSON alert fields you may encounter (availability depends on the
+source, decoder and retention settings):
 
 | Field | Meaning |
 | --- | --- |
 | `rule.id`, `rule.level`, `rule.description` | What matched and how severe |
 | `data.win.system.eventID`, `data.win.eventdata.*` | Windows event ID and decoded event-specific fields; inspect the actual record for names |
 | `data.srcip`, `data.srcuser`, `data.dstuser` | Who, from where, against whom |
-| `predecoder.hostname`, `program_name` | Which log produced the event |
-| `full_log` | The raw log line — the ground truth |
+| `predecoder.hostname`, `predecoder.program_name` | Source hostname/program where pre-decoding provides them |
+| `full_log` | Raw source record when retained; not every alert includes it |
 
 ### 1.3 Where rules live and how you edit them
 
@@ -175,7 +176,8 @@ this section.
 ### 2.1 Authentication monitoring (W1B, L1B)
 
 **Where:** Security events, filtered to `rule.groups: authentication_failed`
-or `syslog,sshd` on Linux; `windows` channel on the Windows target.
+or `rule.groups: sshd` for Linux. For Windows, inspect the collected Security
+channel and Event 4625 fields. Confirm the actual groups in the installed ruleset.
 
 **Baseline:** observe approved benign lab activity and record its actual
 accounts, sources and timing. Do not assume a particular successful-logon
@@ -353,7 +355,9 @@ team07_submission/
 ### Proof the attack was detected
 - Approved failure-only test at HH:MM from <lab-source>
 - Alert fired at HH:MM:SS: <paste the alert JSON>
-- Fields captured: srcip, srcuser, rule.level
+- Fields captured: source IP, username and rule identity/severity
+- Record their actual decoded JSON field names; Windows account/source
+  paths need not match Linux srcip/srcuser paths
 
 ### MITRE mapping (optional)
 - T1110 Brute Force (sub-technique T1110.001 password guessing)
