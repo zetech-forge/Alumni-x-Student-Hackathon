@@ -39,7 +39,9 @@ technical starting point, not a different scoring scale. All use the shared
   Never commit private keys, seed phrases or API credentials.
 - **Submit your own repository**, not a push to the official starter. Include
   setup steps, your changes, test evidence, known limitations, SDG rationale and
-  disclosure of AI coding tools as required by the track rules.
+  disclosure of AI coding tools. Every challenge also follows the full
+  submission package in the [track rules](rules.md), including a **2-3 minute
+  backup demo video**; challenge-specific demo checklists do not replace it.
 
 **Two-day scope:** on Day 1, get the baseline running, choose one focused
 contribution and verify its rules. On Day 2, finish tests, document limitations
@@ -606,7 +608,7 @@ the transaction/tool result and wallet state.
 
 Submit your own repository with reproducible commands, tests, a role/policy
 explanation, the purchasing use case, model/fallback configuration, known risks
-and a **short recorded backup demo** (about 60 seconds is enough).
+and the **2-3 minute backup demo video** required by the track submission rules.
 
 Demonstrate:
 

@@ -7,7 +7,7 @@ color_scheme: light
 
 aux_links:
   "Register Now":
-    - "/register.html"
+    - "/Alumni-x-Student-Hackathon/register.html"
   "Repo on GitHub":
     - "https://github.com/zetech-forge/Alumni-x-Student-Hackathon"
 
@@ -21,3 +21,4 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
+  - tracks/web3-blockchain/assets

@@ -20,9 +20,9 @@ your own team's repository.
 
 | Challenge | What you need |
 | --- | --- |
-| **A: The Pledge** | A browser and [Remix IDE](https://remix.ethereum.org). You can complete this challenge without installing the full kit. The kit is optional if you want to run its automated tests locally. |
-| **B: The Commons** | The dedicated starter kit installed on a laptop. Phones join the laptop's game server; players do not need to install wallets or developer tools. |
-| **C: Leashed Agent** | The dedicated starter kit plus a local AI model, an approved OpenAI-compatible model service, or the supported `LLM_FAKE=1` mock fallback. The mock fallback needs no model or API key. |
+| **A: The Pledge - Beginner** | A browser and [Remix IDE](https://remix.ethereum.org). You can complete this challenge without installing the full kit. The kit is optional if you want to run its automated tests locally. |
+| **B: The Commons - Intermediate** | The dedicated starter kit installed on a laptop. Phones join the laptop's game server; players do not need to install wallets or developer tools. |
+| **C: Leashed Agent - Advanced** | The dedicated starter kit plus a local AI model, an approved OpenAI-compatible model service, or the supported `LLM_FAKE=1` mock fallback. The mock fallback needs no model or API key. |
 
 Everything below uses practice funds, not real money. Read the
 [security reminders](#7-security-reminders) before starting.
@@ -544,7 +544,9 @@ create the request directly from the local agent account:
    npx hardhat console --network localhost
    ```
 
-3. Paste these JavaScript lines one at a time into the console:
+3. Paste these JavaScript lines **one at a time**, waiting for the next `>`
+   prompt after each line. Do not paste the whole block at once: asynchronous
+   imports must finish before the next command uses them.
 
    ```javascript
    const demoHardhat = await import("hardhat");
