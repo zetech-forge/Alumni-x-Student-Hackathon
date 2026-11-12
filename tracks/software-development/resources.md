@@ -7,64 +7,115 @@ nav_order: 2
 
 # Software Development: Curated Resources
 
-Use resources for **your selected challenge**; the tools below are alternatives, not a checklist of mandatory installations. All listed documentation is free to read. Hosted model/API usage may have costs or limits.
+Start with shared basics, your selected challenge and the
+[PrimeCloud Deployment Guide](deployment.md). Do not read every course or
+install every listed tool.
 
-## Shared preparation
+**Essential** identifies a required concept or relevant deployment instruction,
+not a mandatory programming language/library. Language-specific references
+apply when using that language; equivalent implementations are allowed.
+**Supplementary** means an optional tool, alternative or deeper explanation.
+All references are free to read; hosted services can have costs and limits.
+Follow documentation matching your project's declared runtime/dependencies.
 
-| Resource | Use it for |
-|---|---|
-| [GitHub: Pull requests](https://docs.github.com/en/pull-requests) | Collaborating, reviewing changes and resolving conflicts. |
-| [UN Sustainable Development Goals](https://sdgs.un.org/goals) | Selecting a relevant goal and explaining the intended beneficiary and useful outcome. |
-| [PrimeCloud](https://primecloud.cloud/) | Required hosting platform; confirm organizer-approved access and costs, not assumed event entitlements. |
-| [PrimeCloud documentation](https://primecloud.cloud/docs) | Authoritative application, configuration, secret-binding and storage guidance. |
-| [PrimeCloud quickstart](https://primecloud.cloud/docs/quickstart) | Initial deployment workflow, runtime binding and health checks. |
+## Shared resources
 
-Use the track's [PrimeCloud Deployment Guide](deployment.md) for the participant
-sequence and submission checklist. Consult your chosen language's collection
-documentation for maps, FIFO queues, sets and binary heaps; the
-[challenge cards](challenges.md) define the required implementations and
-complexity/comparison evidence. No additional DSA framework is required.
+| Resource | What it covers | Supports | Priority |
+|---|---|---|---|
+| [Official Git tutorial](https://git-scm.com/docs/gittutorial) | Repository setup, snapshots, commits and basic branching/merging; pair with GitHub collaboration guidance. | A, B, C | Essential |
+| [GitHub pull-request documentation](https://docs.github.com/en/pull-requests) | Branch-based collaboration, reviews and conflict resolution. | A, B, C | Essential |
+| [Princeton: Analysis of Algorithms](https://algs4.cs.princeton.edu/14analysis/) | Algorithm cost models, growth rates, memory and empirical performance; examples use Java, but the concepts are language-independent. | A, B, C | Essential concepts |
+| [UN Sustainable Development Goals](https://sdgs.un.org/goals) | Choose a relevant goal and connect the user problem, beneficiary and intended outcome. | A, B, C | Essential |
 
 ## Challenge A -- Backend Data Reconciliation & Fuzzy Search
 
-**Beginner focus:** parsing two supported formats, consistent normalization, similarity thresholds and ambiguous-match review. Start with small synthetic examples before the full dataset.
+**Beginner focus:** the hash-map index and FIFO review queue must support the
+existing normalization, fuzzy matching and traceable human-review workflow.
 
-| Resource | Use it for |
-|---|---|
-| [RapidFuzz documentation](https://rapidfuzz.github.io/RapidFuzz/) | Practical fuzzy-comparison functions and examples; use a library rather than implementing edit distance from scratch. |
-| [pandas documentation](https://pandas.pydata.org/docs/) | Optional Python table/file loading, cleaning, joining and exporting. A simpler parser is also valid. |
+| Resource | What it covers | Supports | Priority |
+|---|---|---|---|
+| [Python dictionaries](https://docs.python.org/3/builtins/stdtypes.html#dict) | Key-value indexing and updates. Store a list of record references per normalized key rather than overwriting duplicate-key records. | A; B backend alternative | Essential DSA reference |
+| [Python deque](https://docs.python.org/3/library/collections.html#collections.deque) | Efficient queue insertion/removal and FIFO processing; choose an equivalent queue representation in another language. | A, B | Essential DSA reference |
+| [RapidFuzz documentation](https://rapidfuzz.github.io/RapidFuzz/) | Similarity functions for fuzzy comparisons; thresholds and ambiguous decisions remain your application's responsibility. | A | Supplementary tool |
+| [Python CSV parsing](https://docs.python.org/3/library/csv.html) | Reading structured CSV rows and handling format options. | A | Essential if CSV is selected |
+| [Python JSON parsing](https://docs.python.org/3/library/json.html) | Loading/validating JSON structures and reporting parse failures. | A | Essential if JSON is selected |
+| [Python ElementTree](https://docs.python.org/3/library/xml.etree.elementtree.html) | Parsing XML elements and mapping fields; follow its security guidance for untrusted input. | A | Essential if XML is selected |
+| [pandas documentation](https://pandas.pydata.org/docs/) | Optional tabular data loading and transformation; not a replacement for the required index/review logic. | A | Supplementary tool |
 
-Neither Python nor pandas is mandatory if your chosen language handles the required formats and matching correctly.
+Select at least two supported formats, not necessarily all three. Python,
+pandas and a particular matching library are not mandatory. Begin with small
+synthetic fixtures; compare linear/indexed lookup on identical keys and records.
 
 ## Challenge B -- Offline-First Resource Tracker
 
-**Intermediate focus:** durable local records, pending changes, reconnect/retry behavior and a tested conflict policy.
+**Intermediate focus:** durable queued operations, record/change tracking,
+operation-ID deduplication and consistent conflicts/deletions.
 
-| Resource | Use it for |
-|---|---|
-| [MDN: IndexedDB API](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) | Browser-native persistent structured storage. IndexedDB does not itself synchronize data to a server. |
-| [PouchDB: Conflicts](https://pouchdb.com/guides/conflicts.html) | The alternative database/replication approach and why applications must still handle conflicts. Replication needs a compatible endpoint. |
-| [web.dev: Offline Cookbook](https://web.dev/articles/offline-cookbook) | Supplementary patterns for keeping application assets available offline; distinguish caching from record synchronization. |
-| [Tailwind CSS documentation](https://tailwindcss.com/docs) | Optional UI styling only; visual polish is not a separate assessment category. |
+| Resource | What it covers | Supports | Priority |
+|---|---|---|---|
+| [MDN: IndexedDB API](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) | Durable browser records and pending work; IndexedDB does not itself synchronize with a server. | B | Essential concepts; browser option |
+| [MDN: Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) | JavaScript key-value record/state tracking. Keep queued history separately from a map's latest state. | B; A JavaScript alternative | Essential DSA reference |
+| [MDN: Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) | Unique operation-ID membership and duplicate detection; an in-memory set alone is not durable deduplication. | B | Essential DSA reference |
+| [PouchDB getting started](https://pouchdb.com/guides/) | An alternative local database/replication approach and compatible server requirements. | B | Supplementary tool |
+| [PouchDB conflicts](https://pouchdb.com/guides/conflicts.html) | Detecting and resolving conflicts; replication does not remove the need for a tested conflict policy. | B | Supplementary tool |
+| [web.dev: Offline Cookbook](https://web.dev/articles/offline-cookbook) | Keeping necessary application assets available offline; caching is separate from the record database. | B | Essential concepts; browser examples |
+| [MDN: Idempotent](https://developer.mozilla.org/en-US/docs/Glossary/Idempotent) | Why repeating a request can repeat a state change; safe POST-based synchronization requires application-level operation IDs/deduplication. | B | Essential concepts |
 
-Use browser developer tools to simulate disconnection and separate profiles/devices to test independent offline edits. A local sync service is useful during development, but final delivery requires the PrimeCloud-hosted interface/sync service and organizer-approved persistent remote storage. Test the queue/map/set integration, retry deduplication and conflict/deletion policy; production-grade infrastructure is not required.
+Use the queue reference above or your language's equivalent. Persist pending
+operations and deduplication state; a JavaScript array's front-removal operation
+is not a constant-time queue implementation. Test two isolated sessions,
+reconnection, lost acknowledgments and conflicts against the PrimeCloud-hosted
+sync backend and approved persistent store. A local-only service is insufficient.
 
 ## Challenge C -- Purposeful Agentic AI / RAG Workflow
 
-**Advanced focus:** relevant retrieval, source metadata, grounded generation/citations, bounded execution and failure evaluation.
+**Advanced focus:** implement the bounded heap selector inside retrieval,
+preserve citation metadata and keep generation grounded and bounded.
 
-| Resource | Use it for |
-|---|---|
-| [Pinecone: Retrieval-Augmented Generation](https://www.pinecone.io/learn/retrieval-augmented-generation/) | The retrieve/context/generate concepts. The explainer does not make a Pinecone account or managed database mandatory. |
-| [LangChain: Retrieval](https://docs.langchain.com/oss/python/langchain/retrieval) | Optional retrieval/context components. Keep the challenge's workflow bounded rather than adopting unrestricted agent examples. |
-| [LlamaIndex framework documentation](https://developers.llamaindex.ai/python/framework/) | An alternative document-ingestion/retrieval toolkit; configure the model and embedding provider deliberately. |
-| [Ollama quickstart](https://docs.ollama.com/quickstart) | Install Ollama and follow the **local-model** route. Download a suitable model and confirm hardware capacity before relying on it. |
-| [Ollama API introduction](https://docs.ollama.com/api/introduction) | Distinguish the local server from cloud endpoints when configuring your application. |
+| Resource | What it covers | Supports | Priority |
+|---|---|---|---|
+| [Princeton: Priority Queues](https://algs4.cs.princeton.edu/24pq/) | Binary heaps, min/max priorities and operation costs; apply these principles to bounded top-K selection. | C | Essential concepts |
+| [Python heapq](https://docs.python.org/3/library/heapq.html) | Binary min-heap primitives and priority-queue considerations. Implement the bounded selection loop; a ready-made top-K call does not satisfy the task. | C | Essential DSA reference |
+| [Pinecone: Retrieval-Augmented Generation](https://www.pinecone.io/learn/retrieval-augmented-generation/) | Retrieval/context/generation concepts; no Pinecone account or managed vector database is required. | C | Supplementary explainer |
+| [LangChain retrieval](https://docs.langchain.com/oss/python/langchain/retrieval) | Optional document loading/splitting, retrieval and context integration; do not bypass the required heap selector. | C | Supplementary framework |
+| [LlamaIndex framework documentation](https://developers.llamaindex.ai/python/framework/) | Alternative document ingestion, chunk/source metadata and retrieval components; configure model/embedding access deliberately. | C | Supplementary framework |
+| [Ollama quickstart](https://docs.ollama.com/quickstart) | Local model setup; download a suitable model and check hardware capacity before relying on it. | C | Supplementary local-model route |
+| [Ollama API introduction](https://docs.ollama.com/api/introduction) | Local-server API configuration and the distinction from a cloud inference endpoint. | C | Supplementary local-model route |
 
-LangChain/LlamaIndex are optional open-source frameworks, **not free access to every model provider**. For local development, select local generation and embeddings explicitly and download what is needed beforehand. Mandatory PrimeCloud delivery needs approved inference reachable from the deployed application; a laptop-only model is insufficient. Hosted/free-tier alternatives are subject to approval, access and quotas; paid AI services are not required and organizer-supplied keys are not guaranteed. Never commit credentials or send private data to a hosted model.
+Use the shared algorithm-analysis resource for time/space reasoning and compare
+heap/full-sort results on the same candidates and tie order. LangChain and
+LlamaIndex are optional, not free access to all model providers. Local Ollama
+does not alone satisfy cloud delivery: confirm approved inference reachable
+from PrimeCloud. Paid AI access and organizer-supplied keys are not guaranteed.
+Never commit credentials or send private data to a hosted model.
+
+## PrimeCloud deployment resources
+
+PrimeCloud deployment is mandatory for all three challenges. Start with the
+[Software Development Deployment Guide](deployment.md), then consult only
+the relevant official sections below.
+
+| Resource | What it covers | Supports | Priority |
+|---|---|---|---|
+| [PrimeCloud official website](https://primecloud.cloud/) | Provider overview; confirm approved event/workspace access, not assumed free entitlements. | A, B, C | Essential orientation |
+| [PrimeCloud documentation](https://primecloud.cloud/docs) | Platform documentation index and links to the required configuration topics. | A, B, C | Essential reference |
+| [Quickstart](https://primecloud.cloud/docs/quickstart) | Basic deployment, runtime binding, health checks and initial verification. | A, B, C | Essential |
+| [Application deployment](https://primecloud.cloud/docs/applications) | Git/source deployment, application lifecycle and runtime behavior. | A, B, C | Essential |
+| [Configuration](https://primecloud.cloud/docs/configuration) | Build/start configuration, environment settings and relevant persistence controls. | A, B, C | Essential |
+| [Security and secrets](https://primecloud.cloud/docs/security) | Supported secret/Vault facilities, credentials and access controls. | A, B, C | Essential |
+| [System limits](https://primecloud.cloud/docs/limits) | Runtime/lifecycle limits and account-dependent constraints to check before assessment. | A, B, C | Essential relevant sections |
+| [Production blueprints and troubleshooting](https://primecloud.cloud/docs/guides) | Optional deployment patterns and diagnostic runbooks; not a requirement for production-grade infrastructure or paid services. | A, B, C | Supplementary |
+
+The Organising Committee must confirm workspaces, trials/credits, database or
+storage allocations and permitted services. Do not purchase add-ons or assume
+free upgrades. B needs approved persistent remote storage; C needs approved
+cloud-reachable inference. The guide explains these dependencies without
+requiring every team to master every platform subsystem.
 
 ## Setup and starter access
 
 - Install Git, an editor and only your project's required runtime/dependencies. Follow its README and manifest; there is no universal install command for all three choices.
 - The [starter-materials notice](challenges.md#starter-materials-and-setup) lists the original event-pack contents and the current download-availability gap. Ask the mentor for the pack or approved substitute inputs; these resource links are not a starter repository.
 - Follow the [curriculum pathway](content.md) and [implementation/acceptance steps](challenges.md), then prepare the [required submission](rules.md#submission-and-assessment-preparation).
+- The [100-point rubric](rules.md#judging-criteria) includes mandatory DSA and
+  deployment. Prepare technical evidence, not a slide deck or formal Track-Level pitch.

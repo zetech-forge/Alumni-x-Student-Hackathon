@@ -15,7 +15,7 @@ Each team selects **ONE** challenge, not all three:
 
 | Challenge | Difficulty | What you will build | Useful background |
 |---|---|---|---|
-| A: Backend Data Reconciliation & Fuzzy Search | Beginner | A backend or command-line workflow that normalizes inconsistent records, finds fuzzy matches and separates uncertain cases for human review. | Basic programming, functions, lists/tables and reading files. |
+| A: Backend Data Reconciliation & Fuzzy Search | Beginner | A reconciliation engine that normalizes records, finds fuzzy matches and separates uncertain cases for human review, exposed through a lightweight cloud interface. | Basic programming, functions, lists/tables and reading files. |
 | B: Offline-First Resource Tracker | Intermediate | An application with persistent local records, offline CRUD and reliable synchronization/conflict handling when connectivity returns. | Application development, JavaScript/browser storage or equivalent mobile storage, and basic APIs. |
 | C: Purposeful Agentic AI / RAG Workflow | Advanced | A bounded document-ingestion, retrieval, generation and citation workflow for a defined task. | Confident programming, APIs and basic document retrieval/LLM concepts; evaluation and failure handling matter more than model training. |
 
@@ -29,18 +29,30 @@ Finish with accessible source code, a working implementation, reproducible setup
 
 ## Mandatory DSA and cloud delivery
 
-Every team must complete the original challenge, its integrated **DSA task**
-and a **working PrimeCloud deployment**:
+Every participating team must:
+
+1. Complete its selected challenge's mandatory functionality.
+2. Integrate the challenge-specific **Data Structures and Algorithms (DSA) task**.
+3. Test the application, DSA operations and relevant failure cases.
+4. Deploy the working solution to **PrimeCloud**, the official cloud deployment provider.
+5. Submit its GitHub repository and assigned HTTPS application URL, with test and deployment evidence.
+
+The DSA component belongs inside the selected solution, **not a separate
+unrelated programming exercise**:
 
 - **A:** normalized-key hash-map indexing and a FIFO ambiguous-match review queue.
 - **B:** a durable FIFO sync queue, record map, operation-ID set and conflict algorithm.
 - **C:** bounded binary min-heap top-K selection integrated into the RAG pipeline.
 
-Explain complexity and provide the required tests/comparisons. Submit the
-assigned HTTPS URL, health check and hosted-workflow evidence. Follow the
-[PrimeCloud Deployment Guide](deployment.md); confirm account access and any
-storage/inference arrangements early. No polished A frontend, custom domain
-or production-grade cloud architecture is required.
+Explain complexity and provide the required tests/comparisons. For deployment,
+start with the [Software Development Deployment Guide](deployment.md) and
+PrimeCloud's [official website](https://primecloud.cloud/),
+[documentation](https://primecloud.cloud/docs) and
+[quickstart](https://primecloud.cloud/docs/quickstart). Confirm approved account
+access and any storage/inference arrangements early; do not assume event
+credits, paid services or API keys. No polished A frontend, custom domain or
+production-grade architecture is required, but the actual hosted workflow and
+health check must work.
 
 ## Technical assessment
 
