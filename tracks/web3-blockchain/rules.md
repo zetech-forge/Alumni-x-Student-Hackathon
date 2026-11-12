@@ -43,7 +43,11 @@ speaking style must not substitute for evidence of correct behavior.
 
 ### Challenge-specific checkpoints
 
-Apply the full acceptance criteria in [Challenges](challenges.md), including:
+Use the [three challenge-specific technical acceptance checklists](judging.md)
+and an [individual printable judge score sheet](judge-score-sheet.html).
+They define reproducible checks and full, partial and zero-point conditions.
+Retain the participant-facing acceptance criteria in [Challenges](challenges.md),
+including:
 
 | Challenge | Required technical evidence |
 | --- | --- |
@@ -75,8 +79,11 @@ The **top three Web3 teams qualify for the Grand Finale**. The
 
 The **top three teams from each of the five tracks** qualify: **15 finalists**
 in total. Each finalist completes the mandatory challenge
-**From Prototype to Real-World Impact**, assessed through the official
-Grand Finale process and worth an **additional 30 points**.
+**[From Prototype to Real-World Impact](../../real-world-impact.md)**,
+worth an **additional 30 points**. The common brief contains the eight
+assessment areas, agreed five-slide structure, recommended five-minute
+presentation and complete 30-point rubric. It is not a Stage 1 requirement
+or an additional Web3 technical scoring category.
 
 ```text
 Combined Score = Track-Level Technical Score + Mandatory Challenge Score

@@ -102,17 +102,25 @@ what's specific to your track:
   "no pre-built ML models", "no public CVE databases")
 - **Submission requirements** — exactly what must be submitted, how, and
   the deadline/time window on the day
-- **Judging criteria & weights** — a rubric, e.g.
+- **Judging criteria & weights** — a 100-point technical rubric. For example,
+  the Web3 framework is:
 
 | Criterion | Weight |
 |---|---|
-| Functionality / correctness | 30% |
-| Code quality / documentation | 15% |
-| Creativity / approach | 15% |
-| SDG / social-impact alignment | 15% |
-| Pitch / presentation | 25% |
+| Core challenge functionality and completion | 40 points |
+| On-chain rule enforcement and correctness | 25 points |
+| Testing, security and failure handling | 15 points |
+| Code quality and technical documentation | 10 points |
+| Problem relevance, SDG alignment and blockchain justification | 10 points |
 
-Every team must tie their solution to at least one UN Sustainable Development Goal — build that expectation into your scenario and judging notes. Day 2 ends with live demonstrations and pitches, so a presentation/pitch criterion belongs in every track's rubric, not just as an afterthought.
+Use each track's approved technical rubric; do not copy on-chain criteria into
+unrelated tracks. Every team must connect its solution to at least one UN SDG.
+Stage 1 awards **no formal pitch or presentation points**. The top three teams
+per track qualify for the 15-team Grand Finale, where the common mandatory
+[From Prototype to Real-World Impact](real-world-impact.md) challenge adds
+30 points to the technical 100. Maximum 130; normalization is
+`(Combined Score / 130) * 100`. Use the common brief for the five-slide format
+and finale rubric rather than maintaining a conflicting copy here.
 
 - **Scoring and tie-breakers**
 - **Day-of timeline** specific to your track, if it differs from the

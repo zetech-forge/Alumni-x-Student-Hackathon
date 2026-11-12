@@ -100,6 +100,11 @@ tests or weaken safety assertions just to obtain a green result.
 
 ## 3. Challenge A: The Pledge in Remix
 
+Use separate pledges for successful and failed outcomes. Goal achievement is
+attested by the referee, not independently verified by the blockchain. The
+contract **does not verify registered-charity status**: a nonzero destination
+is accepted. Use only sandbox beneficiary addresses.
+
 The Pledge holds a stake against a goal. A chosen referee confirms success and
 returns the stake to the pledger. If the deadline is reached without success, the
 stake can be sent to a charity.
@@ -316,6 +321,20 @@ Remove-Item Env:ROUND_SECONDS
    earlier process with **Ctrl+C** rather than starting duplicate servers.
 
 ## 5. Challenge C: Leashed Agent
+
+The owner configures policy, the separately signed agent pays or requests,
+and approved recipients only receive funds. Never give the AI agent or model
+the owner's private key. The kit's public local mnemonic is for practice,
+not secure isolation of real accounts.
+
+Boundary semantics: exactly **0.02 ETH** per autonomous payment and exactly
+**0.05 ETH** cumulative spend are allowed. A window lasts **3,600 seconds**
+from deployment or its last reset, not a clock hour or rolling interval.
+The next successful autonomous payment at/after expiry resets its start and
+counter; failed payments roll changes back. Explicit owner approvals bypass
+and do not consume this budget. Pause blocks payments, requests and approvals;
+revocation blocks new agent actions but leaves pending requests available for
+the owner to approve while unpaused and still allowlisted.
 
 An agent buys data or pays suppliers through a PolicyWallet. The model may
 misunderstand a request or accept a malicious prompt; the wallet must enforce

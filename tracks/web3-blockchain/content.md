@@ -245,21 +245,34 @@ already arrived:
 
 ## Realistic Day 1 preparation
 
-Use the announced event timetable; the sequence below is a preparation
-priority, not a promise of additional scheduled sessions.
+The [draft event schedule](../../schedule.md) allocates **11:00-12:00** to
+parallel bootcamps and challenge selection, subject to organizer confirmation.
+Use a **45-minute essentials session plus 15-minute setup/selection clinic**,
+not eight consecutive module lectures:
 
-1. **Shared foundations:** review Modules 1-4 and the sandbox rules. Identify
-   the roles and transactions in your team's selected challenge.
-2. **Guided contract exercise:** use Module 5 to deploy, call and deliberately
-   trigger a rejection in Remix. Experienced teams can use this as a quick review.
-3. **Challenge-specific setup:** A teams test both pledge outcomes; B teams
-   launch the baseline game; C teams run wallet tests and a fake/local-model
-   purchase. Use Modules 6-8 as needed, not as a required full-day course.
-4. **Before implementation:** confirm one working baseline and write the
-   team's change plus its acceptance tests. Ask the Technical Lead about
-   blockers early; do not spend the build window on optional installations.
-5. **During the build:** add one small change at a time, test the relevant
-   behavior and record what the evidence demonstrates.
+| Minutes | Essential activity |
+|---|---|
+| 0-10 | Shared state, transactions, gas, roles and sandbox safety (selected concepts from Modules 1-4) |
+| 10-25 | Facilitator-led Remix deployment: create one pledge, inspect state and reject an unauthorized action (Module 5) |
+| 25-35 | Trace the team's selected baseline: A settlement; B harvest and an on-chain rule; C agent versus owner and a rejected payment |
+| 35-45 | Select one achievable change, its acceptance checks and an SDG-linked user problem |
+| 45-60 | Confirm one challenge, check browser or preinstalled kit, and triage blockers with mentors |
+
+**Mandatory before starting the build:** understand the sandbox and signing
+roles, choose one challenge, access its source, and demonstrate one baseline
+action and one rejected action. A needs only a browser and Remix. B/C should
+complete downloads and `npm ci` before the event; first-time installation,
+full tests and local model downloads are not realistic within this clinic.
+If setup fails, involve a mentor rather than skipping validation.
+
+**Learn just in time:** use Module 5 for A, Module 6 and the relevant Module 7
+workflow for B, and selected Modules 6-8 for C. Deeper security reading,
+complete frontend customization and local-model experimentation are
+supplementary. Do not require participants to finish every module before
+starting their selected challenge; C can begin with the mock fallback.
+
+During the build, add one small change at a time, test the relevant behavior
+and record what the evidence demonstrates.
 
 On **13 November**, prioritize acceptance tests, reproducible run instructions,
 submission materials and a backup demo. Consult [Challenges](challenges.md) and

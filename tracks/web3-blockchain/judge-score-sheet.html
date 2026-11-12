@@ -1,0 +1,79 @@
+---
+layout: null
+title: Web3 Individual Judge Score Sheet
+nav_exclude: true
+search_exclude: true
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web3 Individual Judge Score Sheet</title>
+  <style>
+    body { font: 14px/1.4 Arial, sans-serif; color: #111; max-width: 1000px; margin: 24px auto; padding: 0 16px; }
+    h1 { font-size: 23px; margin-bottom: 4px; }
+    h2 { font-size: 17px; }
+    .info { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 30px; margin: 24px 0; }
+    .line { display: inline-block; border-bottom: 1px solid #444; min-width: 180px; height: 20px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #555; padding: 8px; text-align: left; vertical-align: top; }
+    tbody td { height: 55px; }
+    .number { width: 55px; }
+    .notes { min-height: 100px; border: 1px solid #555; padding: 8px; }
+    .actions { margin: 16px 0; }
+    @page { size: A4 portrait; margin: 12mm; }
+    @media print {
+      body { margin: 0; padding: 0; font-size: 10pt; max-width: none; }
+      .actions { display: none; }
+      h1 { font-size: 17pt; }
+      tr, .info, .notes { break-inside: avoid; }
+      a { color: #111; text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Web3 &amp; Blockchain: Individual Judge Score Sheet</h1>
+  <p>Zetech Forge Alumni x Student Hackathon | 12-13 November 2026<br>
+    <strong>Stage 1: technical assessment only. Maximum 100. No formal pitch or presentation points.</strong></p>
+  <div class="actions">
+    <button type="button" onclick="window.print()">Print / save as PDF</button>
+    <a href="{{ '/tracks/web3-blockchain/judging.html' | relative_url }}">Open technical checklists</a>
+  </div>
+  <div class="info">
+    <div>Team name / ID: <span class="line"></span></div>
+    <div>Judge name / ID: <span class="line"></span></div>
+    <div>Challenge: <span class="line"></span></div>
+    <div>Date / assessment time: <span class="line"></span></div>
+    <div>Repository / submitted commit: <span class="line"></span></div>
+    <div>Team contact: <span class="line"></span></div>
+  </div>
+  <p>Select ONE: The Pledge (Beginner) / The Commons (Intermediate) /
+    Leashed Agent (Advanced). Use that challenge's 20 checks, each out of 5.
+    Record check IDs and scores in evidence or an attached checklist.</p>
+  <table>
+    <thead><tr><th>Assessment criterion</th><th class="number">Max</th><th class="number">Awarded</th><th>Evidence / check IDs</th><th>Comments / failures</th></tr></thead>
+    <tbody>
+      <tr><td>Core challenge functionality and completion (F1-F8)</td><td>40</td><td></td><td></td><td></td></tr>
+      <tr><td>On-chain rule enforcement and correctness (E1-E5)</td><td>25</td><td></td><td></td><td></td></tr>
+      <tr><td>Testing, security and failure handling (T1-T3)</td><td>15</td><td></td><td></td><td></td></tr>
+      <tr><td>Code quality and technical documentation (Q1-Q2)</td><td>10</td><td></td><td></td><td></td></tr>
+      <tr><td>Problem relevance, SDG alignment and blockchain justification (R1-R2)</td><td>10</td><td></td><td></td><td></td></tr>
+    </tbody>
+    <tfoot><tr><th>Final individual technical score</th><th>100</th><th></th><td colspan="2">Check arithmetic before signing.</td></tr></tfoot>
+  </table>
+  <p><strong>Per check:</strong> 5 = complete, reproducible evidence; 4 = minor gap;
+    3 = main behavior, incomplete edge evidence; 2 = substantial partial behavior;
+    1 = minimal evidence; 0 = absent, nonfunctional or contrary to requirements.
+    A reproduced bypass scores zero on its enforcement check.</p>
+  <h2>Overall comments, limitations and follow-up checks</h2>
+  <div class="notes"></div>
+  <p>Judge signature: <span class="line"></span>
+    &nbsp; Evidence / attachment reference: <span class="line"></span></p>
+  <p><strong>Panel use:</strong> preserve this individual sheet; record panel adjustments
+    and the confirmed category totals separately. Rank by technical total;
+    tie-break first by functionality, then recorded technical panel review.
+    Top three qualify; highest-ranked wins Best Web3 &amp; Blockchain Solution.</p>
+  <p>The Grand Finale's separate 30-point mandatory challenge is not scored here.</p>
+</body>
+</html>

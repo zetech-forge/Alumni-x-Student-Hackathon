@@ -69,23 +69,38 @@ Continued development → Mentor consultations → Prototype testing & pitch pre
 
 ## Awards & judging
 
-Every team is scored on a **track-level rubric** (specific to their track --
-see that track's own Rules page) and, for teams whose track win puts them
-in contention for the Overall Hackathon Winner, an **overall rubric** applied
-the same way across all five tracks:
+### Stage 1: Track-Level Judging
 
-| Overall criterion | Weight |
-|---|---|
-| Problem relevance & impact | 20% |
-| Functional prototype | 25% |
-| Technical execution | 20% |
-| Innovation | 15% |
-| User experience / usability | 10% |
-| Pitch & demonstration | 10% |
+Every team undergoes a **technical assessment worth 100 points**, using its
+approved challenge-specific rubric. Judges inspect and test implementations;
+teams may demonstrate functionality and answer short technical clarification
+questions. **No formal slide presentation or pitch is required or scored at
+this stage.**
 
-This keeps an IoT prototype and a cybersecurity system from being compared
-on incompatible raw scores. Across every track: **a working, modest
-solution that does what it claims beats an ambitious one that doesn't run.**
+Judges record criterion scores, evidence and comments, then rank teams within
+each track. The **top three teams per track qualify for the Grand Finale**.
+The highest-ranked team in each track receives its track award; the Web3 award
+is **Best Web3 & Blockchain Solution**.
+
+### Stage 2: Grand Finale Pitch & Awards Judging
+
+The top three teams from each of five tracks form **15 finalists**. Each
+completes **[From Prototype to Real-World Impact](real-world-impact.md)**,
+the common mandatory challenge worth an **additional 30 points**.
+That page contains the assessment areas, five-slide structure, recommended
+five-minute presentation and complete 30-point rubric.
+
+```text
+Combined Score = Track-Level Technical Score + Mandatory Challenge Score
+Maximum Combined Score = 100 + 30 = 130
+Normalized Score = (Combined Score / 130) * 100
+```
+
+The Grand Finale determines **Overall Hackathon Winner**, **Most Innovative
+Solution**, **Best Social Impact Solution**, and **Best Pitch & Presentation**.
+Do not replace the confirmed technical score with a new overall rubric.
+Across every track, a working, modest solution that does what it claims beats
+an ambitious one that does not run.
 
 See the [Prizes](prizes.md) page for the full award structure and what
 winners receive.
@@ -104,4 +119,13 @@ A team may be disqualified for:
 - Abusive conduct toward organizers, judges, alumni, or other teams
 
 ## Scoring and tie-breakers
-Ties are broken first by the highest "Functional prototype" sub-score on the overall rubric, then by judges' panel discussion.
+Use the approved technical rubric and tie-breaker for the team's track.
+Record individual judge scores and supporting evidence before panel review;
+the panel confirms the track ranking and three qualifiers. Web3 uses
+[its technical scoring and tie-breaker](tracks/web3-blockchain/rules.md#recording-scores-ranking-and-tie-breakers).
+Do not use a pitch to break a technical-stage tie.
+
+Finale scores carry the confirmed Stage 1 result forward and use the common
+30-point rubric above. Finale tie-breaks and special-award selection require
+the organizing committee's published procedure before judging; they must not
+introduce unannounced points.

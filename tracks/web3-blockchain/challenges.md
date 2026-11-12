@@ -19,6 +19,37 @@ technical starting point, not a different scoring scale. All use the shared
 
 ## Shared expectations
 
+Judges use the [challenge-specific technical checklists](judging.md) for the
+100-point, technical-only Track-Level assessment. Only Grand Finale qualifiers
+complete [From Prototype to Real-World Impact](../../real-world-impact.md);
+its common 30-point rubric and five-slide presentation are separate.
+
+### Baseline behavior and trust boundaries
+
+- **The Pledge:** demonstrate success and failure with separate pledges.
+  The blockchain cannot independently verify a personal goal; it trusts the
+  designated referee. The contract only checks that the charity address is
+  nonzero: it **does not verify that it belongs to a registered charity**.
+  Use sandbox addresses, not real charity wallets.
+- **The Commons:** regeneration processes all elapsed rounds, stopping early
+  only when integer-rounded growth is zero and further rounds cannot change
+  stock. There is no 100-round truncation. Custom simulations with very slow
+  growth and large capacities require gas assessment; this is a local learning
+  game, not a production-scale resource simulator.
+- **Leashed Agent:** the owner configures policy; the agent has its own signing
+  account and can only pay or request approval; approved recipients receive
+  funds but gain no policy authority. Never supply the owner's private key to
+  the AI agent or model. The public local mnemonic is not secret isolation and
+  must never secure real funds. Owner-approved payments bypass the autonomous
+  budget and do not increase its counter. A payment of exactly 0.02 ETH and
+  cumulative autonomous spending of exactly 0.05 ETH are allowed; one wei over
+  either requires approval or is rejected, respectively. The one-hour window
+  starts at deployment and resets on the next successful autonomous payment
+  when at least 3,600 seconds have elapsed; it is neither a sliding window nor
+  aligned to clock hours. Pause blocks payments, requests and approvals.
+  Revocation blocks new agent payments/requests but does not cancel pending
+  requests: the owner may still approve them while unpaused and allowlisted.
+
 - **Work from the dedicated kit:** [zetech-forge/web3_starter-kit](https://github.com/zetech-forge/web3_starter-kit).
   Do not clone the main hackathon repository for project files. Follow
   [Starter Kits](starter-kits.md) for installation, cross-platform commands,
