@@ -1,6 +1,6 @@
 ---
 title: Mentors & Judges
-nav_order: 6
+nav_exclude: true
 ---
 
 # Meet the people helping you build
