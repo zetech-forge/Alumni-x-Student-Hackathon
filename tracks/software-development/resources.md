@@ -15,6 +15,15 @@ Use resources for **your selected challenge**; the tools below are alternatives,
 |---|---|
 | [GitHub: Pull requests](https://docs.github.com/en/pull-requests) | Collaborating, reviewing changes and resolving conflicts. |
 | [UN Sustainable Development Goals](https://sdgs.un.org/goals) | Selecting a relevant goal and explaining the intended beneficiary and useful outcome. |
+| [PrimeCloud](https://primecloud.cloud/) | Required hosting platform; confirm organizer-approved access and costs, not assumed event entitlements. |
+| [PrimeCloud documentation](https://primecloud.cloud/docs) | Authoritative application, configuration, secret-binding and storage guidance. |
+| [PrimeCloud quickstart](https://primecloud.cloud/docs/quickstart) | Initial deployment workflow, runtime binding and health checks. |
+
+Use the track's [PrimeCloud Deployment Guide](deployment.md) for the participant
+sequence and submission checklist. Consult your chosen language's collection
+documentation for maps, FIFO queues, sets and binary heaps; the
+[challenge cards](challenges.md) define the required implementations and
+complexity/comparison evidence. No additional DSA framework is required.
 
 ## Challenge A -- Backend Data Reconciliation & Fuzzy Search
 
@@ -38,7 +47,7 @@ Neither Python nor pandas is mandatory if your chosen language handles the requi
 | [web.dev: Offline Cookbook](https://web.dev/articles/offline-cookbook) | Supplementary patterns for keeping application assets available offline; distinguish caching from record synchronization. |
 | [Tailwind CSS documentation](https://tailwindcss.com/docs) | Optional UI styling only; visual polish is not a separate assessment category. |
 
-Use browser developer tools to simulate disconnection and separate profiles/devices to test independent offline edits. A small local sync service or compatible replication endpoint is sufficient; a production deployment is not required.
+Use browser developer tools to simulate disconnection and separate profiles/devices to test independent offline edits. A local sync service is useful during development, but final delivery requires the PrimeCloud-hosted interface/sync service and organizer-approved persistent remote storage. Test the queue/map/set integration, retry deduplication and conflict/deletion policy; production-grade infrastructure is not required.
 
 ## Challenge C -- Purposeful Agentic AI / RAG Workflow
 
@@ -52,7 +61,7 @@ Use browser developer tools to simulate disconnection and separate profiles/devi
 | [Ollama quickstart](https://docs.ollama.com/quickstart) | Install Ollama and follow the **local-model** route. Download a suitable model and confirm hardware capacity before relying on it. |
 | [Ollama API introduction](https://docs.ollama.com/api/introduction) | Distinguish the local server from cloud endpoints when configuring your application. |
 
-LangChain/LlamaIndex are optional open-source frameworks, **not free access to every model provider**. For a local-only setup, select local generation and embeddings explicitly and download what is needed beforehand. Hosted/free-tier alternatives are subject to approval, access and quotas; paid services are not required and organizer-supplied keys are not guaranteed. Never commit credentials or send private data to a hosted model.
+LangChain/LlamaIndex are optional open-source frameworks, **not free access to every model provider**. For local development, select local generation and embeddings explicitly and download what is needed beforehand. Mandatory PrimeCloud delivery needs approved inference reachable from the deployed application; a laptop-only model is insufficient. Hosted/free-tier alternatives are subject to approval, access and quotas; paid AI services are not required and organizer-supplied keys are not guaranteed. Never commit credentials or send private data to a hosted model.
 
 ## Setup and starter access
 

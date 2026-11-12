@@ -23,9 +23,24 @@ Beginners are welcome, but should be able to write and run a small program in th
 
 ## Tools and expected outcomes
 
-Any suitable language or framework is permitted. For A, Python with RapidFuzz/pandas is one option, not a requirement. For B, IndexedDB or PouchDB can support a browser app; comparable mobile tooling is acceptable. For C, LangChain or LlamaIndex are optional helpers, and a local model through Ollama avoids mandatory paid AI access. Use an editor, Git and the runtime required by your own project; not every participant needs every runtime.
+Any suitable language or framework is permitted. For A, Python with RapidFuzz/pandas is one option, not a requirement. For B, IndexedDB or PouchDB can support a browser app; comparable mobile tooling is acceptable. For C, LangChain or LlamaIndex are optional helpers, and Ollama supports local development; the deployed application needs approved inference access reachable from PrimeCloud. Paid AI access and organizer-supplied keys are not assumed. Use an editor, Git and the runtime required by your own project; not every participant needs every runtime.
 
 Finish with accessible source code, a working implementation, reproducible setup instructions, relevant sample inputs/outputs and test evidence. The [challenge instructions](challenges.md) distinguish mandatory behavior from optional improvements and explain the status of the listed starter materials.
+
+## Mandatory DSA and cloud delivery
+
+Every team must complete the original challenge, its integrated **DSA task**
+and a **working PrimeCloud deployment**:
+
+- **A:** normalized-key hash-map indexing and a FIFO ambiguous-match review queue.
+- **B:** a durable FIFO sync queue, record map, operation-ID set and conflict algorithm.
+- **C:** bounded binary min-heap top-K selection integrated into the RAG pipeline.
+
+Explain complexity and provide the required tests/comparisons. Submit the
+assigned HTTPS URL, health check and hosted-workflow evidence. Follow the
+[PrimeCloud Deployment Guide](deployment.md); confirm account access and any
+storage/inference arrangements early. No polished A frontend, custom domain
+or production-grade cloud architecture is required.
 
 ## Technical assessment
 
