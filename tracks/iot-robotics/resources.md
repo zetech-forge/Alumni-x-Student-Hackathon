@@ -5,7 +5,17 @@ grandparent: Hackathon Tracks
 nav_order: 2
 ---
 
-These free official references support the Beginner, Intermediate, and Advanced challenges. Start with the Arduino and Wokwi introductions, then use the part-specific guide for the sensor or output in your prototype.
+# IoT & Robotics: Curated Resources
+
+These official references support **Room Activity & Energy Cue (Beginner)**, **Safer Campus Environment Monitor (Intermediate)** and **Rover Rescue Run (Advanced)**. Documentation is free to read; check simulator account/sharing limits before relying on a feature. Learn only the parts required by your selected challenge.
+
+| Challenge | Start with | Use next |
+|---|---|---|
+| Beginner | Arduino/Wokwi setup and board pin reference. | PIR behavior, LED output and the documented inactivity timer tests. |
+| Intermediate | Board analog/digital input and the selected MQ-2 or NTC reference. | Threshold/alert tests and optional output guidance. Two sensors are not mandatory. |
+| Advanced | Controller/motor-interface documentation for the actual allocated kit, or an approved virtual setup. | Virtual obstacle input, repeatable route/control trace and stop tests. No particular physical obstacle sensor is guaranteed. |
+
+Follow the [step-by-step simulation setup](challenges.md#starting-a-simulation). It covers project creation, board selection, wiring, code execution, observing outputs and saving test evidence.
 
 ## Getting started and simulation
 
@@ -25,11 +35,17 @@ These free official references support the Beginner, Intermediate, and Advanced 
 | [Wokwi PIR motion sensor](https://docs.wokwi.com/parts/wokwi-pir-motion-sensor) | Part guide | Free for personal use | Shows how to trigger simulated motion and explains the sensor's output and timing behavior. |
 | [Wokwi MQ-2 gas sensor](https://docs.wokwi.com/parts/wokwi-gas-sensor) | Part guide | Free for personal use | Demonstrates analog and threshold outputs for the MQ-2. Treat simulation readings as sample values, not calibrated safety measurements. |
 | [Wokwi NTC thermistor](https://docs.wokwi.com/parts/wokwi-ntc-temperature-sensor) | Part guide | Free for personal use | Explains the analog temperature input and how to interpret it in a simple prototype. |
-| [Wokwi HC-SR04 ultrasonic sensor](https://docs.wokwi.com/parts/wokwi-hc-sr04) | Part guide | Free for personal use | Lets teams change simulated distance values to develop and demonstrate proximity logic. |
+| [Wokwi HC-SR04 ultrasonic sensor](https://docs.wokwi.com/parts/wokwi-hc-sr04) | Part guide | Free for personal use | Optional virtual distance input for proximity/control tests; this link does not confirm a physical HC-SR04 in the event inventory. |
 | [Wokwi relay module](https://docs.wokwi.com/parts/wokwi-relay-module) | Part guide | Free for personal use | Shows relay control behavior. For this event, use it only with a low-voltage demonstration load. |
 
 ## Simulation and hardware notes
 
-Wokwi is useful for testing the Uno/ESP32 code and the documented sensor or output parts before using the shared physical kits. The current listed parts include PIR, MQ-2, thermistor, HC-SR04, LEDs, and relay. Check the supported-hardware list before depending on a particular module. The fingerprint reader and the complete rover chassis are not required for a Wokwi submission; simulate the access decision or rover control inputs where needed, then book the physical rover for an optional test slot.
+Wokwi supports circuit/controller experiments with documented virtual parts such as PIR, MQ-2, thermistor, distance inputs, LEDs and relay. **Simulator support and physical inventory are different lists.** Check the supported-hardware page and the [allocation note](challenges.md#shared-hardware-planning-note) separately; confirm cabling, power and shared booking slots with the mentor.
+
+The existing track permits equivalent suitable simulators; a different electronic circuit or virtual robotics environment needs mentor approval for the selected outcomes. No additional named robotics platform, paid service or hardware purchase is required.
+
+Wokwi does not provide a complete moving rover/chassis physics model. Use an approved virtual robotics run or an explicit controller route/obstacle test scenario showing progress, movement outputs and stop behavior. Agree the equivalent scenario with the mentor before assessment. LEDs or Serial Monitor alone show commands, not measured physical movement. The single physical rover can be booked for optional supervised validation; simulation-only participation remains valid.
+
+For physical builds, use the actual board, sensor and motor-driver documentation rather than copying a virtual pinout blindly. Uno and ESP32 logic levels differ. Never connect motors directly to GPIO, never use mains loads, and follow the [electrical/battery/movement safety rules](rules.md#physical-safety-mandatory).
 
 Simulation helps teams develop and demonstrate control logic. It does not validate real-world sensor calibration, wiring, battery performance, motor behavior, or safety. Clearly identify what you simulated and what you tested on hardware.

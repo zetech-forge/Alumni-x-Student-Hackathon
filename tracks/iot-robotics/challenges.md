@@ -22,6 +22,19 @@ All teams must explain the campus or community need their prototype addresses an
 - Do not use real fingerprints or store biometric data. The fingerprint module is optional; simulate an access decision if it is not available.
 - Provide a safe live demonstration. Judges may ask you to repeat the core test or change a sensor input.
 
+## Starting a simulation
+
+1. Follow the [Wokwi setup and part references](resources.md) and create an Arduino Uno or ESP32 project matching your intended controller.
+2. Add only the selected challenge's supported virtual inputs/outputs. Check each part's documented pin names and behavior; a component in the simulator is not a promise of physical availability.
+3. Connect power, ground and signals in the virtual diagram, using an LED resistor and the correct sensor interface where applicable. Record the pin mapping in your README.
+4. Enter or import your code, declare needed libraries and start the simulation. For physical hardware, use the matching board/port and mentor-checked wiring before uploading.
+5. Observe Serial Monitor, state indicators and output commands. Change the simulated motion, sensor or obstacle input and compare the response with your expected result.
+6. Save a shareable project/configuration and record repeatable test cases. Identify the simulated parts and limitations.
+
+An equivalent approved circuit or virtual robotics environment is acceptable. **Wokwi simulates circuits/controllers, not a complete rover moving through a physical course.** Rover control simulation must include an explicit route/obstacle test scenario and evidence of the required movement commands, progress and stop behavior, or a suitable virtual robotics run. Confirm the equivalent scenario with the mentor; do not claim that a controller trace validates real motor dynamics.
+
+For any physical build, use only compatible allocated parts and the [mandatory safety rules](rules.md#physical-safety-mandatory). Software/controller simulation is acceptable when a physical component or compatible power/interface arrangement is unavailable.
+
 ## Beginner — Room Activity & Energy Cue
 
 ### Scenario
@@ -37,6 +50,25 @@ A campus room is sometimes left lit or treated as occupied when nobody is using 
 
 **Stretch goals:** Add a second status LED, a buzzer that can be muted, or a short event counter in the Serial Monitor.
 
+### Components
+
+| Category | Physical or virtual requirements |
+|---|---|
+| Mandatory | Uno R3, ESP32 or equivalent controller simulation; PIR motion input; LED indicator. Physical builds also need a suitable LED resistor, compatible power and approved wiring. |
+| Optional | Second LED, buzzer or Serial Monitor event counter. |
+| Alternatives | A virtual PIR/LED/controller circuit when the shared PIR or board is unavailable. A breadboard is useful where needed, not a separate scoring requirement. |
+
+### Implementation steps
+
+1. Choose the controller, PIR and LED; confirm allocation/compatibility or create the virtual circuit.
+2. Draw and build the input/controller/output connections using the relevant pin references. Obtain a wiring check before powering physical hardware.
+3. Read the PIR's digital motion output and display it in Serial Monitor; allow the physical sensor's documented startup behavior.
+4. Define the two states and a chosen inactivity timeout. Explain what happens if motion is detected again during the active period.
+5. Implement activity/timer logic: motion activates the LED; no recent motion returns it to idle after the stated timeout.
+6. Keep the output limited to the indicator. Explain the energy-use cue, not an unsupported claim that the prototype switches or measures building energy.
+7. Test no motion, motion, return to idle and repeated motion; compare elapsed behavior with the documented timer policy.
+8. Save source, component/pin diagram, setup instructions and observed results, including the limits of PIR sensing.
+
 ### Constraints
 
 - The core build must use a PIR sensor (or a simulated PIR input), an LED, and a microcontroller or equivalent simulation.
@@ -48,14 +80,19 @@ A campus room is sometimes left lit or treated as occupied when nobody is using 
 - A live demonstration or shareable simulation link.
 - Source code and a short README with setup and test instructions.
 - A simple wiring/system diagram.
+- Component/pin details and a test log covering at least three input/timing cases.
 - A short README explanation of the user need, state behavior, limitations and chosen SDG.
 
 ### Points — 100
 
-- Functionality and correctness — 40: Motion input triggers the indicator, and the system returns to idle after the stated timeout.
-- Code quality, documentation, and testing — 20: The code is understandable, setup steps are clear, and the team demonstrates repeated tests.
-- Creativity, practical use, and SDG connection — 20: The indicator supports a sensible campus energy-use decision and the team explains its limits.
-- Reliability and safety — 20: Repeated motion/no-motion inputs and retriggering behave consistently with the documented timeout; the design uses safe low-voltage outputs and acknowledges PIR limitations.
+| Criterion | Points | Required evidence |
+|---|---:|---|
+| Core functionality and correctness | 35 | PIR input activates the LED, distinguishes activity/idle and returns to idle after the stated inactivity timeout. |
+| Technical design and component integration | 20 | Correct input/output mapping, suitable circuit and explained timer/retrigger policy. |
+| Testing, reliability and safe operation | 20 | At least three documented cases, repeated motion/no-motion behavior and safe low-voltage outputs or equivalent simulated safeguards. |
+| Code quality, diagrams and documentation | 15 | Understandable code, component/pin diagram, reproducible setup and actual test results. |
+| Practical relevance and SDG alignment | 10 | A sensible room-energy cue, relevant SDG and honest PIR/energy-impact limitations. |
+| **Total** | **100** | **No presentation allocation.** |
 
 **Technical checkpoints:** Be ready to repeat motion/no-motion tests, retrigger during the active period and verify the stated return-to-idle behavior. A simulation is assessed on the same outcomes as hardware.
 
@@ -74,6 +111,25 @@ A campus workshop or shared room needs an affordable way to flag a possible envi
 
 **Stretch goals:** Add a distinct warning and urgent state, a reset/acknowledge action, a relay-driven low-voltage indicator, or a timestamped event log.
 
+### Components
+
+| Category | Physical or virtual requirements |
+|---|---|
+| Mandatory | Suitable controller; MQ-2 **or** thermistor input, or both; LED and/or buzzer alert. Physical builds need compatible power, signal interfaces and the appropriate resistors/wiring. |
+| Optional | A second sensor, extra alert states, acknowledge/reset control, event log or a relay connected only to a low-voltage demo load. |
+| Alternatives | Virtual MQ-2 or NTC input when the physical part is unavailable. Either listed sensor satisfies the core requirement; two sensors are not mandatory. |
+
+### Implementation steps
+
+1. Select the allocated sensor(s) or virtual parts and controller; label the input as gas-related or temperature-related, as appropriate.
+2. Build the circuit and document power, signal pins and any required resistor/interface arrangement. Do not assume sensor output voltages are safe for every controller.
+3. Read sample values and display them in Serial Monitor; state whether they are simulated, raw/relative or calibrated.
+4. Define the normal/alert threshold and its boundary rule, such as whether equality triggers the alert. Justify it as a demonstration setting, not a certified hazard limit.
+5. Implement the monitoring logic. If using two sensors, explain how the readings combine; avoid adding a second sensor merely for assumed extra marks.
+6. Connect the normal/alert state to the chosen LED/buzzer. Provide clear response guidance and make optional reset/acknowledge behavior explicit.
+7. Test at least three cases, including normal, alert and threshold behavior. Use simulator controls or safe organizer-approved inputs only; repeat transitions to check reliability.
+8. Document inputs, expected/observed states, threshold policy, setup and limitations. Do not report simulated or uncalibrated values as certified safety measurements.
+
 ### Constraints
 
 - This is a demonstration of alert logic, not a calibrated gas detector or certified fire/safety system. Do not test by releasing gas, creating smoke, or using an open flame.
@@ -84,16 +140,20 @@ A campus workshop or shared room needs an affordable way to flag a possible envi
 ### Deliverables
 
 - A live demonstration or shareable simulation link showing normal and alert conditions.
-- Source code, README, and wiring/system diagram.
+- Source code, README, component/pin details and wiring/system diagram.
 - A small test table listing the input condition, expected state, and observed output for at least three cases.
 - A short README explanation of the use case, response guidance, limitations and chosen SDG.
 
 ### Points — 100
 
-- Functionality and correctness — 40: Sensor thresholds produce the expected normal and alert states, with a clear local warning.
-- Code quality, documentation, and testing — 20: The team documents thresholds and demonstrates at least three relevant test cases.
-- Creativity, practical use, and SDG connection — 20: The alert fits a real campus need and includes sensible user guidance and honest limitations.
-- Reliability and safety — 20: Repeated and threshold-adjacent inputs produce predictable states; tests use safe inputs, outputs are low voltage, and the prototype makes no certified-safety claims.
+| Criterion | Points | Required evidence |
+|---|---:|---|
+| Core functionality and correctness | 35 | The selected sensor input(s) produce the defined normal/alert states and understandable local warning. |
+| Technical design and component integration | 20 | Appropriate sensor/interface choice, threshold logic and output integration; explain combined decisions if using both sensors. |
+| Testing, reliability and safe operation | 20 | At least three normal/alert/boundary cases, repeatable transitions and safe simulated or approved physical inputs. |
+| Code quality, diagrams and documentation | 15 | Clear code, component/pin diagram, reproducible setup, threshold definitions and observed results. |
+| Practical relevance and SDG alignment | 10 | A relevant campus use case/SDG, sensible response guidance and explicit measurement/certification limits. |
+| **Total** | **100** | **No presentation allocation.** |
 
 **Technical checkpoints:** Have at least three input cases ready, including normal, alert and threshold behavior. Be able to change a simulated or safe sensor input, reproduce the state transition and explain the response guidance and limitations.
 
@@ -112,6 +172,26 @@ A campus support rover must travel through a short route, avoid a simulated or p
 
 **Stretch goals:** Add a second route, manual override, status LEDs, a low-battery indicator, or a simulated delivery/arrival message.
 
+### Components
+
+| Category | Physical or virtual requirements |
+|---|---|
+| Mandatory | Controller, movement/motor-control outputs, a defined obstacle input or approved simpler control method, and route/destination/stop behavior. Physical builds use the allocated rover chassis, motors, compatible driver and approved battery/power arrangement. |
+| Optional | An available approved obstacle sensor, status LEDs, second route, manual override or low-battery indication. An accessible stop/power-off method is mandatory for physical safety, even when a software override is optional. |
+| Alternatives | Approved virtual rover, or a controller simulation with a documented equivalent route/obstacle scenario and output trace. Simulated distance/obstacle input is valid; the physical inventory does not guarantee an ultrasonic sensor. |
+
+### Implementation steps
+
+1. Agree the marked route, destination and obstacle scenario with the mentor. No universal route length or completion-time limit is currently specified; confirm operational constraints at the briefing rather than inventing them.
+2. Identify allocated controller/chassis/driver/power parts or the equivalent virtual setup, and document the chosen obstacle/control input.
+3. Configure motor-control outputs and the driver interface. For physical tests, have wiring/power checked and secure moving parts for initial checks; never drive motors directly from GPIO.
+4. Connect and inspect the obstacle input, whether an approved sensor, virtual distance value or the permitted simpler method. Explain any detection limitations.
+5. Implement start, forward/turn and destination-stop behavior for the agreed route. Check direction commands before attempting a full run.
+6. Add the obstacle response: stop or avoid safely according to the scenario, then continue only when the chosen policy permits. Keep control/stop checks responsive.
+7. Test the complete route and obstacle sequence at least three times, recording completion, response and stop outcomes. Simulation must show the equivalent route/control sequence, not just code compilation.
+8. Debug pin mapping, motor direction, input interpretation and timing using logs or simulated traces. Disconnect physical power before adjustments.
+9. Demonstrate a repeatable run ending at the destination; provide code, configuration/diagram, test log and limitations. Keep physical tests at controlled speed inside the supervised course.
+
 ### Constraints
 
 - Only the single physical rover is available; teams must book a test slot with the organizers. Simulation-first development is encouraged so all teams can progress in parallel.
@@ -122,16 +202,20 @@ A campus support rover must travel through a short route, avoid a simulated or p
 ### Deliverables
 
 - A physical run, shareable simulation, or both. State clearly which parts were tested physically.
-- Source code, README with setup/run steps, and a wiring/system diagram.
+- Source code, README with setup/run steps, component/pin details and a wiring/system diagram.
 - A short test log with at least three runs, noting route completion and obstacle behavior.
 - A short README explanation of the campus use case, design choices, limitations and chosen SDG.
 
 ### Points — 100
 
-- Functionality and correctness — 40: The rover or simulated controller completes the route, responds to an obstacle, and stops safely.
-- Code quality, documentation, and testing — 20: Setup and control logic are explained, with a log of at least three runs or equivalent simulated tests.
-- Creativity, practical use, and SDG connection — 20: The route task addresses a plausible campus need and the design explains its limitations.
-- Reliability and safety — 20: At least three runs show repeatable control, obstacle response and a safe stop; physical tests use controlled speed and an accessible stop, or simulation demonstrates equivalent controls.
+| Criterion | Points | Required evidence |
+|---|---:|---|
+| Core functionality and correctness | 35 | The rover or equivalent simulation starts, follows the marked route, responds to an obstacle and stops at the destination. |
+| Technical design and component integration | 20 | Appropriate controller/driver/movement integration, interpreted obstacle input and explained route/control decisions. |
+| Testing, reliability and safe operation | 20 | At least three repeatable runs or equivalent scenarios, verified obstacle/stop behavior and safe physical or simulated controls. |
+| Code quality, diagrams and documentation | 15 | Readable control code, component/pin or system diagram, reproducible run instructions and the test log. |
+| Practical relevance and SDG alignment | 10 | A plausible campus use case/SDG and honest limits of sensing, navigation and simulated versus physical behavior. |
+| **Total** | **100** | **No presentation allocation.** |
 
 **Technical checkpoints:** Be ready to repeat the marked route and obstacle scenario, show start/movement/obstacle/stop behavior and explain the three-run log. Simulation can demonstrate equivalent control logic; hardware access is not a scoring advantage.
 
@@ -141,7 +225,7 @@ Before the track deadline, make sure your team has submitted:
 
 - Challenge tier and project title.
 - Source code and README with setup and demonstration steps.
-- A wiring/system diagram.
+- A component list and wiring/pin or system diagram, including the physical or virtual configuration needed to reproduce the build.
 - A working demonstration or simulation link.
 - Test evidence and a brief statement of what was simulated versus physically tested.
 - A README explanation naming the user need, chosen SDG and prototype limitations.
@@ -151,7 +235,7 @@ Teams should follow the event's general submission deadline and the IoT & Roboti
 
 ## How technical evidence earns credit
 
-Each tier's allocation is **40 + 20 + 20 + 20 = 100 points**. Full credit for a requirement depends on demonstrated behavior and supporting code, tests or documentation; partial or inconsistent evidence receives partial credit, and absent or unsupported evidence receives none for the affected requirement. Stretch goals count only within these allocations. Simulation and hardware use the same evidence standard.
+Each tier's allocation is **35 + 20 + 20 + 15 + 10 = 100 points**. Full credit for a requirement depends on demonstrated behavior and supporting code, tests or documentation; partial or inconsistent evidence receives partial credit, and absent or unsupported evidence receives none for the affected requirement. Stretch goals count only within these allocations. Simulation and hardware use the same evidence standard, with no hardware bonus or separate presentation marks.
 
 ### Shared hardware planning note
 The listed inventory includes: 3 Arduino Uno R3, 1 ESP32, 1 PIR sensor, 1 MQ-2 gas sensor, 1 fingerprint module, 1 rover/car chassis set (including motors, motor driver, and battery), 1 thermistor, 1 flame sensor, 1 Bluetooth module, 1 relay, 15 red LEDs, 20 resistors, 5 breadboards, and the listed KY modules. Confirm allocation and book shared or single-quantity items with organizers. Jumper wires, USB cables and battery details are not fully specified; confirm compatibility before physical testing. Only the selected tier's core parts are required; disclose simulation substitutions for unavailable equipment. Teams are not expected to buy hardware.

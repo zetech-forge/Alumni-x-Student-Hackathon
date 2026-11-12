@@ -20,11 +20,19 @@ Every project must connect to at least one UN Sustainable Development Goal (SDG)
 
 - Arduino Uno R3 or ESP32 and the components allocated by the organizers.
 - Arduino IDE or another suitable development environment and programming language.
-- Wokwi or another suitable simulator for code and circuit behavior. Clearly identify what was simulated and what was tested physically.
+- Wokwi is the recommended circuit/controller simulator. Another approved electronic circuit or virtual robotics simulator is acceptable when it demonstrates equivalent behavior; confirm the environment with the mentor before relying on it. Clearly identify what was simulated and what was tested physically.
 - Teams may use documentation and code libraries, but must credit external libraries, examples, and other reused material and explain their own contribution.
 - Do not assume that every team will receive a particular sensor or module. Ask organizers about shared parts and schedule scarce equipment before building a design that depends on it. Optional components must not be required for a valid submission.
 - The fingerprint module is optional. Use a simulated access decision if it is unavailable; do not collect or store real fingerprints.
 - Disclose significant AI assistance and explain your own code and design decisions. Use synthetic sample data and never publish passwords, API keys or private device credentials.
+
+### Hardware and simulation fairness
+
+- Allocated physical hardware, approved simulation and hybrid builds are equally valid. None of the current challenges requires a physical-only demonstration.
+- Assessment uses equivalent sensing/input, control, output, repeatability and safety outcomes. Physical components do not earn extra points; simulation can earn full marks.
+- A virtual component is not proof of physical stock. Confirm component allocation, voltage compatibility and shared booking slots before constructing a physical circuit; use approved simulation when parts are unavailable.
+- A controller simulation must show the required behavior, not only compile code. For the rover, provide the route/obstacle scenario and control trace or suitable virtual run; circuit simulation alone does not establish real movement or battery performance.
+- Confirm any necessary demonstration arrangement in advance. A new physical-hardware requirement must not be introduced during judging.
 
 ## Physical safety (mandatory)
 
@@ -33,15 +41,19 @@ Every project must connect to at least one UN Sustainable Development Goal (SDG)
 - Never connect the relay to mains electricity. Use only a low-voltage demonstration load such as an LED.
 - Do not release gas, create smoke, or use an open flame to test a gas or flame sensor. Use simulator controls or safe, organizer-approved test inputs.
 - Do not bring personal hardware that organizers have not safety-checked.
+- Disconnect power before changing wiring. Have the mentor verify polarity, supply ratings, board/sensor logic levels and current-limiting resistors before energizing a circuit; do not assume Uno and ESP32 pins tolerate the same voltage.
+- Use only approved low-voltage supplies and the allocated battery/charger arrangement. Do not modify battery packs, improvise charging or use damaged/swollen cells; disconnect and report unusual heating.
+- Drive motors through a compatible motor driver, never directly from microcontroller GPIO. Confirm motor power and the documented grounding arrangement with the mentor. Secure the rover for initial motor checks and stop power before touching wheels or wiring.
+- Keep people, loose items and cables outside the physical course. Test only in the designated area with supervision; stop if the rover leaves the boundary or the stop control fails.
 
 ## Submission requirements
 
 Follow the event-wide submission process and deadline in the [General Rules](../../general-rules.md). Each IoT & Robotics team must include:
 
 1. Project title and selected challenge tier.
-2. Source code and a README with setup, run, and demonstration instructions.
-3. A wiring diagram or system diagram showing the main inputs, controller, outputs, and power arrangement.
-4. A live demonstration or a shareable simulation link. If hardware is used, explain which parts were physically tested.
+2. Source code in a GitHub repository and a README with the board/runtime, dependencies, setup, run and demonstration instructions.
+3. A component list and wiring/pin or system diagram showing inputs, controller, outputs and the physical or simulated power arrangement.
+4. A live demonstration or shareable simulation project with code/configuration and viewing/run instructions. If hardware is used, explain which parts were physically tested.
 5. Brief test evidence showing the core behavior under at least three relevant input or route conditions.
 6. A short README explanation of the user need, design decisions, selected SDG and prototype limitations.
 7. The common 2-3 minute backup demo video, team details, Alumni Contribution note and AI/external-resource acknowledgments.
@@ -56,10 +68,11 @@ Beginner, Intermediate and Advanced are each scored directly out of **100 points
 
 | Criterion | Points | What your team must demonstrate |
 | --- | ---: | --- |
-| Functionality and correctness | 40 | Required sensor/control inputs produce the specified outputs and state transitions for the selected tier. |
-| Code quality, documentation and testing | 20 | Understandable source code, reproducible setup, system diagram and test evidence for the stated cases. |
-| Creativity, practical use and SDG connection | 20 | A justified design serving a specific campus/community need, a relevant SDG and honest limits. |
-| Reliability and safety | 20 | Repeatable behavior, relevant boundary/changed-input checks and safe outputs, wiring or equivalent simulated controls. |
+| Core functionality and correctness | 35 | The selected challenge's required sensing/control inputs, output behavior and state transitions work correctly. |
+| Technical design and component integration | 20 | Appropriate component choices, pin/signal interfaces and explained timing, threshold or motor/obstacle control logic. |
+| Testing, reliability and safe operation | 20 | Repeatable normal, changed-input and boundary tests, with safe physical operation or equivalent simulated safeguards. |
+| Code quality, diagrams and documentation | 15 | Understandable source, component/pin or system diagram and reproducible setup/run/test instructions. |
+| Practical relevance and SDG alignment | 10 | A specific useful campus/community application, relevant SDG and honest limits without certified-safety claims. |
 | **Total** | **100** | **Technical assessment only; no presentation marks.** |
 
 Physical and simulated builds are assessed against equivalent behavior. Hardware access alone is not a scoring advantage; a simulation-only submission can earn full marks. Complete evidence can earn full credit for a requirement, partial/inconsistent behavior earns partial credit, and missing or unsupported work earns none for the affected requirement.
@@ -74,7 +87,7 @@ Approximately **two to three judges** may assess each team. Each independently a
 
 Example: `(85 + 90 + 88) / 3 = 87.67/100`.
 
-Ties use the higher average **Functionality and correctness** sub-score, then **Reliability and safety**, then **Code quality, documentation and testing**, followed by panel deliberation on technical evidence where necessary.
+Ties use the higher average **Core functionality and correctness** sub-score, then **Testing, reliability and safe operation**, then **Technical design and component integration**, followed by panel deliberation on technical evidence where necessary.
 
 The **top three teams** qualify for the **Grand Finale**. The highest-ranked team receives **Best IoT and Robotics Solution**.
 
