@@ -108,55 +108,57 @@ solution. You do not need to complete challenges from all five tracks.
 <div class="ztf-step" markdown="1">
 <span class="ztf-step-num">01 — Form your team</span>
 Form a team of **3-4 members**, including at least one **Alumni/Finalist
-Collaborator** (an alumnus or final-year student), and choose a team lead.
-Each participant may belong to only one team. Record everyone's contribution.
+Collaborator** (an alumnus or final-year student). Choose a team lead,
+join only one team and record everyone's contribution.
 </div>
 
 <div class="ztf-step" markdown="1">
-<span class="ztf-step-num">02 — Choose one track and read its brief</span>
-Pick from the five tracks above and follow that track's challenge-selection
-rules. Read its challenge, curriculum and assessment criteria. Prepare Git,
-an editor and only the runtime, tools, datasets or approved lab access your
-selected work needs.
+<span class="ztf-step-num">02 — Choose your track</span>
+Pick **one of the five tracks** and follow its challenge-selection rules.
+Read the brief, curriculum and assessment criteria. Prepare Git, an editor
+and only the tools, data or approved lab access your selected work needs.
 </div>
 
 <div class="ztf-step" markdown="1">
 <span class="ztf-step-num">03 — Build and test</span>
-Complete the mandatory functionality, test normal and failure cases, and
-keep evidence of the results. Use permitted or synthetic data, protect
-credentials and explain the problem, beneficiary and intended SDG impact.
-**Software Development teams must also implement the required DSA task and
-deploy the working solution to PrimeCloud**; follow the
-[deployment guide](tracks/software-development/deployment.md) and confirm access early.
+Build the required functionality and test normal and failure cases.
+Keep evidence of your results, use permitted or synthetic data and protect
+credentials. Explain the problem, beneficiary and intended **SDG impact**.
+Complete your track's mandatory technical and deployment requirements.
 </div>
 
 <div class="ztf-step" markdown="1">
-<span class="ztf-step-num">04 — Prepare and submit your project</span>
-Submit an accessible GitHub repository, README with setup/run instructions,
-the required **2-3 minute backup demo video**, team details and contributions,
-technology stack, SDG statement, AI-tool disclosure and known limitations.
-Include your track's required tests, outputs and deployment URL/evidence.
+<span class="ztf-step-num">04 — Submit your project</span>
+Prepare your **GitHub repository, README and 2-3 minute backup demo video**.
+Include the required team details, disclosures, tests and challenge evidence.
 Follow the [complete submission checklist](general-rules.md#what-every-team-submits)
-and the announced submission freeze in the [schedule](schedule.md).
+before the [submission freeze](schedule.md).
 </div>
 
 <div class="ztf-step" markdown="1">
-<span class="ztf-step-num">05 — Show your working solution</span>
-Every team receives a **100-point Track-Level technical assessment**.
-Be ready for judges to inspect your source, run the solution, verify tests
-and ask implementation questions. **No formal pitch or slides are required**
-at this stage.
+<span class="ztf-step-num">05 — Technical assessment</span>
+Every team receives a **100-point technical assessment**. Be ready for
+judges to inspect your source, run the solution, verify tests and ask
+implementation questions. **No formal pitch or slides** are required
+during Track-Level Judging.
 </div>
 
 <div class="ztf-step" markdown="1">
-<span class="ztf-step-num">06 — Grand Finale for qualifiers</span>
-The top three teams per track (**15 finalists**) complete
-[From Prototype to Real-World Impact](real-world-impact.md): a seven-minute
-presentation including any demonstration, with **8-10 slides including the
-title slide**. This additional stage is for qualifying finalists only.
+<span class="ztf-step-num">06 — Finalists advance</span>
+The top three teams per track (**15 finalists**) advance to the
+[Grand Finale](real-world-impact.md). Only qualifiers deliver a
+**seven-minute presentation**, including any demonstration, with
+**8-10 slides including the title slide**.
 </div>
 
 </div>
+
+**Software Development teams:** implement your challenge's required DSA task
+and deploy the working solution to **PrimeCloud**. Confirm access early and
+follow the [deployment guide](tracks/software-development/deployment.md).
+All teams must include the contributions, technology stack, SDG statement,
+AI-tool disclosure and known limitations required by the General Rules,
+plus their track's tests, outputs and deployment URL/evidence where required.
 
 ## Schedule, prizes & more
 
