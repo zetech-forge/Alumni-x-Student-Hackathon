@@ -7,20 +7,26 @@ nav_order: 4
 
 # Cybersecurity: Nine Defensive Lab Tasks
 
-Select **two or three tasks** from the five Windows and four Linux cards below; you may use one platform or both. This is a task-based defensive track, not a set of difficulty tiers. The `B` suffixes are task identifiers, not score multipliers. Allow roughly 30-40 minutes for an initial detection, then time for validation, prevention and evidence.
+There are **five Windows and four Linux cards**. Existing guidance recommends selecting **two or three**; a formal completion minimum or compulsory platform mix is not explicitly established in the materials. Confirm the [selection conditions](rules.md#task-selection-and-confirmation) with the Technical Lead before committing. The `B` suffixes are task identifiers, not difficulty tiers or score multipliers. Allow roughly 30-40 minutes for an initial detection, then time for validation, investigation and evidence.
 
-Work **only inside the designated isolated lab and on explicitly authorized targets**. Build a Wazuh rule that detects the selected behavior, show its alert, explain the weakness and demonstrate appropriate prevention without breaking legitimate use. Follow the [authorized-scope and submission rules](rules.md).
+Work **only inside the designated isolated lab and on supplied or explicitly authorized targets**. No unauthorized interaction with university infrastructure, unrelated public systems or other teams' systems is permitted. Build a Wazuh rule, verify its alert and investigate the evidence. Use only the approved exercise procedures below; the broader bank guide does not add mandatory attacks, blocking or network tools.
 
 Your selected task set is assessed once out of **100 points**, not per task. Approximately two to three judges may assess each team independently; their scores are averaged for ranking. The top three teams qualify for the Grand Finale. **No slides or formal pitch are required, and technical demonstrations have no presentation marks.**
 
-Every challenge follows the same pattern:
-1. **Run the attack** from your attacker VM.
-2. **Watch Wazuh** — the right events arrive already decoded.
-3. **Write a rule** that fires on the behaviour. Alert must carry the fields
-   named in the card.
-4. **Prove it isn't hardcoded** — the final round runs the same attack with
-   something changed (different IP, different username, different filename).
-   A rule containing a literal IP, username, or filename will fail.
+## Participant workflow
+
+1. Read the selected card and confirm its target, required behavior and authorized test/cleanup procedure.
+2. Obtain access to the assigned endpoint, Wazuh dashboard and permitted rule/configuration route.
+3. Identify the source listed in that card and confirm that the relevant events reach the manager.
+4. Inspect the raw event, decoded fields and any existing matching rule; do not assume a copied rule ID fits another OS.
+5. Configure only the selected source/channel/FIM paths or approved audit feed, within your permissions.
+6. Develop the detection, validate its syntax/decoded fields with the approved Wazuh tools and explain the matching logic.
+7. Generate the card's approved event on the designated lab system, or use a mentor-approved sample if that arrangement is explicitly accepted. A sample-only test must not be presented as live collection.
+8. Locate the resulting alert and verify the required fields, endpoint and timestamp.
+9. Investigate what happened; compare positive, benign and changed-input tests to identify missed detections or false positives.
+10. Export the permitted evidence, document limitations/reproduction steps and restore lab changes as instructed.
+
+The source/configuration and verification notes under each card apply these steps to that exercise. Match behavior rather than one test IP, username or filename; fixed monitored paths explicitly required by a FIM card are legitimate scope, not prohibited hardcoding.
 
 ---
 
@@ -34,7 +40,17 @@ logins against one account. Don't log in successfully — failures only.
 **Build a rule that fires when:** 5+ failed logons (Event 4625) from the same
 source IP within 2 minutes. Alert includes source IP and username.
 
-Start from Wazuh's built-in rule 5710 and add a frequency block.
+**Source and prerequisites:** Windows Security log, failed-logon auditing and
+collection of Event 4625 with source address and account fields. Use an approved
+Windows authentication parent/decoded event, not an assumed SSH rule ID.
+
+**Configure and verify:** Correlate failures by source IP using the stated count
+and time window. Repeat the approved failure-only test, check count/window
+boundaries and vary a lab account/source where authorized.
+
+**Evidence:** Rule XML, source/channel settings, event/alert exports with source
+IP and username, and positive/benign/changed-input results. Explain failed
+authentication, not a successful breach.
 
 ### W2B — PowerShell ran something odd
 
@@ -49,6 +65,19 @@ parent process.
 **Watch out:** the final round uses a different download cmdlet or `curl.exe`
 instead of `Invoke-WebRequest`. Match the *family*, not one literal string.
 
+**Source and prerequisites:** Approved Windows process-creation telemetry,
+such as configured Sysmon or Security 4688 collection, with command line and
+parent-process context. Confirm those fields are actually available.
+
+**Configure and verify:** Collect the required channel, inspect its decoded
+process fields and test the existing approved download procedure using a
+harmless lab file. Compare another permitted download form and benign
+PowerShell use.
+
+**Evidence:** Rule/configuration, full command line and parent context,
+timestamped alert and test results. A download command is evidence of behavior,
+not proof that its content was malicious.
+
 ### W3B — A new program was installed
 
 **Attack:** Install a new Windows service from the attacker position:
@@ -57,6 +86,19 @@ instead of `Invoke-WebRequest`. Match the *family*, not one literal string.
 **Build a rule that fires when:** a service is installed (Event 7045) with a
 binary path **outside** `C:\Windows`. Your first negate condition. Alert
 includes service name, path, account.
+
+**Source and prerequisites:** Windows System log with Service Control Manager
+Event 7045, plus permission to perform the approved service-install exercise
+on the designated endpoint.
+
+**Configure and verify:** Collect the System channel and inspect the actual
+service-name/path/account fields. Detect the outside-Windows path condition,
+then compare an approved changed service/path and a legitimate Windows-path
+example. Follow the provided cleanup instructions.
+
+**Evidence:** Rule, channel configuration, event/alert with the required fields
+and positive/benign results. Explain why the location merits investigation;
+installation outside the Windows directory is not automatically malware.
 
 ### W4B — Someone turned off the antivirus
 
@@ -69,6 +111,18 @@ assessed within the same rubric rather than as bonus points.
 
 You need to add the Defender operational channel to the agent's log
 collection first — that's part of the challenge.
+
+**Source and prerequisites:** Microsoft-Windows-Windows Defender/Operational,
+an approved endpoint where these events are available, and explicit permission
+for this temporary lab-only protection change.
+
+**Configure and verify:** Collect the channel, observe the existing approved
+disable/re-enable sequence and confirm Event 5001 is detected. Restore protection;
+the Event 5000 re-enable detection is optional.
+
+**Evidence:** Collection/rule settings, alert timestamp/event context, test
+results and confirmation of restoration. Never perform this on a real managed
+or personal endpoint outside the authorized lab.
 
 ### W5B — File integrity monitoring on Windows
 
@@ -87,6 +141,18 @@ evidence for this task also includes monitoring `HKLM\...\Run` and alerting on n
 Pre-existing entries (OneDrive etc.) must NOT fire — the agent baselines
 existing files at enrolment.
 
+**Source and prerequisites:** Wazuh agent FIM (`syscheck`) for the approved
+Windows directory and relevant Run-key monitoring.
+
+**Configure and verify:** Establish/document the baseline, configure the
+monitored locations and use only approved harmless file/registry changes.
+Check changed filenames/values and distinguish pre-existing entries from new
+changes; account for initial-scan noise rather than assuming it cannot occur.
+
+**Evidence:** FIM/rule configuration, file/registry change alerts with object
+path and change type, baseline context and test results. Do not execute an
+untrusted binary or alter a real production application.
+
 ---
 
 ## Linux
@@ -97,8 +163,18 @@ existing files at enrolment.
 one user. Failures only.
 
 **Build a rule that fires when:** 5+ SSH failures from one source IP within
-2 minutes. Alert includes source IP and username. Mirror image of W1B —
-start from built-in rule 5712.
+2 minutes. Alert includes source IP and username.
+
+**Source and prerequisites:** The designated Linux SSH authentication log or
+journal feed collected by the Wazuh agent. Confirm the decoded source/account
+fields and actual matching SSH rule before choosing a correlation parent.
+
+**Configure and verify:** Use the existing approved failure-only SSH exercise.
+Verify the count/time boundary, changed lab source/account and benign
+authentication; success-after-failure is not required by this card.
+
+**Evidence:** Rule and collection settings, relevant log/alert exports and
+test results. Explain failures without claiming a successful login.
 
 ### L2B — Someone edited the passwd file
 
@@ -107,8 +183,18 @@ start from built-in rule 5712.
 **Build a rule that fires when:** `/etc/passwd` or `/etc/shadow` changes.
 Configure Wazuh FIM (syscheck) on those two files, then one rule.
 
-**Most likely false positive:** none — file changes to these files are
-genuinely rare. This is the cleanest first FIM exercise.
+**Source and prerequisites:** Wazuh FIM on the designated Linux endpoint,
+monitoring both named files, with permission for the existing lab account-change
+exercise.
+
+**Configure and verify:** Establish a baseline, confirm change detection for
+the configured files and repeat only the approved procedure. Legitimate account
+administration also changes these files; a detected change is not by itself
+proof of an unauthorized account.
+
+**Evidence:** FIM/rule settings, path/change-type alerts, authorized test
+timeline and benign comparison. Do not export file contents or password hashes;
+disable content-diff reporting for sensitive account files.
 
 ### L3B — A web shell appeared
 
@@ -120,15 +206,40 @@ it once in your browser.
 HTTP. Either signal provides partial detection evidence for this task; both
 together provide complete coverage of the upload-and-request sequence.
 
+**Source and prerequisites:** The designated DVWA lab, Wazuh FIM for its
+actual upload directory and collection of the relevant web-server access log.
+Confirm paths and access permissions; do not use a public upload service.
+
+**Configure and verify:** Use the existing approved upload/request exercise
+with its harmless lab artifact. Correlate the new file and request by path/time,
+then vary an approved filename and compare benign uploads/requests.
+
+**Evidence:** Relevant FIM/access-log settings, detection rules and file/request
+events with timestamps. Either signal supports partial evidence; showing the
+sequence supports complete coverage without claiming an unobserved execution.
+
 ### L4B — The web server called home
 
 **Attack:** From the web app's command-injection, make the server connect
 out to your attacker machine (`curl http://<attacker>:8000/`).
 
 **Build a rule that fires when:** an outbound connection comes from the
-web-server process (`www-data`) to anything non-local. The auditd rule to
-feed Wazuh is pre-installed on the target — your job is the Wazuh rule on
-top of it.
+web-server process (`www-data`) to an authorized non-local lab destination.
+The original card expects a preconfigured auditd feed; confirm it is present
+with the Technical Lead, because no complete current-lab installer is published here.
+
+**Source and prerequisites:** Approved Linux audit/process/network records
+that link the outbound connection to the web-server identity/process, forwarded
+to Wazuh. A web access log alone does not establish process ownership.
+
+**Configure and verify:** Inspect the supplied audit fields and apply the Wazuh
+rule above that feed. Use only the existing callback procedure and an authorized
+lab listener, then compare an approved changed lab destination and unrelated
+benign process activity. "Non-local" never authorizes internet targets.
+
+**Evidence:** Rule and relevant collection configuration, process/identity and
+destination context, timestamped alerts and tests. Explain the callback without
+claiming data theft or command execution beyond the observed evidence.
 
 ---
 
@@ -144,7 +255,7 @@ in the submission and explain your choices.
 
 ## Technical assessment checkpoints
 
-These are the observable detection outcomes for the selected cards. For **each selected task**, also provide the rule/configuration, alert evidence, changed-input and benign tests, weakness explanation, and targeted prevention results required by the [100-point rubric](rules.md#judging-criteria).
+These are the observable outcomes for the selected cards. For **each selected task**, provide the rule/configuration, alert/log evidence, positive/changed-input/benign tests and investigation notes required by the [100-point rubric](rules.md#judging-criteria). Screenshots and optional containment experiments are supplementary, not new mandatory tasks.
 
 | Task | Required detection evidence | Robustness checkpoint |
 |---|---|---|
@@ -160,11 +271,12 @@ These are the observable detection outcomes for the selected cards. For **each s
 
 | Criterion | Points |
 |---|---:|
-| Detection engineering | 25 |
-| SIEM evidence quality | 25 |
-| Vulnerability identification | 20 |
-| Prevention and containment | 20 |
-| Reporting and reproducibility | 10 |
+| Detection accuracy and coverage | 30 |
+| Detection rule quality, specificity and robustness | 20 |
+| Validation, testing and evidence quality | 15 |
+| Investigation quality and alert interpretation | 15 |
+| Log-source collection and system configuration | 10 |
+| Documentation and reproducibility | 10 |
 | **Total for the selected task set** | **100** |
 
 Complete and reproducible evidence can earn full credit for a requirement. Partial chains or inconsistent behavior earn partial credit; absent or unsupported work earns none for the affected requirement. Task count, presentation style and literal-value-only detections do not substitute for working defensive controls. See the [rules](rules.md#scoring-and-tie-breakers) for averaging, ranking, technical tie-breakers and qualification.

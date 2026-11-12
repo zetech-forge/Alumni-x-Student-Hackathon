@@ -8,32 +8,38 @@ nav_order: 5
 # CYBER DEFENCE HACKATHON 2026
 # Zetech University  |  12–13 November 2026
 
-## Welcome. Your team is the bank's security team.
+## Supporting bank-lab guide: read the current task cards first
 
-Your job is to look after a simulated bank's lab systems. During the two-day event,
-set up a SIEM — a security monitoring tool called **Wazuh** — that watches
-for security events and tells you when something bad happens.
+This guide contains broader bank-security practice material. The repository
+does not establish that all of those activities are approved components of the
+current competition. The **[nine Wazuh task cards](challenges.md)** and
+**[Track Rules](rules.md)** define the required technical work; treat the
+additional bank scenarios as supplementary unless the Technical Lead explicitly
+approves them.
 
-You will not be the one breaking in. You are the ones **defending**.
+The focus is **defensive monitoring**, not general penetration testing.
+Only supplied or explicitly authorized lab systems may be used. University
+infrastructure outside the lab, unrelated public targets and other teams'
+systems without permission are prohibited. Keep credentials and sensitive
+logs private; follow approved simulation and cleanup instructions.
 
-Choose **two or three of the nine published [task cards](challenges.md)**.
-The [Track Rules](rules.md) define authorized targets, submissions and the
-100-point technical rubric. Supporting practice examples here are not
-additional required tasks. No slides or formal Track-Level pitch are required.
+Existing guidance recommends **two or three selected cards**. A formal
+completion minimum, compulsory platform mix and named mandatory cards still
+require Technical Lead confirmation at the briefing. No slides or formal
+Track-Level pitch are required.
 
 ---
 
 ## What you will be doing
 
-1. **Run some attacks** on your lab machine — the same attacks real
-   attackers use, in a safe, closed lab.
-2. **Build detections in Wazuh** — rules that fire when those attacks happen.
-3. **Stop the attacks** — block them, or configure your machine so they fail.
-4. **Prove it worked** — show the alert, and show the attack failing afterwards.
+1. Confirm the selected cards, authorized endpoints and their required log sources.
+2. Verify collection, develop the Wazuh detections and use only the approved test events.
+3. Validate positive, benign and changed-input cases, then investigate the alerts.
+4. Preserve rule/configuration changes, permitted evidence and reproduction notes.
 
-You score marks for detections, for good evidence, and for stopping attacks
-*without breaking the rest of the system*. Getting a rule that works well is
-worth more than running many attacks.
+Blocking, active response and extra bank-lab exercises are not mandatory
+deliverables for the current nine cards. Optional practice does not create
+extra points or authorize additional targets.
 
 ---
 
@@ -56,36 +62,44 @@ worth more than running many attacks.
                     └──────────────────────────────┘
 ```
 
-### Your tools — that is all you have
+The diagram illustrates the broader bank lab, not a guarantee of supplied
+infrastructure. Confirm the actual environment and access at the briefing.
+Suricata is supplementary; process telemetry is required only where a
+selected card needs it.
+
+### Tools and their roles
 
 - **Wazuh.** Where your alerts appear and where you write rules.
-- **Suricata.** Watches network traffic. When something suspicious crosses the
-  network, it alerts Wazuh. You don't need to learn a second tool.
-- **Sysmon.** On the Windows machine. It records every program that starts,
-  every connection it makes, and every file it creates. Your rules read
-  these records.
+- **Suricata (supplementary).** Network monitoring if explicitly provided and
+  approved; no current card requires universal Suricata deployment.
+- **Sysmon (source-dependent).** Configured Windows telemetry can supply
+  process/parent/command-line context for W2B. Collection depends on its
+  configuration; do not assume it records every action.
 
 **First thing you do:** open the Wazuh dashboard and check your machine says
-**Active**. If it doesn't, nothing you build will count. Fix that first.
+**Active**, then confirm the selected source's events actually arrive.
+A green connection alone does not establish that every required channel is collected.
 
 ---
 
 ## Getting a Windows machine
 
-Any Windows works. You don't need a special one:
+Use an approved, compatible Windows lab image with the channels needed for
+your selected cards. The options below are possible packaging formats, not
+a promise of an allocated image or a requirement to install your own:
 
 - A Windows ISO in VirtualBox, VMware, or Hyper-V
 - A Vagrant box from vagrantcloud.com
 - A ready-made OVA image
 
-Whatever you use, it needs three things — the Windows version doesn't matter:
+Confirm:
 
 1. The **Wazuh agent** installed and connected
-2. **Sysmon** installed
-3. **Host-only / internal network** — no route to the internet
+2. The selected card's event channels/process telemetry; Sysmon is not universal
+3. An approved isolated lab network with no unintended external routes
 
-That third one matters most. It keeps your deliberately vulnerable machine
-from touching anything real.
+The Technical Lead must verify isolation. A host-only/private adapter by itself
+does not prove that another NAT, bridged or host-access route is absent.
 
 ---
 
@@ -106,14 +120,15 @@ approved lab isolation and access restrictions in the [Track Rules](rules.md).
    cannot earn full credit for detection or evidence.
 2. **At the end, we run the attack again in a way you haven't seen.**
    If your rule only matches the exact command you tried, it will fail.
-3. **Blocking everything earns no prevention credit.** Contain the lab
-   behavior while preserving legitimate use and required monitoring.
-4. **Prove the attack worked before you block it.** No attack, no marks.
+3. **Blocking is not a detection substitute.** Optional controls must not
+   disrupt legitimate use or required monitoring.
+4. **Support claims with evidence.** Sample rule replay and live endpoint
+   collection are different results; report which one you demonstrated.
 5. **False alarms affect detection credit.** Test benign activity on the
    designated clean lab machine.
 
-Partial credit is real. Getting part of a chain right scores those parts.
-Submitting nothing is the only way to lose completely.
+Partial credit reflects demonstrated parts of the detection/evidence chain.
+Authorization and integrity violations remain subject to the General Rules.
 
 ---
 
@@ -122,7 +137,7 @@ Submitting nothing is the only way to lose completely.
 Use AI tools during the event. That's encouraged.
 
 - Ask what a Windows event means
-- Paste a rule and ask why it isn't firing
+- Share a sanitized rule/sample and ask why it is not firing; never upload credentials or sensitive lab logs
 - Ask what MITRE technique your detection covers
 
 **But:** AI gives you code, not understanding. The final round uses an attack
@@ -132,12 +147,14 @@ final round.
 
 ---
 
-## Attacks to try
+## Supplementary bank-lab scenarios, not additional task cards
 
-The examples below support learning; the required selection is **two or
-three task cards from [Challenges](challenges.md)**. Adapt examples only
-within the designated lab and explicit authorization. Ask organizers
-before substituting a task; extra examples are not extra mandatory work.
+The examples below are historical/supporting practice, not a second approved
+assignment. Confirm the selection conditions in [Track Rules](rules.md).
+Use these examples only when the Technical Lead explicitly approves the
+scenario, target and procedure; they do not substitute for a selected card
+automatically. In particular, W1B/L1B require failures only, not the broader
+success-after-failures scenario below.
 
 **1. Port scan.** Run `nmap -sV` at your machine from the attack VM.
 Suricata should see it. Your job: tell "real recon" from "one ping".
@@ -166,9 +183,12 @@ it. Detect the upload, the request, or the shell running.
 
 **8. The ransomware simulation — how to run it, and what it does.**
 
-Your organisers will give you a lab VM with this already set up, or a script
-you run inside it. Named `simulate-ransomware.ps1`, it is a **PowerShell
-script** — not an `.exe`, not malware.
+An optional [VM definition](labs/ransomware-sim/Vagrantfile) exists separately.
+It is not the nine-task installer or a promise of an allocated, working VM.
+The following describes its intended exercise, not a validated safety guarantee.
+Do not run it without Technical Lead approval and verified isolation.
+The provisioned `simulate-ransomware.ps1` is a PowerShell simulation script,
+not a mandatory competition artifact.
 
 - The VM boots, and a folder called `C:\LabFiles` is filled with 80 dummy
   documents (40 in the root, 20 in `Finance`, 20 in `HR`).
@@ -186,16 +206,16 @@ script** — not an `.exe`, not malware.
 `powershell -ExecutionPolicy Bypass -File C:\LabFiles\simulate-ransomware.ps1`.
 It takes about 30 seconds to finish all 80 files. Watch Wazuh while it runs.
 
-**To reset:** rename the `.encrypted` files back, or delete `C:\LabFiles`.
-Nothing else to clean up.
+**Reset:** follow the Technical Lead's approved restore procedure. Do not
+assume an arbitrary existing folder contains only disposable simulation files.
 
-**Why it's safe:** the VM has **no network route out** — no internet, no
-access to your real machine, nothing. Even if something went wrong, the
-script can only touch the 80 dummy documents it created itself.
+**Safety limitation:** isolation, exact file selection and containment must
+be verified before any optional run. The file's comments or a private adapter
+do not prove those properties. This documentation update did not execute it.
 
-This is the hardest challenge on purpose. Sysmon does not log *renames*,
-so you can't just match the extension. The signal is **how many files one
-program touches per second** — the same signal that catches real ransomware.
+This is outside the current nine cards. Any approved optional behavior
+analysis must use the events actually available; do not assume a particular
+Sysmon configuration exposes every read or rename.
 
 **9. Only legitimate programs, used badly.** Attack using only Windows'
 own trusted tools — `msbuild.exe`, `rundll32`, `certutil`. Nothing
@@ -204,17 +224,19 @@ signature rules aren't enough.
 
 ---
 
-## Your team
+## Suggested roles for the broader bank exercise
 
 3–4 people:
 
 - **Attacker** — runs the attacks, writes down exactly what was run
 - **Detection** — writes and tunes the Wazuh rules
 - **Defender** — applies the controls: blocking, allowlists
-- **Scribe (mandatory)** — writes everything down as it happens and owns
+- **Scribe** — writes everything down as it happens and owns
   the final report. Not a spare role.
 
-Team of three? Combine attacker + detection. Keep the scribe.
+These roles are suggestions, not extra eligibility or deliverable requirements
+for the nine cards. Follow the General Rules for team composition; distribute
+collection, detection, testing and documentation work sensibly.
 
 ---
 
@@ -223,7 +245,7 @@ Team of three? Combine attacker + detection. Keep the scribe.
 | When | What |
 | --- | --- |
 | **Thu 12 Nov** | Briefing, agent checks, pick your scenarios, start detecting |
-| **Fri 13 Nov** | Cross-check on the clean machine → apply controls → **Final round: the attack is re-run against your rules, in a new way** → Submit, judging, feedback |
+| **Fri 13 Nov** | Positive/benign/changed-input checks → investigate alerts → preserve evidence → submit for technical assessment |
 
 Stuck for more than 20 minutes? Ask. A question costs a minute; staying
 stuck costs an hour.
@@ -234,16 +256,17 @@ stuck costs an hour.
 
 ```
 team07_submission/
-├── README.md      one page per scenario: what you ran, your rule, the evidence, what you blocked, your false-positive test
+├── README.md      per selected card: source, rule, tests, evidence, findings, limitations
 ├── rules/         your Wazuh ruleset XML
 └── alerts/        alert screenshots / exports
 ```
 
 Also include relevant configuration changes, alert exports, benign/changed-input
-tests and prevention evidence as described in the [submission requirements](rules.md#submission-and-assessment-preparation).
+tests and investigation notes as described in the [submission requirements](rules.md#submission-and-assessment-preparation).
 
-The selected task set is scored once out of **100**: detection 25, evidence
-25, vulnerability identification 20, prevention 20 and reporting 10.
+The selected task set is scored once out of **100**: detection accuracy/coverage
+30, rule quality/robustness 20, validation/evidence 15, investigation 15,
+collection/configuration 10 and documentation 10.
 Approximately two to three judges may score it independently; their scores
 are averaged. For example, `(85 + 90 + 88) / 3 = 87.67/100`.
 The top three teams qualify for the Grand Finale, and the highest-ranked
