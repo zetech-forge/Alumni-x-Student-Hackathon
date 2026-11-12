@@ -175,6 +175,12 @@ services, storage/databases, relevant limits and assessment-access arrangements.
 Do not assume identical trial entitlements, paid services, databases or resource
 upgrades, and do not incur unapproved charges.
 
+Registration/invitations, trial activation and expiry, application limits,
+build minutes, database/persistent-storage availability and any sponsorship
+must be confirmed explicitly. Use the deployment guide's
+[organizer confirmation checklist](deployment.md#organizer-confirmation-checklist);
+published plan examples do not establish the event allocation.
+
 Raise access, capacity or inference problems with the Technical Lead early;
 record unresolved issues rather than claiming successful deployment. Follow
 the [PrimeCloud Deployment Guide](deployment.md) for current official resources,

@@ -99,6 +99,9 @@ average O(n), excluding normalization/key construction. Returning m references
 for one key costs O(m), and fuzzy comparisons have their own cost. Queue
 enqueue/dequeue is O(1), or amortized O(1) where appropriate. Describe these
 assumptions rather than claiming the entire reconciliation workflow is O(1).
+Index-reference and queue storage is O(n + q) for n indexed record references
+and q queued review items, excluding the underlying input/output payloads.
+Count all retained references and review candidates, not only distinct keys.
 
 ### Development steps
 
@@ -204,6 +207,9 @@ Standard collections are allowed. Expected in-memory costs are O(1) queue
 enqueue/dequeue, or amortized O(1), and average O(1) map lookup/update and set
 membership/insertion. Explain persistence/network costs separately. Advanced
 distributed consensus and vector clocks are not required.
+Account for O(r + p + d) tracking space for r record-map entries, p pending
+operations and d retained operation IDs, excluding variable-sized payloads.
+Include durable server-side deduplication state in the storage explanation.
 
 ### Development steps
 
@@ -295,6 +301,9 @@ Receive candidate chunks and relevance scores from your chosen keyword,
 similarity or embedding method; the heap-based selection must be your
 implemented algorithm, not merely a database/library's ready-made top-K output.
 You do not need to implement an LLM, embedding model or vector database.
+Standard heap primitives are allowed, but implement the bounded selection
+loop yourself. Do not fetch only a library's final K results and re-heap them
+as evidence of selection; test a candidate pool larger than K.
 
 1. Validate K as a positive integer and retain each candidate's document ID,
    chunk ID, section metadata and score.
@@ -369,7 +378,9 @@ Show heap construction, insertion, replacement and the heap property after
 each operation on a small trace. Verify the highest-scoring K candidates,
 deterministic ties, duplicate policy and preserved citation metadata against
 the full-sort baseline. Include K = 1, fewer than K candidates, empty input and
-invalid K/score cases. Record timings and explain selection, final sorting and
+invalid K/score cases, plus more than K candidates that exercise root
+replacement and tied-score selection at the K boundary. Record timings and
+explain selection, final sorting and
 storage complexity. Show that the same selection code supplies the live RAG
 workflow.
 

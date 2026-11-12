@@ -432,6 +432,52 @@ workspaces, credits, allocated services, relevant limits and assessment-access
 arrangements. See the official
 [limits and lifecycle reference](https://primecloud.cloud/docs/limits).
 
+### Organizer confirmation checklist
+
+The reviewed public track pages do not record an approved event allocation.
+The items below remain **unverified**, not included entitlements, until the
+Organising Committee communicates the arrangements:
+
+| Item requiring confirmation | What participants and the Technical Lead need |
+|---|---|
+| Workspace allocation | Account/project ownership, team permissions, number of applications and assessment access. |
+| Account registration | Whether teams register individually or receive invitations, required verification and the approved onboarding route. |
+| Trial availability and activation | Eligibility, activation procedure, start/expiry times and coverage through submission and judging. |
+| Application resources | Actual CPU/RAM, disk, request/runtime and concurrency limits for each team's application and sync service. |
+| Build allocation | Build-minute allowance, build concurrency, rebuild limits and the route for reporting an exhausted allowance. |
+| Database availability | Approved engine/service or persistent-disk-backed database, connection permissions, capacity and any costs. B requires durable synchronized records and processed-operation tracking. |
+| Persistent storage | Available volumes/object storage, attachment/mount procedure, capacity and restart/redeployment durability. An ordinary container directory is not sufficient. |
+| Event credits or sponsorship | Whether any credits, paid services or upgrades are supplied, their restrictions and who may authorize charges. |
+| C's model inference | Approved reachable endpoint, credentials route, model access, rate/token quotas, data terms and availability during assessment. |
+
+**Public reference only:** on 12 November 2026 the
+[official quickstart](https://primecloud.cloud/docs/quickstart) describes a
+72-hour Developer Trial with **0.5 vCPU, 512 MiB RAM, 1 GB persistent disk and
+60 build minutes**. It also documents 15-minute idle sleep, a two-hour maximum
+continuous run per session and up to ten wakeups per hour. These published
+figures are **not a confirmed participant allocation**, nor proof that a
+managed database, inference service or event credits are included. Recheck
+current documentation and the assigned account before planning capacity.
+
+- **A:** verify representative file sizes, reconciliation time and memory use
+  under the actual application limits.
+- **B:** without approved durable remote storage and a successful
+  restart/redeployment test, mandatory cloud synchronization is not ready.
+  Object storage alone does not supply transactional synchronization or
+  atomic mutation/deduplication.
+- **C:** do not assume a full local LLM and its weights fit a minimal trial
+  container. Without approved reachable inference and sufficient quota, the
+  required hosted generation workflow is not ready. Test inference latency
+  and failures separately from the lightweight health endpoint.
+
+Before declaring the track operationally ready, the Technical Lead must
+validate a small end-to-end A, B and C workflow on the approved allocation,
+including actual build commands, port/health settings, secret bindings,
+B's persistence/idempotency and C's inference/citations. Publish the confirmed
+access route and limits, and resolve missing services with the committee.
+Local-only runs, mock generation and backup videos are not deployment
+exemptions.
+
 Keep the application accessible during the scheduled assessment. Trial
 environments may sleep after inactivity: open and verify the assigned URL
 shortly before judging and follow the documented lifecycle if it has slept.
