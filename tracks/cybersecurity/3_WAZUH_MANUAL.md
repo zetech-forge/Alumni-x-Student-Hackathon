@@ -439,15 +439,21 @@ team07_submission/
 - <honest note — e.g. "our frequency window would miss a slow spray">
 ```
 
-**Marking map (same rubric as the master plan):**
+**How your evidence supports the public technical rubric:**
 
 | Submission section | Rubric component it earns |
 | --- | --- |
-| Rule XML + why this logic | Detection engineering (25%) |
-| Alert JSON with named fields + MITRE id | SIEM evidence quality (25%) |
-| Attack reproduction notes | Vulnerability identification (20%) |
-| Control config + block verification + release test | Prevention and containment (20%) |
-| README clarity + hardened-box test | Reporting (10%) |
+| Rule XML + why this logic | Detection engineering (25 points) |
+| Alert JSON with named fields + MITRE id | SIEM evidence quality (25 points) |
+| Attack reproduction notes | Vulnerability identification (20 points) |
+| Control config + block verification + release test | Prevention and containment (20 points) |
+| README clarity + hardened-box test | Reporting and reproducibility (10 points) |
+| **Total for the selected task set** | **100 points** |
+
+These allocations total **100 points for your selected task set**, not per
+rule or task. Use the [Track Rules](rules.md) for the full rubric, authorized
+scope, score averaging and qualification. Technical demonstrations verify
+evidence; no formal pitch or slides are required.
 
 The teams that score best write the README *as they go*, not at 17:30. The
 scribe role exists for exactly this.

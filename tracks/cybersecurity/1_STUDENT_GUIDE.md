@@ -10,11 +10,16 @@ nav_order: 5
 
 ## Welcome. Your team is the bank's security team.
 
-Your job is to look after the bank's critical systems. You have one day to
+Your job is to look after a simulated bank's lab systems. During the two-day event,
 set up a SIEM — a security monitoring tool called **Wazuh** — that watches
 for security events and tells you when something bad happens.
 
 You will not be the one breaking in. You are the ones **defending**.
+
+Choose **two or three of the nine published [task cards](challenges.md)**.
+The [Track Rules](rules.md) define authorized targets, submissions and the
+100-point technical rubric. Supporting practice examples here are not
+additional required tasks. No slides or formal Track-Level pitch are required.
 
 ---
 
@@ -86,26 +91,26 @@ from touching anything real.
 
 ## Where to run Wazuh
 
-**Cloud is better.** Running Wazuh on your own laptop uses 4 GB of RAM and
-slows everything down, and the dashboard dies when the laptop sleeps.
-
-- **AWS EC2**, **DigitalOcean**, or **Azure** — any of those, a 4 GB Ubuntu
-  machine, costs a few dollars for the event. Open only the ports Wazuh needs
-  (443 for the dashboard, 1514/1515 for agents, 22 for you).
-
-Local works if you're short on time. Cloud is what we recommend.
+Use the organizer-approved Wazuh setup. Confirm monitoring access and
+telemetry before the assessment; you are not required to purchase cloud
+hosting. Do not expose deliberately vulnerable targets or lab services to
+the public internet. Any remote monitoring arrangement must preserve the
+approved lab isolation and access restrictions in the [Track Rules](rules.md).
 
 ---
 
 ## The five rules
 
-1. **Submit the rule AND a screenshot of it working.** We score the rule.
-   The screenshot proves it fired. A rule with no proof scores about half.
+1. **Submit the rule AND evidence of it working.** Export the alert with
+   the required fields; screenshots can support it. An unverified rule
+   cannot earn full credit for detection or evidence.
 2. **At the end, we run the attack again in a way you haven't seen.**
    If your rule only matches the exact command you tried, it will fail.
-3. **Blocking everything scores zero.** Block the attacker, not the internet.
+3. **Blocking everything earns no prevention credit.** Contain the lab
+   behavior while preserving legitimate use and required monitoring.
 4. **Prove the attack worked before you block it.** No attack, no marks.
-5. **False alarms cost you marks.** Test your rules against a clean machine.
+5. **False alarms affect detection credit.** Test benign activity on the
+   designated clean lab machine.
 
 Partial credit is real. Getting part of a chain right scores those parts.
 Submitting nothing is the only way to lose completely.
@@ -129,9 +134,10 @@ final round.
 
 ## Attacks to try
 
-Pick **two or three**. Each takes about 30–40 minutes. These are **examples
-to learn from**, not a checklist — research, adapt, and try your own
-variations.
+The examples below support learning; the required selection is **two or
+three task cards from [Challenges](challenges.md)**. Adapt examples only
+within the designated lab and explicit authorization. Ask organizers
+before substituting a task; extra examples are not extra mandatory work.
 
 **1. Port scan.** Run `nmap -sV` at your machine from the attack VM.
 Suricata should see it. Your job: tell "real recon" from "one ping".
@@ -233,8 +239,15 @@ team07_submission/
 └── alerts/        alert screenshots / exports
 ```
 
-Scoring: detection 25%, evidence 25%, vulnerability ID 20%, prevention 20%,
-reporting 10%.
+Also include relevant configuration changes, alert exports, benign/changed-input
+tests and prevention evidence as described in the [submission requirements](rules.md#submission-and-assessment-preparation).
 
-Everything you need to run Wazuh is in `3_WAZUH_MANUAL.md` — keep it open
-all day.
+The selected task set is scored once out of **100**: detection 25, evidence
+25, vulnerability identification 20, prevention 20 and reporting 10.
+Approximately two to three judges may score it independently; their scores
+are averaged. For example, `(85 + 90 + 88) / 3 = 87.67/100`.
+The top three teams qualify for the Grand Finale, and the highest-ranked
+team receives **Best Cybersecurity Solution**. Technical demonstrations and
+questions verify evidence, not presentation skills.
+
+Use the [Wazuh manual](3_WAZUH_MANUAL.md) for setup and rule-writing guidance.

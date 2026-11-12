@@ -9,6 +9,8 @@ nav_order: 4
 
 Choose **one** challenge tier that fits your team's experience and ambition. Every tier is designed for a working prototype during the two-day hackathon. Start with the required core objectives; stretch goals are optional. Teams may build with the available hardware, use a simulator such as Wokwi, or combine both. A simulation is a valid prototype and will be judged on the same stated behavior as a physical build.
 
+Each tier is assessed directly out of **100 technical points**, without difficulty multipliers. Approximately two to three judges may score each team independently; their scores are averaged for ranking. The top three teams qualify for the Grand Finale. **No slides or formal pitch are required, and technical demonstrations have no separate presentation marks.** See the [rules](rules.md) for the rubric, submissions and tie-breakers.
+
 All teams must explain the campus or community need their prototype addresses and connect it to at least one Sustainable Development Goal (SDG). The prototype is an educational demonstration, not a certified safety, security, or emergency-response device.
 
 ## Shared expectations
@@ -46,16 +48,16 @@ A campus room is sometimes left lit or treated as occupied when nobody is using 
 - A live demonstration or shareable simulation link.
 - Source code and a short README with setup and test instructions.
 - A simple wiring/system diagram.
-- A two-minute explanation of the user need, state behavior, limitations, and chosen SDG.
+- A short README explanation of the user need, state behavior, limitations and chosen SDG.
 
 ### Points — 100
 
 - Functionality and correctness — 40: Motion input triggers the indicator, and the system returns to idle after the stated timeout.
 - Code quality, documentation, and testing — 20: The code is understandable, setup steps are clear, and the team demonstrates repeated tests.
 - Creativity, practical use, and SDG connection — 20: The indicator supports a sensible campus energy-use decision and the team explains its limits.
-- Demonstration and presentation — 20: The team clearly demonstrates the behavior and gives a concise pitch.
+- Reliability and safety — 20: Repeated motion/no-motion inputs and retriggering behave consistently with the documented timeout; the design uses safe low-voltage outputs and acknowledges PIR limitations.
 
-**Judging note:** Judges should trigger motion more than once and check that the indicator returns to idle as described. Score a simulation on its demonstrated behavior, not on whether hardware was available.
+**Technical checkpoints:** Be ready to repeat motion/no-motion tests, retrigger during the active period and verify the stated return-to-idle behavior. A simulation is assessed on the same outcomes as hardware.
 
 ## Intermediate — Safer Campus Environment Monitor
 
@@ -84,16 +86,16 @@ A campus workshop or shared room needs an affordable way to flag a possible envi
 - A live demonstration or shareable simulation link showing normal and alert conditions.
 - Source code, README, and wiring/system diagram.
 - A small test table listing the input condition, expected state, and observed output for at least three cases.
-- A two-minute explanation of the use case, response guidance, limitations, and chosen SDG.
+- A short README explanation of the use case, response guidance, limitations and chosen SDG.
 
 ### Points — 100
 
 - Functionality and correctness — 40: Sensor thresholds produce the expected normal and alert states, with a clear local warning.
 - Code quality, documentation, and testing — 20: The team documents thresholds and demonstrates at least three relevant test cases.
 - Creativity, practical use, and SDG connection — 20: The alert fits a real campus need and includes sensible user guidance and honest limitations.
-- Demonstration and presentation — 20: The demo clearly shows state changes and the pitch explains the intended response.
+- Reliability and safety — 20: Repeated and threshold-adjacent inputs produce predictable states; tests use safe inputs, outputs are low voltage, and the prototype makes no certified-safety claims.
 
-**Judging note:** Judges may change the simulated sensor value or use a safe test input. Reward clear state transitions and honest limitations; do not reward claims that the prototype guarantees safety.
+**Technical checkpoints:** Have at least three input cases ready, including normal, alert and threshold behavior. Be able to change a simulated or safe sensor input, reproduce the state transition and explain the response guidance and limitations.
 
 ## Advanced — Rover Rescue Run
 
@@ -122,16 +124,16 @@ A campus support rover must travel through a short route, avoid a simulated or p
 - A physical run, shareable simulation, or both. State clearly which parts were tested physically.
 - Source code, README with setup/run steps, and a wiring/system diagram.
 - A short test log with at least three runs, noting route completion and obstacle behavior.
-- A two-minute explanation of the campus use case, design choices, limitations, and chosen SDG.
+- A short README explanation of the campus use case, design choices, limitations and chosen SDG.
 
 ### Points — 100
 
 - Functionality and correctness — 40: The rover or simulated controller completes the route, responds to an obstacle, and stops safely.
 - Code quality, documentation, and testing — 20: Setup and control logic are explained, with a log of at least three runs or equivalent simulated tests.
 - Creativity, practical use, and SDG connection — 20: The route task addresses a plausible campus need and the design explains its limitations.
-- Demonstration and presentation — 20: The team demonstrates the sequence clearly and gives a concise pitch.
+- Reliability and safety — 20: At least three runs show repeatable control, obstacle response and a safe stop; physical tests use controlled speed and an accessible stop, or simulation demonstrates equivalent controls.
 
-**Judging note:** Judges should use the same marked route and obstacle placement for each physical run. A simulation-first team can earn full points by demonstrating the required logic clearly; physical access is not a scoring advantage by itself.
+**Technical checkpoints:** Be ready to repeat the marked route and obstacle scenario, show start/movement/obstacle/stop behavior and explain the three-run log. Simulation can demonstrate equivalent control logic; hardware access is not a scoring advantage.
 
 ## Submission checklist
 
@@ -142,31 +144,14 @@ Before the track deadline, make sure your team has submitted:
 - A wiring/system diagram.
 - A working demonstration or simulation link.
 - Test evidence and a brief statement of what was simulated versus physically tested.
-- A short pitch that names the user need, chosen SDG, and the prototype's limitations.
+- A README explanation naming the user need, chosen SDG and prototype limitations.
+- The common 2-3 minute backup demo video, team details, Alumni Contribution note and AI/external-resource acknowledgments.
 
 Teams should follow the event's general submission deadline and the IoT & Robotics track rules for demonstration and judging logistics.
-## Overall scoring and mandatory real-world application
-Every team completes one selected technical tier and the same **From Prototype to Real-World Impact** planning brief. This is not a fourth build: use your existing prototype or simulation to explain how it could address a real need.
-The three tier rubrics above are **raw technical scores out of 100**. Normalize the selected tier to 70 points: **technical contribution = raw tier score × 0.70**. Add the mandatory application brief score (maximum 30) for a **final total of 100 points**. Beginner, Intermediate, and Advanced teams therefore have the same maximum final score. Do not award a numerical advantage solely for choosing a harder tier; assess each tier against its stated checkpoints.
-For each technical criterion, give 0 when there is no demonstrated evidence, about half when the behavior or explanation is partial/inconsistent, and full points when the stated behavior is clearly demonstrated and supported by a test, diagram, or explanation. Record evidence in the judge sheet; do not score claims alone. Apply the same evidence standard to physical and simulated builds.
-### Mandatory brief rubric — 30 points
-| Criterion | Points | Full-credit evidence |
-| --- | ---: | --- |
-| Problem, sector, and intended users | 5 | Specific problem and context, relevant sector, intended beneficiaries, and why it matters. |
-| Solution relevance and suitability | 5 | Clear link to the demonstrated prototype and a plausible value proposition. |
-| Technical architecture and stack | 5 | System diagram and explanation of components, interactions, and simulated versus physical parts. |
-| Feasibility and scalability | 5 | Credible path from prototype to deployment, resources, maintenance/cost considerations, and a realistic scaling or partnership idea. |
-| SDG alignment and societal impact | 4 | Relevant SDG(s), intended benefits, and consideration of inclusion or sustainability. |
-| Risks, safety, and sustainability | 4 | Relevant risks (such as privacy, cybersecurity, connectivity, power, reliability, or safety) with reasonable mitigations. |
-| Measurable outcomes | 2 | Relevant success indicator(s) and a credible way to measure them. |
-| **Total** | **30** | |
-Teams are not expected to deploy in the real world during the hackathon. Separate measured prototype results from estimates about future impact; avoid unsupported cost, scale, or impact claims.
-### Suggested final pitch
-Use up to **five slides** and **five minutes**, subject to the event-wide judging schedule: (1) problem and users; (2) solution and prototype demo; (3) architecture and technology; (4) feasibility, resources, and risks; (5) SDGs, expected impact, and measurable outcomes. Favor diagrams and demo evidence over dense text.
-### Judge checkpoint examples
-- **Beginner:** trigger the PIR input more than once; verify the indicator activates and returns to idle after the stated timeout.
-- **Intermediate:** verify normal and alert states using at least three documented input cases, including threshold behavior and safe response guidance.
-- **Advanced:** use the same marked route and obstacle placement for each physical run; verify route completion, obstacle response, and a safe stop. A simulation may demonstrate equivalent control logic.
-The organizer should provide each judge a separate sheet for every team with team name/ID, selected tier, challenge title, judge name, criterion maximum, score awarded, observed evidence, and comments.
+
+## How technical evidence earns credit
+
+Each tier's allocation is **40 + 20 + 20 + 20 = 100 points**. Full credit for a requirement depends on demonstrated behavior and supporting code, tests or documentation; partial or inconsistent evidence receives partial credit, and absent or unsupported evidence receives none for the affected requirement. Stretch goals count only within these allocations. Simulation and hardware use the same evidence standard.
+
 ### Shared hardware planning note
-The organizer publishes allocation before the event. Current inventory includes: 3 Arduino Uno R3, 1 ESP32, 1 PIR sensor, 1 MQ-2 gas sensor, 1 fingerprint module, 1 rover/car chassis set (including motors, motor driver, and battery), 1 thermistor, 1 flame sensor, 1 Bluetooth module, 1 relay, 15 red LEDs, 20 resistors, 5 breadboards, and the listed KY modules. Shared or single-quantity items require a booking/rotation plan. The inventory does not specify jumper wires, USB cables, or battery details; organizers must confirm availability and compatibility. For each tier, treat only its stated core parts as required; teams may substitute simulation for unavailable shared equipment, disclose substitutions, and are not expected to buy hardware.
+The listed inventory includes: 3 Arduino Uno R3, 1 ESP32, 1 PIR sensor, 1 MQ-2 gas sensor, 1 fingerprint module, 1 rover/car chassis set (including motors, motor driver, and battery), 1 thermistor, 1 flame sensor, 1 Bluetooth module, 1 relay, 15 red LEDs, 20 resistors, 5 breadboards, and the listed KY modules. Confirm allocation and book shared or single-quantity items with organizers. Jumper wires, USB cables and battery details are not fully specified; confirm compatibility before physical testing. Only the selected tier's core parts are required; disclose simulation substitutions for unavailable equipment. Teams are not expected to buy hardware.

@@ -6,14 +6,14 @@ nav_order: 3
 
 # Track Rules & How to Compete
 
-These rules cover what is specific to the Machine Learning & Data Science track. Team size, eligibility and conduct are in the general rules, so they are not repeated here.
+These rules cover the Machine Learning & Data Science track. Team size, eligibility, the Alumni/Finalist Collaborator requirement and conduct follow the [General Rules](../../general-rules.md).
 
 ## Format
 
 - Each team chooses **one of the three challenges** (Beginner, Intermediate or Advanced) and builds a **working prototype** during the two-day event.
-- **Day 1** is for ideation, data and a first working baseline. **Day 2** is for continued development, testing and pitch preparation, and it ends with **live demonstrations and pitches**.
-- Every team delivers: a public code repository, a working demo, a short written limitations note, and a 5-minute live pitch.
-- Teams choose the tier that fits their skills. Harder challenges carry more points, but they are also harder to finish. A complete, honest solution to an easier challenge can beat an unfinished solution to a harder one.
+- **Day 1** is for ideation, data and a first working baseline. **Day 2** is for continued development, evaluation, documentation and a reproducible technical demonstration.
+- Every team prepares a public code repository, a working implementation, the challenge-specific results and a written limitations note. **No slides or formal pitch are required for Track-Level Judging.**
+- Choose the tier that fits your skills. **Beginner, Intermediate and Advanced are each assessed out of 100 points.** Difficulty does not multiply the score or award automatic extra points; the expected technical outcomes of your selected challenge determine the assessment.
 - Every team **must tie its solution to at least one UN Sustainable Development Goal (SDG)** of its own choosing, and explain who the users are and what decision the system supports.
 
 ## Allowed tools and technology
@@ -23,7 +23,7 @@ These rules cover what is specific to the Machine Learning & Data Science track.
 - Any open-source library, free tool or free cloud tier (for example Google Colab, Streamlit Community Cloud, Hugging Face Spaces).
 - **Pre-trained models**, including open language, speech and image models, and free API tiers for language models. Cite every model and say how you used it.
 - Open data from any source whose license allows your use, including the starter kits in `assets/`.
-- AI coding assistants, as long as you **disclose** their use in your README and can explain and defend every part of your solution in the Q&A. *(Organizers: confirm this matches the general rules.)*
+- AI coding assistants, as long as you **disclose** their use in your README and can explain the implementation during technical clarification questions.
 
 **Not allowed**
 - Real personal data, including real patient, household, customer or contact records. Use public aggregated data or synthetic data only.
@@ -39,7 +39,7 @@ These rules cover what is specific to the Machine Learning & Data Science track.
 
 ## Submission requirements
 
-Submit through the event submission channel *(organizers: add the form or platform here)*. A complete submission has:
+Submit through the announced event channel by the published code freeze. A complete submission has:
 
 | Item | Required for | Notes |
 |---|---|---|
@@ -52,42 +52,51 @@ Submit through the event submission channel *(organizers: add the form or platfo
 | **Assumptions file** | Challenge 2 | `ASSUMPTIONS.md`: data biases, covariate choices and modelling assumptions |
 | **Evaluation benchmark, results and security note** | Challenge 3 | 60 or more questions with reference answers, adversarial results before and after defenses, and the access-control note |
 | **One-command run** | Challenges 2 and 3 | A command or short script that rebuilds the main results |
-| **5-minute pitch** | All | Live, at the end of Day 2 |
+| **Common submission information** | All | Team details, SDG statement, Alumni Contribution note, AI/external-resource acknowledgments and the required 2-3 minute backup demo video |
 
-**Deadline.** Submissions close at the **code freeze on Day 2**, which is announced at the start of the event *(organizers: add the exact time; we suggest about two hours before the pitches start)*. Changes pushed after the freeze are not judged. Teams may use the remaining time to rehearse their pitch.
+**Assessment preparation.** Have the app/notebook, permitted data or retrieval instructions, sample inputs, result tables and agent logs accessible. Include dependency versions and example configuration variables, not API keys or private data. For Challenge 3, have both roles and image/audio examples ready. Be able to rerun the documented evaluation and explain failures.
 
-## Judging criteria and weights
+**Deadline.** Follow the [Schedule](../../schedule.md) and announced Day 2 code freeze. Changes pushed after the freeze are not judged. No slide deck or formal pitch is required for this technical assessment.
 
-All teams are scored out of 100 using this rubric.
+## Judging criteria
 
-| Criterion | Weight | What judges look for |
+All three challenges use this **100-point technical rubric**.
+
+| Criterion | Points | What your team must demonstrate |
 |---|---|---|
-| **Technical rigor and functionality** | 30% | The core requirements work end to end. Validation is honest (time, spatial or group splits where needed), with no leakage, uncertainty is reported, and results are compared with a baseline |
-| **SDG relevance and impact** | 15% | A clearly chosen SDG, a clear user and decision, and a realistic path to use |
-| **Responsible AI and security** | 10% | Errors checked by group or area, privacy respected, safe refusals, limits stated honestly. For Challenge 3, mainly the access control, adversarial testing and human hand-off |
-| **Reproducibility and documentation** | 10% | A judge can rerun your work. Clear README, pinned dependencies, data sources and licenses. For Challenges 2 and 3, also tests and a one-command run |
-| **Creativity, approach and insight** | 10% | A sensible, original approach, and insight from the data beyond the minimum |
-| **Pitch and presentation** | 25% | A clear 5-minute story: the problem, the approach, a live demo, the results, honest limits and the impact. Clear answers to questions |
+| **Core functionality** | 30 | The selected challenge's data pipeline, models, app and evidence-grounded agent work end to end. |
+| **Validation and technical correctness** | 25 | Appropriate held-out/time/spatial splits, no leakage, baseline comparisons, required metrics and uncertainty or failure analysis. For Challenge 3, include multimodal and answer/citation evaluation. |
+| **SDG relevance and impact** | 15 | A specific user, supported decision and relevant SDG, with a credible connection to the demonstrated results. |
+| **Responsible AI and security** | 10 | Privacy, group/area error analysis, appropriate refusals and honest limits. Include role-aware access control, adversarial checks and human hand-off where required. |
+| **Reproducibility and documentation** | 10 | Clear README, dependency versions, data licenses and provenance; results can be rerun. Challenges 2 and 3 include the required one-command run. |
+| **Creativity, approach and insight** | 10 | Justified design choices and useful insight from the data beyond simply assembling tools. |
+| **Total** | **100** | **No pitch, slide-design or presentation allocation.** |
 
-**Challenge-specific notes** are in each challenge on the [Challenges](challenges.md) page. They explain how a criterion applies to that challenge, and they do not add new criteria.
+The [challenge-specific checkpoints](challenges.md#technical-assessment-checkpoints) explain how these criteria apply; they do not add points.
+
+### What to expect
+
+Every team undergoes technical inspection of functionality, code, configurations, datasets, documentation, generated outputs and evaluation results. You may be asked to run a sample, reproduce a metric or explain an implementation decision. A technical demonstration is evidence, **not a separately scored presentation**. Speaking style and pitching quality do not affect the Track-Level score.
 
 ## Scoring and tie-breakers
 
-- **Final score** = (rubric score ÷ 100) × the challenge's points. For example, a team scoring 80 on Challenge 2 earns 0.80 × 200 = 160 points. A team scoring 90 on Challenge 1 earns 0.90 × 100 = 90 points.
-- Scores are given by a panel of judges. Each judge scores independently, and the final rubric score is the **average**. Judges may adjust a score after Q&A if the team could not explain the work.
+- Approximately **two to three judges** may assess each team. Each independently awards a score out of 100 using the published rubric. Your official Track-Level score is the **average**, with no difficulty multiplier.
+- Example: `(85 + 90 + 88) / 3 = 87.67/100`. Teams rank by their final average scores.
 - **Stretch goals** earn credit through the rubric (mainly rigor, creativity and impact). They do not add separate points.
-- A criterion is scored zero if the required item is missing (for example, no limitations note means no credit for the honest-limits part of Responsible AI).
+- Complete, reproducible evidence can earn full credit for a requirement; partial or inconsistent evidence earns partial credit. Missing or unsupported work earns no credit for the affected requirement.
 - **Tie-breakers**, in order:
-  1. Higher **Technical rigor and functionality** score
-  2. Higher **Pitch and presentation** score
-  3. Higher **SDG relevance and impact** score
-  4. The judging panel's vote
+  1. Higher average **Core functionality** sub-score
+  2. Higher average **Validation and technical correctness** sub-score
+  3. Higher average **Responsible AI and security** sub-score
+  4. Panel deliberation on technical evidence
 
 **Integrity.** Judges may ask any team member to explain how any part of the solution works, to rerun a result or to show the agent log. Results that cannot be reproduced or explained will be scored down.
 
+The **top three teams** qualify for the **Grand Finale**. The highest-ranked team receives **Best AI, Data Science and Machine Learning Solution**.
+
 ## Day-of timeline for this track
 
-The track follows the general event schedule. These are the track's own checkpoints. *(Organizers: add clock times that match the general schedule.)*
+The track follows the published event schedule and announced freeze. These are its preparation checkpoints:
 
 | When | What happens |
 |---|---|
@@ -97,7 +106,7 @@ The track follows the general event schedule. These are the track's own checkpoi
 | **Day 2, morning** | Build the remaining core requirements. Mentors available |
 | **Day 2, midday: Checkpoint 2** | All core requirements working, even if rough. From here, work on testing, limitations and the demo. Do not start new features |
 | **Day 2, code freeze** | Final push of code and submission of the repository link and documents |
-| **Day 2, pitches** | Live 5-minute pitch per team, followed by questions from the judges |
+| **Day 2, Track-Level Judging** | Technical inspection, demonstrations and short implementation clarification questions; no formal pitch |
 | **Day 2, close** | Judges' deliberation and results |
 
 **Advice for winning**
@@ -106,4 +115,4 @@ The track follows the general event schedule. These are the track's own checkpoi
 3. **Compare with a baseline**, and be honest if your model does not beat it. Judges respect clear thinking.
 4. **Split data the way the real world will test you**: by time for forecasts, by place for maps, by held-out items for retrieval and images.
 5. **Show uncertainty and limits.** Say who the system might fail, and how you checked.
-6. **Practice the pitch with a timer**, with the demo already running. Show one chart at a time, and say the finding aloud.
+6. **Rehearse the technical checks**, with the app running, sample inputs ready and evaluation outputs easy to locate.

@@ -19,13 +19,14 @@ Trophy, a mechanical keyboard per team member, certificates, a feature in
 university media, and priority introductions to partner organizations.
 
 ## Track Champions
-One per track: the highest-ranked team in its 100-point technical assessment.
+One per track: the highest-ranked team by its **average independent judge
+score out of 100** in the Track-Level technical assessment.
 The top **three**, not only the champion, qualify for the Grand Finale.
-- <i class="fa-solid fa-laptop-code ztf-icon" aria-hidden="true"></i> Best Software Solution
-- <i class="fa-solid fa-robot ztf-icon" aria-hidden="true"></i> Best AI / Data Science Solution
+- <i class="fa-solid fa-laptop-code ztf-icon" aria-hidden="true"></i> Best Software Development Solution
+- <i class="fa-solid fa-robot ztf-icon" aria-hidden="true"></i> Best AI, Data Science and Machine Learning Solution
 - <i class="fa-solid fa-lock ztf-icon" aria-hidden="true"></i> Best Cybersecurity Solution
-- <i class="fa-solid fa-link ztf-icon" aria-hidden="true"></i> Best Web3 & Blockchain Solution
-- <i class="fa-solid fa-gears ztf-icon" aria-hidden="true"></i> Best IoT / Robotics Solution
+- <i class="fa-solid fa-link ztf-icon" aria-hidden="true"></i> Best Web3 and Blockchain Solution
+- <i class="fa-solid fa-gears ztf-icon" aria-hidden="true"></i> Best IoT and Robotics Solution
 
 Medal, plaque, branded hoodie/T-shirt, and a laptop sleeve.
 

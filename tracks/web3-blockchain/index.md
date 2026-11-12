@@ -64,8 +64,13 @@ documentation and problem relevance. You may demonstrate the implementation
 and answer short technical questions. **No formal slide presentation or pitch
 is required, and no presentation marks are included.**
 
+Approximately **two to three judges** may assess each team independently.
+Their scores are **averaged** for the official Track-Level score and ranking,
+with no difficulty multiplier. For example:
+`(85 + 90 + 88) / 3 = 87.67/100`.
+
 The top **three Web3 teams** qualify for the Grand Finale. The highest-ranked
-Web3 team receives **Best Web3 & Blockchain Solution**.
+Web3 team receives **Best Web3 and Blockchain Solution**.
 
 **Stage 2: Grand Finale Pitch & Awards Judging.** The top three teams from each
 of five tracks form **15 finalists**. Each completes **From Prototype to

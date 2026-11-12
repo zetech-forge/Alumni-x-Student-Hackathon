@@ -14,6 +14,9 @@ Each team selects **ONE** challenge for the two-day event:
 (Advanced)**. Follow its [mandatory requirements and assessment checkpoints](challenges.md).
 Difficulty does not provide bonus points or change the 100-point maximum.
 
+Team size, eligibility, the Alumni/Finalist Collaborator requirement and
+conduct follow the [General Rules](../../general-rules.md).
+
 Build on the supplied baseline, identify your team's contribution, and connect
 the solution to an SDG through its **problem, beneficiary and measurable
 potential impact**. Explain why a blockchain is justified and disclose what it
@@ -43,11 +46,10 @@ speaking style must not substitute for evidence of correct behavior.
 
 ### Challenge-specific checkpoints
 
-Use the [three challenge-specific technical acceptance checklists](judging.md)
-and an [individual printable judge score sheet](judge-score-sheet.html).
-They define reproducible checks and full, partial and zero-point conditions.
-Retain the participant-facing acceptance criteria in [Challenges](challenges.md),
-including:
+Prepare the evidence in [Challenges](challenges.md) and the
+[challenge-specific technical acceptance checklists](judging.md).
+These explain reproducible checks and the conditions for full, partial or
+zero credit, including:
 
 | Challenge | Required technical evidence |
 | --- | --- |
@@ -62,18 +64,20 @@ are outside that budget. Payments above **0.02 ETH** require the
 
 ### Recording scores, ranking and tie-breakers
 
-Judges record category scores, supporting evidence and relevant failed checks
-on the approved challenge-specific score sheet. The panel confirms one final
-category breakdown and total, capped at **100 points**, for each team. Rank
-teams by that recorded technical total, highest first.
+Approximately **two to three judges** may assess each team. Each independently
+awards a score out of **100 points** using the selected challenge's technical
+criteria. Your official Track-Level score is the **average** of those scores,
+and teams rank from highest to lowest final average.
 
-For a track-level tie, compare **Core challenge functionality and completion**
-scores first. If still tied, the judges' panel reviews the technical evidence,
-records its decision and confirms the ranking. Do not introduce a pitch or
+For example: `(85 + 90 + 88) / 3 = 87.67/100`.
+
+For a Track-Level tie, compare the average **Core challenge functionality and
+completion** sub-score first. If still tied, the panel deliberates on the
+technical evidence. Do not introduce a pitch, difficulty multiplier or
 unannounced presentation criterion to break a technical-stage tie.
 
 The **top three Web3 teams qualify for the Grand Finale**. The
-**highest-ranked Web3 team receives Best Web3 & Blockchain Solution**.
+**highest-ranked Web3 team receives Best Web3 and Blockchain Solution**.
 
 ## Stage 2: Grand Finale Pitch & Awards Judging
 
@@ -153,13 +157,12 @@ Safety violations remain subject to the event's disqualification rules.
 
 Follow the [general submission requirements](../../general-rules.md#what-every-team-submits),
 including your team's code repository, setup/run README, **2-3 minute backup
-demo video**, short pitch deck, live URL if applicable, team details, named
+demo video**, live URL if applicable, team details, named
 Alumni/Finalist Collaborator and contribution note, SDG impact statement,
 technology stack, AI-tool disclosure and known limitations.
 
-The deck is part of the event submission package; **it does not create a
-Stage 1 pitch requirement or presentation marks**. Finalists present through
-the Grand Finale process.
+**No slide deck or formal pitch is required for this Track-Level submission.**
+Any Grand Finale presentation requirements apply only to qualifying finalists.
 
 For this track, also include:
 

@@ -36,7 +36,7 @@ No previous robotics experience is required. Participants should be comfortable 
 
 **Day 1 — Understand and build:** Attend the track briefing, select one challenge tier, identify the user need, and divide tasks. Begin with a small working sensor-to-output prototype. Use simulation first if a physical part is not immediately available; ask organizers to schedule shared hardware when needed.
 
-**Day 2 — Test and present:** Complete the core behavior, test several input cases, improve reliability, and prepare the required code, README, system diagram, and demo. Make clear which features were simulated and which were tested physically. Use the [Track Rules](rules.md) and [Challenges](challenges.md) pages for exact submission and scoring details.
+**Day 2 — Test and demonstrate:** Complete the core behavior, test several input cases, improve reliability, and prepare the required code, README, system diagram, test log and backup demo video. Make clear which features were simulated and which were tested physically. Every tier is assessed directly out of 100 technical points; no slides or formal pitch are required, and presentation quality earns no points. Use the [Track Rules](rules.md) and [Challenges](challenges.md) pages for submission and scoring details.
 
 ## Learning resources
 

@@ -21,7 +21,7 @@ By the end of the prep period, a participant should be able to:
 - Build an AI agent that calls tools, cites its numbers, logs what it does and says "I don't know"
 - Present results in a clear map, dashboard or story
 - Audit a model for errors by group or area, protect privacy, and write a limitations note
-- Package a project so another person can run it, and present it in 5 minutes
+- Package a project so another person can run it and reproduce its technical results
 - Link a solution to at least one UN Sustainable Development Goal (SDG)
 
 Beginners in Challenge 1 add: climate statistics (normals, anomalies, extremes, trends) and seasonal forecasting skill. Intermediate participants in Challenge 2 add: spatial statistics, uncertainty and epidemiology (prevalence mapping, presence-only data, meta-analysis of drug studies). Advanced participants in Challenge 3 add: multimodal AI (speech, image and text retrieval), access control for AI systems, and building a benchmark that measures hallucination.
@@ -56,7 +56,7 @@ Module numbers match the [Course](course.md) page. In the table, **●** means t
 | 8 | LLMs and RAG | 4 h | ● | ● | ● | Prompt a model, ground answers in sources, say "I don't know" |
 | 9 | AI agents and tool use | 3 h | ● | ● | ● | Build an agent with traceable tool calls |
 | 10 | Responsible AI, privacy and security basics | 2 h | ● | ● | ● | Audit errors by group and write a model card |
-| 11 | Ship it: repo, reproducibility, pitch | 3 h | ● | ● | ● | Package your work and deliver a 5-minute pitch |
+| 11 | Ship it: repo, reproducibility, technical evidence | 3 h | ● | ● | ● | Package your work, reproduce results and demonstrate required functionality |
 
 ### Specialist modules (by challenge)
 
@@ -90,7 +90,7 @@ For Module 17, the parts about validation, idempotency, logging and one-command 
 | 11 | Module 12 (climate indicators) | |
 | 12 | Module 9 and the agent part of Module 8 | |
 | 13 | Module 10 | |
-| 14 | Module 11 and **Checkpoint 2** | A mini Climate Sentinel, with README and a 5-minute pitch |
+| 14 | Module 11 and **Checkpoint 2** | A mini Climate Sentinel, with README, evaluation outputs and a repeatable technical demonstration |
 
 If you have less than two weeks, do Setup, Modules 1, 2, 5, 6, 7, 12 and 9 first. Those give you the biggest return for Challenge 1.
 
@@ -110,6 +110,8 @@ If you have less than two weeks, do Setup, Modules 1, 2, 5, 6, 7, 12 and 9 first
 | Phase 3 | Practice the one-command build and evaluation (Module 17), and draft your model card and limitations note. |
 
 ## Before competition day
+
+Track-Level Judging assesses each selected challenge out of **100 technical points**, without difficulty multipliers. Prepare the working implementation, data/sample inputs, evaluation results, logs and documents listed in the [rules](rules.md). You may demonstrate functionality and answer technical questions, but no slides or formal pitch are required and presentation quality earns no points.
 
 - [ ] Python (or a Colab account) and Git are working
 - [ ] You have a GitHub account and a project repository ready

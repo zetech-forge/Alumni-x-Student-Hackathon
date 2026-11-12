@@ -29,9 +29,9 @@ this is a working draft built from the event's planned flow.)*
 |---|---|
 | 9:00-13:00 | Continued build |
 | 13:00-14:00 | Lunch |
-| 14:00-15:00 | Testing & pitch preparation |
+| 14:00-15:00 | Testing, documentation and technical demonstration preparation |
 | 15:00-15:30 | **Submission freeze** -- no further code changes after this point |
-| 15:30-16:30 | Stage 1: parallel Track-Level technical assessments (100 points); panels confirm the top three per track |
+| 15:30-16:30 | Stage 1: parallel Track-Level technical assessments (100 points); independent judge scores are averaged to rank teams and identify the top three per track |
 | 16:30-18:15 | Stage 2: Grand Finale Pitch & Awards Judging; 15 finalists complete the mandatory real-world impact challenge (+30 points) |
 | 18:15-18:30 | Finale score confirmation and award deliberation |
 | 18:30-19:30 | Project showcase, awards, alumni & partner recognition, closing (Chief Guest) |
@@ -48,7 +48,9 @@ whether the one-hour parallel assessment window fits their actual team counts
 and technical checks; pre-review submitted evidence and request a revised slot
 if it does not. Do not silently shorten acceptance checks.
 
-Stage 1 has **no formal pitch or presentation points**. Teams prepare the
-common five-slide deck before freeze, but only the 15 finalists present
-[From Prototype to Real-World Impact](real-world-impact.md) in Stage 2.
+Stage 1 has **no slide-deck requirement, formal pitch or presentation points**.
+The presentation requirements for
+[From Prototype to Real-World Impact](real-world-impact.md) apply only to the
+15 qualifying finalists in Stage 2. Follow the announced finalist preparation
+and submission instructions; the code freeze is not a universal deck deadline.
 The combined maximum is **130**, normalized as `(Combined Score / 130) * 100`.

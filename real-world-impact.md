@@ -35,8 +35,10 @@ has not been verified. Web3 sandbox restrictions still apply.
 
 ## Agreed five-slide structure
 
-The **recommended presentation duration is five minutes**. Prepare the deck
-before the submission freeze; finalists use it in the Grand Finale.
+The **recommended presentation duration is five minutes**. Only qualifying
+finalists are required to prepare this deck, following the announced Grand
+Finale preparation and submission instructions. It is not a Track-Level
+submission requirement.
 
 | Slide | Title | Essential evidence |
 |---|---|---|
@@ -63,7 +65,7 @@ Judges record awarded points and supporting evidence for each criterion.
 Full points require specific, credible evidence covering the criterion;
 partial points reflect incomplete or weakly supported evidence; absent or
 unsupported claims receive zero. These points are **additional to**, not
-deducted from, the confirmed 100-point technical score.
+deducted from, the official Track-Level average out of 100.
 
 ```text
 Combined Score = Track-Level Technical Score + Mandatory Challenge Score

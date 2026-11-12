@@ -150,16 +150,18 @@ evidence matters more than a model's text claiming success.
 | R1 | Ask for the agent's user problem, SDG target and success measure. | A justified use case and measurable benefit are described without speculative impact claims. |
 | R2 | Ask why programmable on-chain limits help. | Team explains bounded autonomy, owner trust, public local-key limitations and what still needs protection. |
 
-## Panel handover
+## Scoring and qualification
 
-Sum all 20 item scores, record five category totals on each judge's sheet,
-and attach check-level evidence/comments. The panel confirms its category
-breakdown and **technical total out of 100**, then applies the
-[published ranking and tie-breaker](rules.md#recording-scores-ranking-and-tie-breakers).
-Preserve individual sheets and document any panel adjustments rather than
-silently replacing evidence.
+Each judge independently assesses the selected challenge's 20 checks using
+the five category totals, for a maximum of **100 points**. Approximately
+two to three judges may assess each team. Their independent totals are
+**averaged** for the official Track-Level score, not replaced by a single
+panel total. For example: `(85 + 90 + 88) / 3 = 87.67/100`.
+Teams rank by that average, with the
+[published technical tie-breaker](rules.md#recording-scores-ranking-and-tie-breakers)
+applied where needed.
 
-The highest-ranked team receives **Best Web3 & Blockchain Solution**; the
+The highest-ranked team receives **Best Web3 and Blockchain Solution**; the
 top three advance. Do not add a pitch score here. Only finalists undertake
 the common **[From Prototype to Real-World Impact](../../real-world-impact.md)**
 challenge for 30 additional points.

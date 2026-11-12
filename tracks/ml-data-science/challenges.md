@@ -8,17 +8,19 @@ nav_order: 4
 
 This track has **three challenges**. Each one is a mini-project that combines several disciplines in a single working system: **data engineering, geospatial analysis, machine learning, software engineering and AI agents**, plus a domain ingredient that changes with the challenge (climate science, epidemiology, or product and industrial knowledge).
 
-Each challenge is designed to be a working prototype within the two-day event. **Day 1** is for ideation, data and a first working baseline. **Day 2** is for building the rest, testing, and preparing your pitch. Every challenge has:
+Choose **one** challenge for a working prototype within the two-day event. **Day 1** is for ideation, data and a first working baseline. **Day 2** is for completing the implementation, testing and preparing technical evidence. Every challenge has:
 
 - **Core requirements** that every team must complete, and
-- **Stretch goals** for teams that finish early and want more points for depth.
+- **Stretch goals** for teams that finish early and can demonstrate useful depth within the existing rubric; they do not add bonus points.
 
 A team that finishes the core requirements and demonstrates them well will score better than a team that attempts everything and finishes nothing.
 
+All three choices are assessed out of **100 points**, with no difficulty multiplier. Approximately two to three judges may inspect the implementation and independently score it; their scores are averaged for ranking. The top three teams qualify for the Grand Finale. **No slides or formal pitch are required for Track-Level Judging; demonstrations verify technical evidence and carry no presentation marks.** See the [rules](rules.md) for the rubric, submissions and tie-breakers.
+
 | | Challenge 1 | Challenge 2 | Challenge 3 |
-
-
+|---|---|---|---|
 | **Name** | Climate Sentinel | Malaria Atlas Lab | Product Copilot |
+| **Difficulty / maximum score** | Beginner / 100 | Intermediate / 100 | Advanced / 100 |
 | **Theme** | Cyclones, heavy rain and drought: analysis, early warning and response planning | Malaria mapping, parasite species patterns and drug effectiveness in Africa | A multimodal assistant that replaces printed product manuals for engineers and customers |
 | **Data skills** | 30+ years of weather and hazard-event data, cleaned and aggregated | Fuse survey, surveillance, genomic and environmental data | Collect, clean and structure a company's product knowledge from text, images and audio |
 | **Geospatial** | Hazard maps, exposure and risk zones | Prevalence mapping with spatial statistics | Optional: service-region and depot mapping (stretch) |
@@ -59,7 +61,7 @@ A team that finishes the core requirements and demonstrates them well will score
   | Machine learning | Forecast unusually dry seasons and heavy-rain days, and test honestly against simple baselines |
   | Geospatial | Map hazard status by district, cyclone exposure and the people at risk |
   | AI agent | Build an early-warning agent that calls tools, writes a cited advisory and proposes a response plan |
-  | Disaster planning and storytelling | A dashboard, an action playbook and a 5-minute pitch for decision makers |
+  | Disaster planning and communication | A dashboard and cited action playbook that support decision makers |
 
 - **Objectives (core requirements):**
   1. **Data.** Build a clean dataset with **at least 30 years of daily rainfall and temperature** (1991 to the present) for **at least 8 locations** in your region, from a free source such as the Open-Meteo historical weather API. Add district **boundaries**, a **population** raster, a monthly **El Niño index** (ENSO) and, for coastal regions, the **IBTrACS** historical storm-track archive. Record every source, access date and license in `DATA.md`. State clearly that the rainfall is a **model- or satellite-based estimate, not a rain gauge reading**, and what that means for accuracy.
@@ -81,7 +83,7 @@ A team that finishes the core requirements and demonstrates them well will score
   7. **Short-range watch.** Use a live forecast API to get the next 7 days of rainfall (and wind, for coastal regions) for each location, and flag any location whose forecast 3-day total passes its own 99th percentile threshold from step 3.
   8. **AI agent.** Build an early-warning agent with **at least 5 tools**: current climate status, the 7-day forecast watch, your seasonal outlook, the cyclone exposure lookup, the population exposure lookup, and a **playbook lookup** (see step 9). For any district, the agent writes a short advisory covering: *what is happening compared with normal, what is likely next (with probability and confidence), who is exposed, and what to prepare*. It must **cite the tool result behind every number**, log every tool call, **say "I don't know" when data is missing**, and always state that **official warnings from the national meteorological service take priority**. The advisory remains a **draft until a person approves it** (a simple approve button is enough). Test it with at least 5 questions, including: one it cannot answer (for example, exactly when it will rain on a particular farm), one about a district that does not exist, one asking it to predict the exact path of a cyclone, and one that tries to make it say there is no risk when the data says otherwise.
   9. **Playbook and limitations.** Write a one-page **action playbook**: for each hazard (drought, flood, cyclone) and hazard level (for example watch, warning, emergency), list 5 to 8 preparedness and response actions, **each taken from a cited guidance document** (for example from WMO, FAO, OCHA, your national disaster agency or humanitarian guidelines). The agent may only recommend actions from this playbook. Also write a one-page **limitations note**: where your data or model is weak, which districts or seasons you trust least, and who might be missed.
-  10. **Story.** A dashboard or app with the hazard map, a chart of rainfall against normal for a chosen district, the seasonal outlook, cyclone exposure and the agent's advisory. Prepare a 5-minute pitch for a district disaster manager.
+  10. **Dashboard output.** A dashboard or app with the hazard map, a chart of rainfall against normal for a chosen district, the seasonal outlook, cyclone exposure and the agent's advisory. Make the evidence and planning limitations understandable to a district disaster manager.
 
 - **Stretch goals:**
   - Replace the drought indicator with the **Standardized Precipitation Index (SPI)**, the drought measure recommended by the World Meteorological Organization, and compare the two.
@@ -95,7 +97,7 @@ A team that finishes the core requirements and demonstrates them well will score
 - **Constraints:**
   - Complete within the two-day event window.
   - **Data**  use publicly available data
-  - This is a **planning-support tool**, not an official warning system. State this in the app and in your pitch.
+  - This is a **planning-support tool**, not an official warning system. State this in the app and README.
 
 - **Deliverable:** Submit all of the following:
   1. A **public repository** with a README (region, target users, chosen SDG, how to run), `requirements.txt` and `DATA.md`.
@@ -104,12 +106,12 @@ A team that finishes the core requirements and demonstrates them well will score
   4. A **working app or dashboard** with the hazard map, exposure counts, outlook and the early-warning agent.
   5. The **agent log** for your 5 test questions, including the approval step.
   6. The **action playbook** (with citations) and the **limitations note**.
-  7. A **5-minute live demo and pitch**.
+  7. A reproducible **technical demonstration** and the required **2-3 minute backup demo video**, without a formal pitch or slides.
 
 
 
 
-## Challenge 
+## Challenge 2
 
 ### Malaria Atlas Lab, Mapping Malaria, Parasite Species Patterns and Drug Effectiveness in Africa
 
@@ -117,7 +119,7 @@ A team that finishes the core requirements and demonstrates them well will score
 
 - **Scenario:** A national malaria programme must decide where to send bed nets, spraying teams and test kits, and which first-line drugs to recommend. Three questions drive those decisions: **Where is malaria transmitted most and how is it changing? Which parasite species are present where? And are the drugs still working?** The data to answer them exists, but it is scattered across household surveys, health facility counts, clinical drug trials, parasite genetics and environmental layers, and each source is incomplete and biased in a different way. Your team will build **Malaria Atlas Lab**: a pipeline that maps malaria burden for a chosen set of African countries, models the geographic pattern of parasite species, estimates the **effectiveness of antimalarial drugs and the spread of resistance markers** from published study data, and presents the results, with uncertainty, through an **evidence-grounded briefing agent** for programme planners.
 
-  **This is a research-support and planning tool. It is not a diagnostic or treatment tool and must never give clinical advice to individual patients.** State this in the app and in your pitch.
+  **This is a research-support and planning tool. It is not a diagnostic or treatment tool and must never give clinical advice to individual patients.** State this in the app and README.
 
 - **What you will combine:**
 
@@ -128,7 +130,7 @@ A team that finishes the core requirements and demonstrates them well will score
   | Statistics and epidemiology | Handle sampling bias, spatial autocorrelation, confidence intervals and meta-analysis |
   | Machine learning | Spatial prediction of prevalence, prediction of resistance-marker frequency, species pattern modelling, all validated on unseen locations |
   | AI agent | A surveillance briefing agent that retrieves evidence and never invents numbers |
-  | Public health communication | A dashboard, a limitations note and a 5-minute pitch for a programme manager |
+  | Public health communication | A dashboard and limitations note that support a programme manager |
 
 - **Objectives (core requirements):**
   1. **Data.** Choose **at least 3 African countries** (or one large country with at least 15 districts or regions) and build a clean dataset from open sources. Minimum content:
@@ -173,7 +175,7 @@ A team that finishes the core requirements and demonstrates them well will score
   4. A **working dashboard** with maps, trends and the briefing agent.
   5. The **agent log** for your 6 test questions, including the approval step.
   6. A **model card and limitations note** (one to two pages): data gaps, biases, which countries or years you trust least, and what the tool must not be used for.
-  7. A **5-minute live demo and pitch**.
+  7. A reproducible **technical demonstration** and the required **2-3 minute backup demo video**, without a formal pitch or slides.
 
 
 
@@ -243,7 +245,7 @@ A team that finishes the core requirements and demonstrates them well will score
   - **Data** use publicly available data
   - Respect licenses and terms of use. Do not copy proprietary manuals you are not allowed to use.
   - Use **synthetic data** for anything that looks like customer, supplier or cost information. Attacks and tests must target only your own system.
-  - The assistant is a **decision-support tool**. It does not replace manufacturer documentation, certified technicians or local safety regulations. State this in the app and in your pitch.
+  - The assistant is a **decision-support tool**. It does not replace manufacturer documentation, certified technicians or local safety regulations. State this in the app and README.
 
 - **Deliverable:** Submit all of the following:
   1. A **public repository** with a README (company, target users, chosen SDG, architecture diagram, how to run), `requirements.txt`, `DATA.md`, and the **one-command** build and evaluation script (Docker or an equivalent).
@@ -253,5 +255,22 @@ A team that finishes the core requirements and demonstrates them well will score
   5. A **working app** with engineer mode, customer mode, source panel and the agent's tool-call log.
   6. A **short security and access-control note**: what is restricted, how access is enforced before retrieval, and what attacks were tried.
   7. A **model card and limitations note**: products or topics where the assistant is weak, languages it handles poorly, and who might be misled.
-  8. A **5-minute live demo and pitch**, with one engineer scenario and one customer scenario.
+  8. A **technical demonstration** with one engineer scenario and one customer scenario, plus the required **2-3 minute backup demo video**. No formal pitch or slides.
 
+---
+
+## Technical assessment checkpoints
+
+The [shared rubric](rules.md#judging-criteria) applies to each challenge. These checkpoints explain its allocations: **30 + 25 + 15 + 10 + 10 + 10 = 100 points** for every difficulty level.
+
+| Criterion | Points | Climate Sentinel - Beginner | Malaria Atlas Lab - Intermediate | Product Copilot - Advanced |
+|---|---:|---|---|---|
+| Core functionality | 30 | Required weather history/locations, hazard indicators, exposure map, seasonal outlook, forecast watch and approval-gated advisory with cited playbook actions. | Required country/district coverage, prevalence/uncertainty maps, species analysis, drug efficacy/resistance results and approval-gated briefing dashboard. | Required catalogue/document/image/audio coverage, both user roles, multimodal input, sourced comparisons/prices and the working app/source panel. |
+| Validation and technical correctness | 25 | Historical event checks, time-based validation, both baselines, per-location metrics and probability skill; disclose when the model adds no skill. | Spatial holdouts, prevalence baseline/interval checks, presence-data limitations, efficacy uncertainty and held-out resistance predictions. | At least 60 reference questions, speech/image held-out metrics, answer/citation/comparison/calculation correctness, hallucination and refusal results. |
+| SDG relevance and impact | 15 | Explain the chosen region, intended planner, relevant SDG and supported preparedness decision. | Explain the programme-planning decision, intended users and SDG connection without claiming individual clinical benefit. | Explain the engineer/customer need, chosen SDG and supported decision without replacing manufacturer safety guidance. |
+| Responsible AI and security | 10 | Logged, grounded tool outputs, missing-data behavior, official-warning priority, human approval and regional limitations. | Logged evidence and uncertainty, clinical-advice refusal, privacy, missing-evidence behavior and human approval. | Pre-retrieval role enforcement, adversarial results before/after defenses, safe refusals and human hand-off for consequential answers. |
+| Reproducibility and documentation | 10 | README, dependencies, licensed sources, notebooks, five-question agent log, playbook and limitations. | README, dependencies, sources, assumptions, notebooks, six-question agent log, model card and one-command results. | README, dependencies, licensed knowledge base/provenance, benchmark, logs, security/model notes and one-command build/evaluation. |
+| Creativity, approach and insight | 10 | Justify indicators/models and explain a useful finding beyond generated maps. | Justify analytical choices and explain bias, species/drug evidence and planning implications. | Justify modality/retrieval choices and explain measured trade-offs rather than relying on model claims. |
+| **Total per challenge** | **100** | | | |
+
+Keep the required data, sample questions, app/notebooks and results accessible. You may be asked to reproduce outputs or explain code and evaluation choices. Full credit requires the relevant outcome and supporting evidence; incomplete work receives partial credit, and missing or unsupported work receives none for that requirement.

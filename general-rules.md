@@ -40,18 +40,28 @@ Registration opens via [REGISTRATION LINK] and closes [DATE]. See the [Register]
 If a team is short a member or loses one before the event, they may add a replacement up to 48 hours before the event starts, provided the team still meets the 3-4 member and Alumni/Finalist Collaborator requirements. After that point, incomplete teams compete as-is or are merged with organizer approval.
 
 ## What every team submits
-Regardless of track, every team's final submission must include:
+For Track-Level Judging, every team submits the following through the announced
+event channel by the published submission freeze:
 1. A GitHub repository with their code
 2. A README with setup/run instructions
 3. A 2-3 minute demo video (required as a backup even if you also demo live -- live demos can fail on flaky wifi or APIs)
-4. A short pitch deck
-5. A live demo URL, if applicable
-6. Team member details, including who served as the Alumni/Finalist Collaborator
-7. An **Alumni Contribution** note: what did your alumni/finalist member actually contribute? (see Team composition above)
-8. An SDG impact statement (see SDG alignment below)
-9. The technology stack used
-10. An AI-tool disclosure (see below)
-11. Known limitations
+4. A live demo URL, if applicable
+5. Team member details, including who served as the Alumni/Finalist Collaborator
+6. An **Alumni Contribution** note: what did your alumni/finalist member actually contribute? (see Team composition above)
+7. An SDG impact statement (see Choosing a track above)
+8. The technology stack used
+9. An AI-tool disclosure (see below)
+10. Known limitations
+
+Also prepare the challenge-specific project files, sample inputs, permitted
+datasets, configurations, tests and outputs listed in your track's rules.
+Provide example environment variables where needed, never real credentials.
+Have the implementation and required simulation or approved hardware ready
+for technical inspection.
+
+**No slide deck or formal pitch is required for Track-Level Judging.**
+Any Grand Finale presentation requirements apply only to qualifying finalists,
+not to the 100-point technical submission.
 
 ## AI usage
 AI-assisted development is permitted across every track. Teams must disclose significant use of AI coding assistants, generative AI systems, pretrained models, and APIs in their submission -- which tools, and roughly how much they contributed. This is for transparency; it is not penalized unless undisclosed.
@@ -65,22 +75,45 @@ Participants retain ownership of their original intellectual property unless a s
 Opening session → Keynote → Technology bootcamps (per-track crash courses) → Team formation → Challenge briefing → Ideation → Prototype development
 
 **Day 2 — Build & Pitch**
-Continued development → Mentor consultations → Prototype testing & pitch prep → Demonstrations → Judging → Awards → Networking → Closing (with a Chief Guest closing the event)
+Continued development → Mentor consultations → Prototype testing & documentation → Track-Level technical assessment → Grand Finale for qualifiers → Awards → Networking → Closing (with a Chief Guest closing the event)
 
 ## Awards & judging
 
 ### Stage 1: Track-Level Judging
 
 Every team undergoes a **technical assessment worth 100 points**, using its
-approved challenge-specific rubric. Judges inspect and test implementations;
-teams may demonstrate functionality and answer short technical clarification
-questions. **No formal slide presentation or pitch is required or scored at
-this stage.**
+published challenge-specific rubric. Where Beginner, Intermediate and Advanced
+categories exist, **each has the same 100-point maximum**. There are no
+difficulty multipliers or automatic extra points for selecting a harder
+challenge. Cybersecurity retains its task-based structure.
 
-Judges record criterion scores, evidence and comments, then rank teams within
-each track. The **top three teams per track qualify for the Grand Finale**.
-The highest-ranked team in each track receives its track award; the Web3 award
-is **Best Web3 & Blockchain Solution**.
+Judges inspect and test required functionality, review source code,
+configurations and documentation, and verify outputs and technical
+correctness. Teams may demonstrate functionality and answer short technical
+clarification questions. A demonstration supplies implementation evidence;
+it is **not a separately scored presentation**. No formal slides or pitch
+are required, and presentation skills, slide design and pitching quality
+must not contribute to this score.
+
+Approximately **two to three judges** may assess each team. Each independently
+awards a score out of 100 using the published criteria. The scores are
+**averaged** to produce the team's official Track-Level score:
+
+```text
+Example: (85 + 90 + 88) / 3 = 87.67/100
+```
+
+Teams are ranked from highest to lowest final average within their track.
+The **top three teams per track qualify for the Grand Finale**.
+The highest-ranked team in each track receives its respective track award:
+
+| Track | Published technical criteria | Track award |
+|---|---|---|
+| Software Development | [100-point rubric](tracks/software-development/rules.md#judging-criteria) | Best Software Development Solution |
+| Machine Learning & Data Science | [100-point rubric](tracks/ml-data-science/rules.md#judging-criteria) | Best AI, Data Science and Machine Learning Solution |
+| Cybersecurity | [100-point rubric](tracks/cybersecurity/rules.md#judging-criteria) | Best Cybersecurity Solution |
+| Web3 & Blockchain | [100-point rubric](tracks/web3-blockchain/rules.md#technical-scoring) | Best Web3 and Blockchain Solution |
+| IoT & Robotics | [100-point rubric](tracks/iot-robotics/rules.md#judging-criteria) | Best IoT and Robotics Solution |
 
 ### Stage 2: Grand Finale Pitch & Awards Judging
 
@@ -119,13 +152,22 @@ A team may be disqualified for:
 - Abusive conduct toward organizers, judges, alumni, or other teams
 
 ## Scoring and tie-breakers
-Use the approved technical rubric and tie-breaker for the team's track.
-Record individual judge scores and supporting evidence before panel review;
-the panel confirms the track ranking and three qualifiers. Web3 uses
-[its technical scoring and tie-breaker](tracks/web3-blockchain/rules.md#recording-scores-ranking-and-tie-breakers).
-Do not use a pitch to break a technical-stage tie.
+Your official Track-Level score is the average of the independent judges'
+100-point scores, not a difficulty-adjusted score or a replacement panel
+total. Use the published technical tie-breakers for your track, comparing
+the relevant averaged criterion sub-scores in the stated order:
 
-Finale scores carry the confirmed Stage 1 result forward and use the common
+- [Software Development](tracks/software-development/rules.md#scoring-and-tie-breakers)
+- [Machine Learning & Data Science](tracks/ml-data-science/rules.md#scoring-and-tie-breakers)
+- [Cybersecurity](tracks/cybersecurity/rules.md#scoring-and-tie-breakers)
+- [Web3 & Blockchain](tracks/web3-blockchain/rules.md#recording-scores-ranking-and-tie-breakers)
+- [IoT & Robotics](tracks/iot-robotics/rules.md#scoring-and-tie-breakers)
+
+If those criteria do not resolve a tie, the panel deliberates on the technical
+evidence. No pitch, presentation score or unpublished bonus may be introduced
+to break a Track-Level tie.
+
+Finale scores carry that official Stage 1 average forward and use the common
 30-point rubric above. Finale tie-breaks and special-award selection require
 the organizing committee's published procedure before judging; they must not
 introduce unannounced points.

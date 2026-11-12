@@ -33,8 +33,8 @@ Choose based on which challenge in Challenges your team is leaning toward:
 
 **2C -- Retrieval-augmented generation basics** (for Challenge C): what embeddings and vector search are, how a RAG pipeline is structured (retrieve → synthesize → cite), why unbounded agent loops are risky in a time-boxed demo. ~3-4 hours.
 
-### Module 3: Pitching what you built (everyone)
-Judging weighs your live pitch/demo at 25% -- practice explaining your solution, your SDG link, and a live walkthrough in under 5 minutes. ~1 hour.
+### Module 3: Preparing technical evidence (everyone)
+Practice running the required functionality, repeating failure/edge cases and locating the source code and outputs that explain the results. Prepare the README, test evidence, SDG explanation and backup demo video. Track-Level Judging is a 100-point technical assessment: no slides or formal pitch are required, and presentation quality earns no points. See the [rubric and challenge checkpoints](rules.md). ~1 hour.
 
 ## Suggested timeline
-If you have lead time before 11-12 November: do Module 1 and skim all three challenges in Week 1, pick a challenge and go deep on the matching module (2A/2B/2C) in Week 2, and do a practice pitch in the days right before the event.
+Before **12-13 November 2026**, make sure Git and your chosen development tools work, read the three challenges and focus on the relevant module (2A/2B/2C). During Day 1, select one challenge and get a baseline running. During Day 2, finish core functionality, test it and prepare reproducible technical evidence before the announced freeze.
