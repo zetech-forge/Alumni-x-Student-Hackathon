@@ -1,6 +1,6 @@
 ---
 title: Register
-nav_order: 2
+nav_exclude: true
 ---
 
 # Register
