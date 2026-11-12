@@ -70,7 +70,10 @@ interface, runtime port, health check, secret configuration and any approved
 persistence/inference dependencies. Practice the DSA trace/comparison and repeat
 the core workflow through the assigned HTTPS URL, not only localhost.
 
-Every challenge uses the [35/20/15/15/5/10 technical rubric](rules.md#judging-criteria), totaling **100 points**. No slides or formal Track-Level pitch are required; presentation quality earns no points.
+Every challenge uses the [25/15/15/10/15/10/5/5 technical rubric](rules.md#judging-criteria),
+totaling **100 points**, with dedicated DSA and PrimeCloud deployment criteria.
+No slides or formal Track-Level pitch are required; presentation quality earns
+no points.
 
 ## Suggested timeline
 

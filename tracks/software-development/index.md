@@ -46,6 +46,9 @@ or production-grade cloud architecture is required.
 
 Every team receives a **100-point technical assessment** against its selected challenge's requirements, without a difficulty multiplier. Approximately two to three judges may inspect your implementation, tests, outputs and documentation; their independent scores are averaged to rank teams. You may demonstrate functionality and answer technical questions, but **no slides or formal pitch are required and presentation quality earns no points**. The top three teams qualify for the Grand Finale; the highest-ranked team receives **Best Software Development Solution**.
 
-The common allocation is **35 functionality + 20 technical design + 15 testing + 15 code/documentation + 5 security/privacy + 10 practical relevance = 100 points**.
+The common allocation is **25 functionality + 15 DSA + 15 PrimeCloud deployment +
+10 technical design + 15 testing + 10 code/documentation + 5 security/privacy +
+5 practical relevance = 100 points**. See the [full rubric](rules.md#judging-criteria)
+and [challenge-specific checkpoints](challenges.md#technical-assessment-checkpoints).
 
 See [Content & Curriculum](content.md) to prepare, [Curated Resources](resources.md) for tools and docs, [Track Rules & How to Compete](rules.md) for judging and submission details, and [Challenges](challenges.md) for the full problem statements.
