@@ -6,7 +6,7 @@ nav_order: 1
 
 # Content & Curriculum
 
-This is the self-study plan to complete **before** competition day. The full lessons, with explanations, code and exercises, are on the [Course](course.md) page. This page tells you what to learn, in what order and how long it takes, depending on the challenge you plan to attempt. Links to external tutorials, datasets and tools are on [Curated Resources](resources.md).
+Use this guide to prepare for your **selected challenge**, not to complete every module before building. The challenge scopes and technical minimums are unchanged. The modules below identify relevant skills; explanations and examples are linked from [Curated Resources](resources.md). There is no separate published Course page in this track.
 
 The three challenges are **Climate Sentinel** (Beginner), **Malaria Atlas Lab** (Intermediate) and **Product Copilot** (Advanced). Read them on the [Challenges](challenges.md) page first, so you can see what you are preparing for.
 
@@ -30,17 +30,17 @@ Beginners in Challenge 1 add: climate statistics (normals, anomalies, extremes, 
 
 | Level | What you should already know |
 |---|---|
-| **Beginner** | Basic computer skills and school-level maths. No programming experience is needed. |
+| **Beginner** | Basic Python, loading and summarizing tables, simple charts and school-level maths. Review the full weather/forecasting/mapping requirements before choosing Climate Sentinel. |
 | **Intermediate** | Some Python (variables, loops, functions) and experience with tables of data, or a first model built in a class or tutorial. |
 | **Advanced** | Comfortable with Python, pandas and scikit-learn, and Git. Some experience with at least one of: language-model applications, speech or image models, or building web apps and APIs. |
 
-Not sure where you fit? Try the Module 2 exercise on the Course page (load a CSV and summarize it by group). If it takes more than an hour, start at the beginning.
+Not sure where to start? Load a small permitted CSV, inspect missing values and summarize it by group. If this is unfamiliar, begin with Python/pandas preparation and ask a mentor about the challenge workload.
 
 ## Topic breakdown
 
-Module numbers match the [Course](course.md) page. In the table, **●** means the module is needed for that challenge and **○** means it is helpful. Challenge 1 is Climate Sentinel, Challenge 2 is Malaria Atlas Lab and Challenge 3 is Product Copilot.
+Module numbers are references within this guide. **●** marks a skill relevant to implementing that challenge and **○** marks supplementary study; neither means that every lesson must be completed before the event. Times are optional self-study estimates, not the Day 1 bootcamp agenda. Challenge 1 is Climate Sentinel, Challenge 2 is Malaria Atlas Lab and Challenge 3 is Product Copilot.
 
-### Core modules (everyone)
+### Shared learning areas
 
 | Module | Topic | Time | Ch. 1 | Ch. 2 | Ch. 3 | You will be able to |
 |---|---|---|---|---|---|---|
@@ -74,49 +74,34 @@ For Module 17, the parts about validation, idempotency, logging and one-command 
 
 ## Suggested timeline
 
-### Beginners (Challenge 1): 14 days, about 2 hours a day
+The event is **12-13 November 2026**. Prioritize a verified environment and data/model access, then build incrementally. A preparation exercise is not a reduced submission specification.
 
-| Day | Study | Checkpoint |
-|---|---|---|
-| 0 | Setup | Run `print("hello")` and push a notebook to GitHub |
-| 1 | Modules 0 and 1 | |
-| 2 to 3 | Module 2 | |
-| 4 | Module 3 | |
-| 5 | Module 4 | |
-| 6 | Module 5 | |
-| 7 | Catch-up and **Checkpoint 1** | A short data story from weather data for one city |
-| 8 | Module 6 | |
-| 9 to 10 | Module 7 | |
-| 11 | Module 12 (climate indicators) | |
-| 12 | Module 9 and the agent part of Module 8 | |
-| 13 | Module 10 | |
-| 14 | Module 11 and **Checkpoint 2** | A mini Climate Sentinel, with README, evaluation outputs and a repeatable technical demonstration |
+| Challenge | Essential preparation focus | Useful first checkpoint | Supplementary learning |
+|---|---|---|---|
+| Climate Sentinel - Beginner | Modules 1-7, 12-13 for data, weather indicators, maps and honest time-based evaluation; 8-11 for the required grounded advisory and delivery. | Load permitted weather data, document units/missing values, plot a climatology and compare an initial outlook with the required baselines. | Additional drought indices, vegetation signals and other listed stretch goals; do not download these before core inputs work. |
+| Malaria Atlas Lab - Intermediate | Modules 2, 4-7, 14 and 17 for joins, projections, spatial validation and study uncertainty; 8-11 for the briefing workflow and delivery. | Map the available aggregate observations, verify joins/projections and reproduce a simple baseline with a spatial holdout. | Advanced MLOps, extra covariates, genomic clustering and other listed stretch goals. |
+| Product Copilot - Advanced | Modules 2, 5, 8-11 and 15-17 for source metadata, multimodal inputs, role-aware retrieval and evaluation. | Ingest a few permitted product pages, verify role filtering before retrieval and run one text, image and audio example with source evidence. | Additional languages, offline optimization, mapping and other listed stretch goals. |
 
-If you have less than two weeks, do Setup, Modules 1, 2, 5, 6, 7, 12 and 9 first. Those give you the biggest return for Challenge 1.
+Across all pathways, Module 10's safety/privacy principles and Module 11's reproducible evidence are essential. Study additional modules as needed rather than treating the entire table as compulsory pre-event homework.
 
-### Intermediate (Challenge 2): 2 weeks, 1 to 2 hours a day
+### Day 1 and Day 2
 
-| Week | Focus |
-|---|---|
-| Week 1 | Skim Modules 2, 5, 6 and 7 and fix gaps, especially honest validation (Module 7). Read Modules 8, 9 and 10. |
-| Week 2 | Study Module 14 (spatial statistics and epidemiology) and the pipeline parts of Module 17. Build a half-day mini version: fit a prevalence model on a few dozen survey points with spatial cross-validation, and pool three made-up drug studies with a random-effects meta-analysis. |
+- **Before committing to a challenge:** inspect its full requirements and confirm the actual event pack, dataset permissions and model access. No starter bundle is currently published under this track; missing inputs need Technical Lead confirmation, not fabricated replacements.
+- **Day 1:** verify the environment and sources, divide the work, inspect/clean inputs and establish an end-to-end baseline. Reserve time for the complete challenge, not just data downloads or model installation.
+- **Day 2:** complete the specified functionality, evaluate using the required splits/metrics, test missing/unsafe inputs, document limitations and prepare the submission before freeze.
 
-### Advanced (Challenge 3): flexible
-
-| Phase | Focus |
-|---|---|
-| Phase 1 | Study Module 15 (speech, OCR, image and text retrieval) and Module 8 (RAG). Build a retrieval prototype over five manuals and measure how often the right page is retrieved. |
-| Phase 2 | Study Module 16 (evaluation and access control) and Module 9 (agents). Prototype the riskiest piece first: role-aware retrieval and the adversarial tests. |
-| Phase 3 | Practice the one-command build and evaluation (Module 17), and draft your model card and limitations note. |
+The retained research-heavy requirements depend on adequate preparation and accessible inputs. Ask the Technical Lead to resolve missing packs or access restrictions; these guidelines do not silently waive minimums or guarantee that a fresh data-access application will finish during the event.
 
 ## Before competition day
 
 Track-Level Judging assesses each selected challenge out of **100 technical points**, without difficulty multipliers. Prepare the working implementation, data/sample inputs, evaluation results, logs and documents listed in the [rules](rules.md). You may demonstrate functionality and answer technical questions, but no slides or formal pitch are required and presentation quality earns no points.
 
+The allocation is **30 technical methodology + 20 data quality/provenance + 15 evaluation + 15 responsible AI/safety + 10 reproducibility + 10 practical relevance/SDG alignment = 100**.
+
 - [ ] Python (or a Colab account) and Git are working
 - [ ] You have a GitHub account and a project repository ready
 - [ ] You can run a language model for your agent: a local open model through Ollama, or a free API tier
 - [ ] You have read the [rules](rules.md) and the [challenges](challenges.md), and have chosen a challenge and a draft SDG
-- [ ] Applied for any data that needs registration or approval (for example DHS, WWARN, MalariaGEN)
+- [ ] Confirmed access and permitted use for required data; an application alone does not guarantee availability, and patient-level records remain prohibited
 - [ ] Optional: QGIS installed for checking map layers, and a Streamlit account for hosting your demo
-- [ ] Optional for Challenge 3: a Google Colab account for free GPU time (speech and vision models)
+- [ ] Optional for Challenge 3: Colab access if useful; free GPU capacity is not guaranteed, so confirm a workable model/runtime alternative

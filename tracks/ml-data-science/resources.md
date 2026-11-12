@@ -6,14 +6,40 @@ nav_order: 2
 
 # Curated Resources
 
-A short list of well-chosen resources for the three challenges: **Climate Sentinel** (Challenge 1), **Malaria Atlas Lab** (Challenge 2) and **Product Copilot** (Challenge 3). Everything here is **free**. A few services need free registration or an application, which is marked "Free (registration)". Register early, because some approvals take days. The [Course](course.md) page explains the ideas, and these links are for going deeper. The "Used in" column shows which challenge the resource helps most.
+Resources for **Climate Sentinel** (Challenge 1, Beginner), **Malaria Atlas Lab** (Challenge 2, Intermediate) and **Product Copilot** (Challenge 3, Advanced). Use the [curriculum](content.md) to choose a pathway. Documentation/open-source software is free to read or use subject to its license; hosted models, quotas, compute and dataset access are separate considerations. Registration or an application does not guarantee approval during the hackathon. There is no separate published Course page.
+
+## Start with your selected challenge
+
+| Challenge | Essential references for its existing requirements | Supplementary only |
+|---|---|---|
+| Climate Sentinel | pandas time series, the existing weather/ENSO/IBTrACS sources as applicable, GeoPandas/Rasterio, scikit-learn time-based evaluation, and cited warning/playbook guidance. | Extra datasets and SPI/vegetation tools are for the existing stretch goals, not new mandatory inputs. |
+| Malaria Atlas Lab | Approved aggregate malaria/study data, GeoPandas/projections, spatial validation, meta-analysis/uncertainty references and cited WHO guidelines. | Raw-genome processing, extra covariates and advanced modelling are not reasons to delay the required pipeline. |
+| Product Copilot | Permitted manuals/catalogue/media, speech/OCR or vision tools, retrieval with source metadata, role filtering and benchmark evaluation. | Managed vector services, autonomous-agent frameworks, MLOps and automated scanning suites are not required installations. |
+
+### Data and starter access
+
+The track currently publishes documentation only; no `assets/` starter directory, downloadable dataset bundle or runnable templates are present here. Confirm any event pack with the Technical Lead. The sources below were already listed in this track; they are references, not a claim that organizers have supplied or preprocessed them.
+
+| Existing source/input group | Meaning and intended use | Access and handling |
+|---|---|---|
+| Open-Meteo weather, ENSO and IBTrACS | Daily weather estimates, a climate-driver index and historical cyclone tracks for Climate Sentinel's analyses. | Cache permitted extracts, record coverage/units and respect API limits. IBTrACS describes past tracks, not predictions. |
+| Boundaries and population grids | District geometry and estimated population for maps and exposure/risk aggregation. | Record year, resolution and coordinate reference system; confirm alignment before spatial joins. |
+| MAP/approved survey aggregates and environmental layers | Place/time-linked malaria prevalence and covariates for mapping/modelling. | Use only permitted aggregate inputs; verify denominators, coordinate precision and collection periods. No patient-level data or re-identification. |
+| WWARN/WHO study summaries, resistance and species information | Study-level efficacy estimates, marker frequencies and reported species patterns. | Some underlying data require approval; a public map is not necessarily a licensed downloadable table. Confirm usable files and terms before depending on them. |
+| Product manuals, catalogue/prices, images and audio questions | Page-cited knowledge, structured specifications, product recognition and speech evaluation. | No supplied pack is verified here. Use the existing challenge's licensed/fictional-company route; keep customer/supplier/internal price examples synthetic. |
+
+Record source, version/access date, license and preprocessing in `DATA.md`. Reference organizer-provided input versions instead of recommitting large raw files. If access fails, ask the Technical Lead to confirm a suitable permitted alternative without silently reducing the challenge requirements.
+
+### Models, credentials and compute
+
+Local Ollama and compatible local embedding/speech/OCR models are options, subject to model licenses and hardware capacity. Download weights in advance and select local providers explicitly. Hosted/free-tier services can require your own credentials and impose quotas; **shared API keys, paid access and free GPU availability are not guaranteed**. Never commit secrets or send private data to hosted models. None of the frameworks below is a requirement to buy a service.
 
 ## 1. Python and data wrangling
 
 | Resource | Type | Free/Paid | Used in | Why it's useful |
 |---|---|---|---|---|
 | [The Python Tutorial](https://docs.python.org/3/tutorial/) | Official tutorial | Free | All | The standard beginner path through the language |
-| [Google Colab](https://colab.research.google.com/) | Tool | Free (Google account) | All | Run notebooks in the browser with nothing to install, including free GPU time |
+| [Google Colab](https://colab.research.google.com/) | Tool | Free tier (Google account, quotas) | All | Browser notebooks; free GPU access is optional and not guaranteed |
 | [JupyterLab documentation](https://docs.jupyter.org/en/latest/) | Documentation | Free | All | Notebook tips and setup |
 | [NumPy: Absolute Beginners](https://numpy.org/doc/stable/user/absolute_beginners.html) | Tutorial | Free | All | Arrays and fast maths, which every other library builds on |
 | [10 minutes to pandas](https://pandas.pydata.org/docs/user_guide/10min.html) | Tutorial | Free | All | The fastest tour of tables in Python |
@@ -33,13 +59,13 @@ A short list of well-chosen resources for the three challenges: **Climate Sentin
 | [Gradio](https://www.gradio.app/guides/quickstart) | Documentation | Free | 3 | A demo app with microphone, image upload and chat built in |
 | [Streamlit Community Cloud](https://docs.streamlit.io/deploy/streamlit-community-cloud) | Hosting | Free | All | Put your demo online so judges can open it |
 | [SciPy statistics tutorial](https://docs.scipy.org/doc/scipy/tutorial/stats.html) | Tutorial | Free | 1, 2 | Compare groups and report the size of a difference |
-| [statsmodels: Meta-analysis](https://www.statsmodels.org/stable/meta_analysis.html) | Documentation | Free | 2 | Pool results from several studies with fixed and random effects |
+| [statsmodels: Combining effect sizes](https://www.statsmodels.org/stable/generated/statsmodels.stats.meta_analysis.combine_effects.html) | Documentation | Free | 2 | Fixed/random-effects pooling; check outcome definition and input variances before combining studies |
 
 ## 3. Open data: weather, climate and hazards (Challenge 1)
 
 | Resource | Type | Free/Paid | Used in | Why it's useful |
 |---|---|---|---|---|
-| [Open-Meteo](https://open-meteo.com/en/docs) | API | Free | 1, 2 | Weather history and live forecasts, no key needed for light use |
+| [Open-Meteo historical weather](https://open-meteo.com/en/docs/historical-weather-api) and [forecast API](https://open-meteo.com/en/docs) | API | Free non-commercial access subject to terms/limits | 1, 2 | Distinguish historical estimates from forecasts; cache inputs and record their dates |
 | [CHIRPS](https://www.chc.ucsb.edu/data/chirps) | Dataset | Free | 1, 2 | Satellite and station rainfall since 1981, to cross-check Open-Meteo |
 | [ERA5 (Copernicus Climate Data Store)](https://cds.climate.copernicus.eu/) | Dataset | Free (registration) | 1, 2 | Consistent global historical weather |
 | [NOAA CPC: Oceanic Niño Index (ONI)](https://www.cpc.ncep.noaa.gov/data/indices/) | Dataset | Free | 1 | Monthly El Niño and La Niña index to use as a seasonal predictor |
@@ -61,9 +87,9 @@ A short list of well-chosen resources for the three challenges: **Climate Sentin
 |---|---|---|---|---|
 | [Malaria Atlas Project](https://malariaatlas.org/) | Data and maps | Free | 2 | Parasite rate surveys, prevalence surfaces, vector occurrence and more |
 | [malariaAtlas R package](https://cran.r-project.org/package=malariaAtlas) | Software | Free | 2 | Download MAP data in R, if a teammate uses R |
-| [WWARN](https://www.wwarn.org/) | Data and tools | Free (registration) | 2 | Antimalarial efficacy and molecular marker data from clinical studies |
+| [WWARN](https://www.wwarn.org/) | Data and tools | Access subject to terms/approval | 2 | Check availability of permitted study summaries before planning efficacy/marker analysis |
 | [WHO Malaria Threats Map](https://apps.who.int/malaria/maps/threats/) | Data and maps | Free | 2 | Drug efficacy, resistance markers and vector resistance, by country and year |
-| [MalariaGEN Pf7 data resource](https://www.malariagen.net/resource/34) | Genomic data | Free | 2 | Parasite genomes with resistance marker calls (stretch goal) |
+| [MalariaGEN Pf7 data resource](https://malariagen.net/resource/34/) | Genomic data | Access/use subject to published terms | 2 | Check permitted marker summaries; full genomic processing is supplementary |
 | [WHO World Malaria Report](https://www.who.int/teams/global-malaria-programme/reports) | Report | Free | 2 | Official burden figures to compare with your model |
 | [WHO Guidelines for malaria](https://www.who.int/teams/global-malaria-programme/guidelines-for-malaria) | Guidelines | Free | 2 | The documents your agent's guideline tool should cite |
 | [WHO: Report on antimalarial drug efficacy, resistance and response](https://www.who.int/publications/i/item/9789241512817) | Report | Free | 2 | Background on efficacy studies and resistance markers |
@@ -148,7 +174,8 @@ A short list of well-chosen resources for the three challenges: **Climate Sentin
 
 ## How to use these resources
 
-- Start with the **Course** page. Open a link only when you need more detail on that exact topic.
+- Start with your selected [curriculum pathway](content.md) and the unchanged [challenge requirements](challenges.md). Open a reference when you need that topic, not to complete the entire list.
 - Check the **version** in the address ("stable" or "latest"). Old blog posts often show outdated code.
 - If a link breaks, search for the page title on the tool's official site. Documentation sites sometimes reorganize.
 - Always record your data sources, access dates and licenses in your README.
+- Use the [public rubric](rules.md#judging-criteria) to prepare data-quality, evaluation, safety and reproducibility evidence. Technical demonstrations verify implementation; no formal Track-Level presentation is required or scored.
