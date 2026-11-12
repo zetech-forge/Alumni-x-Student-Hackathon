@@ -104,17 +104,22 @@ Explore decentralized systems, trust, and digital infrastructure. [Explore track
 
 <div class="ztf-step" markdown="1">
 <span class="ztf-step-num">02 — Choose your challenge</span>
-Select one challenge within your track.
+Choose your track and follow its challenge-selection rules.
 </div>
 
 <div class="ztf-step" markdown="1">
-<span class="ztf-step-num">03 — Build</span>
+<span class="ztf-step-num">03 — Build and test</span>
 Design, develop, test, and validate your prototype over two days.
 </div>
 
 <div class="ztf-step" markdown="1">
-<span class="ztf-step-num">04 — Pitch</span>
-Demonstrate your working solution to technical and industry judges.
+<span class="ztf-step-num">04 — Technical assessment</span>
+Every team undergoes a 100-point Track-Level technical assessment. No formal pitch or slides are required.
+</div>
+
+<div class="ztf-step" markdown="1">
+<span class="ztf-step-num">05 — Grand Finale</span>
+The top three teams per track (15 finalists) present [From Prototype to Real-World Impact](real-world-impact.md): seven minutes with 8-10 slides.
 </div>
 
 </div>

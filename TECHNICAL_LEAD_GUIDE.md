@@ -119,7 +119,7 @@ Stage 1 awards **no formal pitch or presentation points**. The top three teams
 per track qualify for the 15-team Grand Finale, where the common mandatory
 [From Prototype to Real-World Impact](real-world-impact.md) challenge adds
 30 points to the technical 100. Maximum 130; normalization is
-`(Combined Score / 130) * 100`. Use the common brief for the five-slide format
+`(Combined Score / 130) * 100`. Use the common brief for the presentation requirements
 and finale rubric rather than maintaining a conflicting copy here.
 
 - **Scoring and tie-breakers**

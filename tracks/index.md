@@ -42,3 +42,18 @@ Explore decentralized systems, trust, and digital infrastructure. [Explore track
 Not sure which track fits your team? Each track's "Content & Curriculum"
 page lists the prerequisite knowledge expected -- most have a
 Beginner-friendly entry point regardless of experience level.
+
+## Next stage: Grand Finale
+
+The **top three teams from each of the five tracks** qualify for the
+**15-team Grand Finale**. Finalists complete
+[From Prototype to Real-World Impact](../real-world-impact.md), the common
+mandatory challenge assessed only during Stage 2: Grand Finale Pitch &
+Awards Judging, not during Track-Level Judging.
+
+Only these finalists give the formal **seven-minute presentation**, including
+any demonstration, with **8-10 slides including the title slide**. Every team
+first receives a Track-Level technical assessment out of **100**, with no
+formal pitch or slides. Finalists carry their official technical average
+forward unchanged and add up to **30** Grand Finale points: maximum **130**,
+normalized as `(Combined Score / 130) * 100`.

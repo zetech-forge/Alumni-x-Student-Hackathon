@@ -60,8 +60,16 @@ Have the implementation and required simulation or approved hardware ready
 for technical inspection.
 
 **No slide deck or formal pitch is required for Track-Level Judging.**
-Any Grand Finale presentation requirements apply only to qualifying finalists,
-not to the 100-point technical submission.
+The general project materials listed above, including the backup demo video,
+remain required for every team; they are not a formal presentation deck.
+
+**Formal Grand Finale deck: qualifying finalists only.** The 15 qualifying
+teams prepare **8-10 slides, including the title slide**, for a **seven-minute
+presentation including any demonstration**. Follow the announced finalist
+preparation and deck-submission instructions in
+[From Prototype to Real-World Impact](real-world-impact.md). This is separate
+from the 100-point technical submission and does not require other teams to
+deliver a formal pitch.
 
 ## AI usage
 AI-assisted development is permitted across every track. Teams must disclose significant use of AI coding assistants, generative AI systems, pretrained models, and APIs in their submission -- which tools, and roughly how much they contributed. This is for transparency; it is not penalized unless undisclosed.
@@ -117,11 +125,15 @@ The highest-ranked team in each track receives its respective track award:
 
 ### Stage 2: Grand Finale Pitch & Awards Judging
 
-The top three teams from each of five tracks form **15 finalists**. Each
+**Only the 15 qualifying teams participate.** The top three teams from each
+of five tracks form these finalists. Each
 completes **[From Prototype to Real-World Impact](real-world-impact.md)**,
 the common mandatory challenge worth an **additional 30 points**.
-That page contains the assessment areas, five-slide structure, recommended
-five-minute presentation and complete 30-point rubric.
+That page contains the assessment areas, required **8-10 slides including
+the title slide**, the
+**seven-minute presentation including any demonstration**, and the complete
+30-point rubric. The official Track-Level average out of 100 is carried
+forward **unchanged**; the Finale does not replace or reweight it.
 
 ```text
 Combined Score = Track-Level Technical Score + Mandatory Challenge Score
@@ -131,7 +143,10 @@ Normalized Score = (Combined Score / 130) * 100
 
 The Grand Finale determines **Overall Hackathon Winner**, **Most Innovative
 Solution**, **Best Social Impact Solution**, and **Best Pitch & Presentation**.
-Do not replace the confirmed technical score with a new overall rubric.
+The normalized combined score ranks the 15 finalists for Overall Hackathon
+Winner. Special-award selection is separate from that overall ranking and
+must follow the organizing committee's published procedure; no special-award
+points are added to the 130-point maximum.
 Across every track, a working, modest solution that does what it claims beats
 an ambitious one that does not run.
 

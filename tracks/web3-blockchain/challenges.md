@@ -22,7 +22,7 @@ technical starting point, not a different scoring scale. All use the shared
 Judges use the [challenge-specific technical checklists](judging.md) for the
 100-point, technical-only Track-Level assessment. Only Grand Finale qualifiers
 complete [From Prototype to Real-World Impact](../../real-world-impact.md);
-its common 30-point rubric and five-slide presentation are separate.
+its common 30-point rubric and finalist presentation requirements are separate.
 
 ### Baseline behavior and trust boundaries
 

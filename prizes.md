@@ -12,9 +12,17 @@ structure and categories below are ready.)*
 **Overall Hackathon Winner** -- selected during the Grand Finale from the
 **15 finalists** (top three from each of five tracks), using the
 [two-stage framework](general-rules.md#awards--judging).
-Each finalist carries a technical score out of 100 and completes the common
+Each finalist carries their official Track-Level average out of 100 forward
+**unchanged** and completes the common
 [From Prototype to Real-World Impact](real-world-impact.md) challenge for
 30 additional points: maximum 130, normalized as `(Combined Score / 130) * 100`.
+The highest normalized combined score determines the Overall Hackathon
+Winner, subject to the published Finale tie-break procedure.
+
+Only the 15 qualifying teams deliver the formal Grand Finale presentation:
+**seven minutes per team, including any demonstration, with 8-10 slides
+including the title slide**. This is not a Track-Level presentation requirement.
+
 Trophy, a mechanical keyboard per team member, certificates, a feature in
 university media, and priority introductions to partner organizations.
 
@@ -36,9 +44,13 @@ Medal, plaque, branded hoodie/T-shirt, and a laptop sleeve.
 - <i class="fa-solid fa-person-chalkboard ztf-icon" aria-hidden="true"></i> **Best Pitch & Presentation**
 
 These awards are determined during Grand Finale Pitch & Awards Judging.
+Their selection is separate from the normalized overall ranking and adds
+**no points** to the 130-point maximum. The special-award selection procedure
+and Finale tie-break procedure require organizer confirmation and publication
+before judging; no additional scoring arrangement is assumed.
 The Alumni Contribution submission remains required, but is not a separate
-award category in this structure. Physical prizes and the special-award
-selection procedure require organizer confirmation.
+award category in this structure. Physical prizes and sponsors also require
+organizer confirmation.
 
 Plaque, a university tote bag, and a small tech accessory.
 

@@ -84,9 +84,9 @@ The **top three Web3 teams qualify for the Grand Finale**. The
 The **top three teams from each of the five tracks** qualify: **15 finalists**
 in total. Each finalist completes the mandatory challenge
 **[From Prototype to Real-World Impact](../../real-world-impact.md)**,
-worth an **additional 30 points**. The common brief contains the eight
-assessment areas, agreed five-slide structure, recommended five-minute
-presentation and complete 30-point rubric. It is not a Stage 1 requirement
+worth an **additional 30 points**. The common brief contains the assessment
+guidance, required presentation format and duration, and complete
+30-point rubric. It is not a Stage 1 requirement
 or an additional Web3 technical scoring category.
 
 ```text
