@@ -87,8 +87,8 @@ npm run build
 ```
 
 **The current dedicated repository is a working baseline:** the Pledge and
-PolicyWallet TODOs were completed during migration, and the migration verified
-48 passing tests. A fresh copy of that baseline should pass, including the
+PolicyWallet TODOs were completed during migration and have automated regression
+tests. A fresh copy of the current baseline should pass, including the
 Commons and game-page tests.
 
 If your instructor supplies an **unfinished exercise copy**, Pledge and
@@ -101,7 +101,7 @@ tests or weaken safety assertions just to obtain a green result.
 ## 3. Challenge A: The Pledge in Remix
 
 The Pledge holds a stake against a goal. A chosen referee confirms success and
-returns the stake to the pledger. If the deadline passes without success, the
+returns the stake to the pledger. If the deadline is reached without success, the
 stake can be sent to a charity.
 
 ### Open, compile and deploy
@@ -113,7 +113,9 @@ stake can be sent to a charity.
 3. If you have an unfinished exercise version, implement the TODOs in `confirm`
    and `release`: check authorization, deadline and active status; update
    status before transferring the stake; emit the appropriate event. The
-   official migrated baseline already implements these rules.
+   official baseline implements confirmation strictly before the deadline
+   (`block.timestamp < deadline`) and release at or after it
+   (`block.timestamp >= deadline`).
 4. Open **Solidity Compiler**, choose **0.8.34** (the kit's configured version)
    or another compatible version at least 0.8.24, then click **Compile Pledge.sol**.
 5. Open **Deploy & Run Transactions**. Select a **Remix VM** environment, not
@@ -161,12 +163,12 @@ Pledge IDs start at **0** and increase with each successful `create`. Use
 a failed one.
 
 1. Create another pledge with a short duration, such as 30 seconds; note its ID.
-2. Do not confirm it. Wait until after its stored deadline.
+2. Do not confirm it. Wait until its stored deadline is reached or has passed.
 3. From any VM account, call `release(id)`.
 4. Show status `Failed` and that the charity received the stake.
 
 Settlement does not happen automatically when time runs out: someone must call
-`release`. If Remix still reports that the deadline has not passed, wait longer
+`release`. If Remix still reports that the deadline has not been reached, wait longer
 and send another transaction; contract time is the latest block's timestamp.
 
 ### Try to break the rules
@@ -176,8 +178,9 @@ Use fresh active pledges where necessary so one rejection does not hide another:
 | Attempt | Expected result |
 | --- | --- |
 | The pledger or a stranger calls `confirm(id)`. | Reverts: only the chosen referee may confirm. |
-| Anyone calls `release(id)` before or exactly at the deadline. | Reverts: release is only allowed after the deadline. |
-| The referee calls `confirm(id)` after the deadline on an active pledge. | Reverts: confirmation is too late. |
+| Anyone calls `release(id)` before the deadline. | Reverts: release is only allowed at or after the deadline. |
+| The referee calls `confirm(id)` exactly at or after the deadline on an active pledge. | Reverts: confirmation is too late. |
+| Anyone calls `release(id)` exactly at the deadline on an active pledge. | Succeeds: the charity receives the stake. Use automated tests to set this timestamp precisely. |
 | Confirm a successful pledge again, release it after its deadline, or release a failed pledge again. | Reverts: a settled pledge cannot pay out twice. |
 
 After changing source code in Remix, compile and **deploy a new instance**;
@@ -325,7 +328,7 @@ and [`test/PolicyWallet.t.sol`](https://github.com/zetech-forge/web3_starter-kit
 The official migrated version is implemented. If you received an unfinished
 exercise copy, complete `pay` and `approve` before attempting a purchase:
 
-- `pay` must enforce the payee allowlist, co-signature threshold and spending
+- `pay` must enforce the payee allowlist, owner-approval threshold and spending
   window; update spending before transferring funds and emit `Paid`.
 - `approve` must be owner-only, recheck the payee allowlist, prevent duplicate
   settlement, mark a request done before transferring funds, and emit `Paid`.
