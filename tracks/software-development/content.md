@@ -8,33 +8,66 @@ nav_order: 1
 # Software Development: Content & Curriculum
 
 ## Learning objectives
-By the event, you should be able to:
-- Work effectively as a team using Git/GitHub (branches, pull requests, resolving conflicts)
-- Scope a two-day software project down to a demonstrable MVP
-- Build and defend a working solution to one of the three track challenges
-- Explain how your solution connects to a specific UN Sustainable Development Goal
+Prepare to build **one** of the [three challenges](challenges.md), not to master every tool in the track. You should be able to:
+
+- Work as a team using Git/GitHub and credit external contributions.
+- Reduce a two-day build to the mandatory behavior and relevant test scenarios.
+- Implement the chosen workflow, explain design decisions and handle failures explicitly.
+- Supply reproducible setup instructions, sample inputs/outputs and test evidence.
+- Explain the user need, limitations and a specific SDG connection.
 
 ## Prerequisite knowledge
-- Comfortable writing code in at least one language your team agrees on
-- Basic Git usage (clone, commit, push, pull request)
-- No prior ML/LLM experience required unless your team is targeting Challenge C
+
+| Challenge | Preparation baseline | What you do not need |
+|---|---|---|
+| A: Backend Data Reconciliation & Fuzzy Search - Beginner | Basic programming, functions, lists/tables, file reading and simple validation. | AI frameworks, offline synchronization or a frontend framework. |
+| B: Offline-First Resource Tracker - Intermediate | Application CRUD, JavaScript/browser concepts or comparable mobile development, and simple client/server requests. | Production cloud infrastructure or advanced distributed systems. |
+| C: Purposeful Agentic AI / RAG Workflow - Advanced | Confident programming, APIs, document processing and basic retrieval/LLM concepts. | Training a language model, paid APIs or a managed vector database. |
+
+Everyone needs basic Git usage and a working editor/runtime for their chosen stack. Use a supported runtime version compatible with your project's dependencies and record it in the README.
 
 ## Topic breakdown
 
 ### Module 1: Git & GitHub essentials (everyone)
-Branching, committing, opening and reviewing pull requests, resolving merge conflicts under time pressure. ~1-2 hours.
+Practice branches, commits, pull requests and resolving a simple merge conflict. Create your own repository, ignore secrets/generated files and record reused code. **Preparation exercise:** another team member can obtain your code and run a minimal example. Suggested focused practice: 1-2 hours if new to Git.
 
-### Module 2: Pick your challenge track
-Choose based on which challenge in Challenges your team is leaning toward:
+### Module 2: Follow your selected challenge pathway
 
-**2A -- Data cleaning & fuzzy matching** (for Challenge A): reading/parsing CSV, JSON, and XML; intro to fuzzy string matching (Levenshtein distance, Jaccard similarity); using a matching library instead of writing your own from scratch. ~2-3 hours.
+**2A - Beginner: data reconciliation and fuzzy search**
 
-**2B -- Offline-first web apps** (for Challenge B): how browsers store data locally (IndexedDB), the basic idea of a service worker, simple sync/conflict-resolution strategies (last-write-wins vs. manual merge). ~2-3 hours.
+- Learn parsing for two of CSV/JSON/XML, schema mapping, whitespace/case normalization and missing-field validation.
+- Use a similarity library such as RapidFuzz; understand exact vs fuzzy matches, threshold choices and false matches.
+- Separate confident reconciliations from human-review cases, retaining source traceability.
+- **Practice:** reconcile a few synthetic records with typos, a distinct near-match and an ambiguous pair; export reconciled/review results.
+- Focus on the Challenge A section of [Curated Resources](resources.md). Suggested practice: 2-3 hours; the third format and a review UI are optional.
 
-**2C -- Retrieval-augmented generation basics** (for Challenge C): what embeddings and vector search are, how a RAG pipeline is structured (retrieve → synthesize → cite), why unbounded agent loops are risky in a time-boxed demo. ~3-4 hours.
+**2B - Intermediate: offline-first resource tracking**
+
+- Learn IndexedDB/PouchDB or equivalent device storage; distinguish persistent state from in-memory UI state.
+- Understand pending changes, stable IDs, acknowledgments/retries, deletions and a simple conflict policy.
+- For browser apps, learn how to keep needed assets available offline; a service worker is one option, not the record database.
+- **Practice:** create/edit/delete offline, reload, reconnect and sync; repeat sync and resolve conflicting edits from two isolated sessions.
+- Focus on the Challenge B section of [Curated Resources](resources.md). Suggested practice: 2-3 hours; background sync and richer UI are supplementary.
+
+**2C - Advanced: purposeful agentic AI / RAG**
+
+- Distinguish model-only answers from retrieval-grounded outputs and a defined, multi-step workflow.
+- Learn chunking/source metadata, relevant retrieval, context-based generation and verifiable citations.
+- Bound tool execution and retries, handle absent evidence/service failure and treat document instructions as untrusted data.
+- **Practice:** use a few permitted documents for one supported question, one missing-answer case and one model/retrieval failure; inspect the source support.
+- Focus on the Challenge C section of [Curated Resources](resources.md). Suggested practice: 3-4 hours; install/download a usable local model beforehand if choosing Ollama. OCR, model training and advanced agents are supplementary, not prerequisites.
 
 ### Module 3: Preparing technical evidence (everyone)
-Practice running the required functionality, repeating failure/edge cases and locating the source code and outputs that explain the results. Prepare the README, test evidence, SDG explanation and backup demo video. Track-Level Judging is a 100-point technical assessment: no slides or formal pitch are required, and presentation quality earns no points. See the [rubric and challenge checkpoints](rules.md). ~1 hour.
+Practice the selected challenge's [acceptance scenarios](challenges.md). Keep expected and observed results, sample inputs/outputs, configuration examples and limitations together with your code. Have another team member follow the README. Prepare the required 2-3 minute backup demo video and common submission details. Suggested focused practice: about 1 hour.
+
+Every challenge uses the [35/20/15/15/5/10 technical rubric](rules.md#judging-criteria), totaling **100 points**. No slides or formal Track-Level pitch are required; presentation quality earns no points.
 
 ## Suggested timeline
-Before **12-13 November 2026**, make sure Git and your chosen development tools work, read the three challenges and focus on the relevant module (2A/2B/2C). During Day 1, select one challenge and get a baseline running. During Day 2, finish core functionality, test it and prepare reproducible technical evidence before the announced freeze.
+
+The event is **12-13 November 2026**. The practice durations above are learning estimates, not a requirement to complete all pathways before building.
+
+- **Before starting:** confirm your runtime/Git, choose the relevant pathway and obtain the event materials or mentor-approved substitutes. For C, confirm model access without assuming shared API keys.
+- **Day 1:** choose one challenge, divide work and get a small end-to-end baseline running. Address the riskiest part early: matching ambiguity, offline conflict handling or grounded retrieval.
+- **Day 2:** complete mandatory behavior, run relevant scenarios, document results/limits and prepare the submission before the announced freeze.
+
+Use the [curated resources](resources.md) to fill gaps as needed. Do not spend the build window trying every framework.
