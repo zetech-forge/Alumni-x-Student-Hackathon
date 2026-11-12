@@ -138,8 +138,9 @@ restart the agent, write a rule on the resulting syscheck events.
 
 **Watch out:** the registry is part of file integrity too. Complete detection
 evidence for this task also includes monitoring `HKLM\...\Run` and alerting on new values.
-Pre-existing entries (OneDrive etc.) must NOT fire — the agent baselines
-existing files at enrolment.
+Pre-existing entries (OneDrive etc.) must be distinguished from new changes.
+Document the initial inventory and any first-scan alerts instead of assuming
+enrolment alone establishes a quiet baseline.
 
 **Source and prerequisites:** Wazuh agent FIM (`syscheck`) for the approved
 Windows directory and relevant Run-key monitoring.
@@ -246,7 +247,7 @@ claiming data theft or command execution beyond the observed evidence.
 ## Recommended pairings
 
 - **Fastest confidence:** W1B + L1B (same skill, two platforms)
-- **Detection + defence:** W1B + W4B, or L1B + L2B (one detection, one control)
+- **Authentication + system changes:** W1B + W4B, or L1B + L2B (complementary detections, not mandatory blocking/hardening)
 - **Integrity focus:** W5B + L2B (Windows and Linux file monitoring)
 - **Web attack story:** L3B + L4B (the drop, then the callback)
 

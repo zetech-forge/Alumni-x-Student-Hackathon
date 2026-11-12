@@ -1,7 +1,7 @@
 ---
 title: Challenges
 parent: Software Development
-grandparent: Hackathon Tracks
+grand_parent: Hackathon Tracks
 nav_order: 4
 ---
 

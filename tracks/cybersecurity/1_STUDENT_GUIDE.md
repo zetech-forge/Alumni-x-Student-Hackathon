@@ -118,14 +118,15 @@ approved lab isolation and access restrictions in the [Track Rules](rules.md).
 1. **Submit the rule AND evidence of it working.** Export the alert with
    the required fields; screenshots can support it. An unverified rule
    cannot earn full credit for detection or evidence.
-2. **At the end, we run the attack again in a way you haven't seen.**
-   If your rule only matches the exact command you tried, it will fail.
+2. **You may be asked to repeat an approved task with changed lab inputs.**
+   A rule that memorizes one command, address or account does not demonstrate
+   the required behavior.
 3. **Blocking is not a detection substitute.** Optional controls must not
    disrupt legitimate use or required monitoring.
 4. **Support claims with evidence.** Sample rule replay and live endpoint
    collection are different results; report which one you demonstrated.
 5. **False alarms affect detection credit.** Test benign activity on the
-   designated clean lab machine.
+   designated endpoint during an approved benign test window.
 
 Partial credit reflects demonstrated parts of the detection/evidence chain.
 Authorization and integrity violations remain subject to the General Rules.
@@ -140,10 +141,10 @@ Use AI tools during the event. That's encouraged.
 - Share a sanitized rule/sample and ask why it is not firing; never upload credentials or sensitive lab logs
 - Ask what MITRE technique your detection covers
 
-**But:** AI gives you code, not understanding. The final round uses an attack
-you haven't seen. A rule you don't understand will fail exactly like a
-hardcoded one. Use AI to move faster. Use your own head to survive the
-final round.
+**But:** AI-generated rules still need explanation and validation. Technical
+assessment may repeat the selected task with approved changed inputs; it is
+not permission for an undisclosed or out-of-scope attack. Be able to explain
+the conditions, required fields and limitations of your rule.
 
 ---
 
@@ -192,15 +193,18 @@ not a mandatory competition artifact.
 
 - The VM boots, and a folder called `C:\LabFiles` is filled with 80 dummy
   documents (40 in the root, 20 in `Finance`, 20 in `HR`).
-- The script takes those 80 files one by one.
+- The script selects up to 80 files recursively. It does not explicitly
+  exclude the simulation script itself or unrelated files already in that
+  directory; the selected set needs review before any approved run.
 - It **reads** each file — real ransomware does this too, and it's part of
   what you detect.
 - It **renames the last part of each name** — `document_1.docx` becomes
   `document_1.encrypted`. The content never changes. Nothing is deleted.
 - It **pauses 400 milliseconds** between files. Real ransomware would do
   thousands per minute. That pause is your window to catch it.
-- **Every file, it checks the file is still inside `C:\LabFiles`** before
-  touching it. If anything ever points outside that folder, it stops.
+- Each iteration performs a path-prefix check against `C:\LabFiles`.
+  This is not a verified containment boundary, especially for redirected
+  paths or directory links.
 
 **To run it:** arm your detection first, then inside the VM run
 `powershell -ExecutionPolicy Bypass -File C:\LabFiles\simulate-ransomware.ps1`.

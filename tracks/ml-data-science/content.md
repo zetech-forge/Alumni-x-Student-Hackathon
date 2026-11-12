@@ -1,6 +1,7 @@
 ---
 title: Content & Curriculum
 parent: Machine Learning & Data Science
+grand_parent: Hackathon Tracks
 nav_order: 1
 ---
 

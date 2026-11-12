@@ -38,11 +38,11 @@ credentials. Menu names vary by installed version and permissions. On first logi
    | Module | Path | What it's for |
    | --- | --- | --- |
    | **Security events** | ☰ → Explore → Discover (default view) | Every alert that has fired. Your main workspace. |
-   | **Agent status** | ☰ → Agents | Is your agent connected? Green = collecting. |
-   | **Integrity monitoring** (FIM) | ☰ → Modules → Security Information Management → File Integrity Monitoring | File/registry change events for C1, C2, L2B |
-   | **Security Configuration Assessment** (SCA) | ☰ → Modules → Security Information Management → SCA | Hardening posture for C5, C6 |
-   | **Mitre** | ☰ → Modules → Threat Hunting → MITRE ATT&CK | Maps your alerts to ATT&CK tactics — used for evidence marks |
-   | **Ruleset** | ☰ → Settings → Rules | Not where you edit — see 1.3 |
+   | **Agent status** | ☰ → Agents | Connected agent status; verify the selected source's events separately. |
+   | **Integrity monitoring** (FIM) | ☰ → Modules → Security Information Management → File Integrity Monitoring | File/registry changes for W5B, L2B and L3B |
+   | **Security Configuration Assessment** (SCA) | ☰ → Modules → Security Information Management → SCA | Supplementary hardening, not a current card requirement |
+   | **Mitre** | ☰ → Modules → Threat Hunting → MITRE ATT&CK | Optional technique context, not separate evidence marks |
+   | **Ruleset** | ☰ → Settings → Rules | Rule inspection/editing depends on role and version; see 1.3 |
 
 2. **First check: Agents.** Click ☰ → Agents. Your machine must show
    **Status: Active** with a recent "Last keep-alive". If it's grey:
@@ -50,12 +50,12 @@ credentials. Menu names vary by installed version and permissions. On first logi
    ```
    # On the agent machine:
    sudo systemctl restart wazuh-agent        # Linux
-   Restart-Service Wazuh                     # Windows (as Administrator)
+   Restart-Service WazuhSvc                  # Windows (as Administrator)
    ```
    Then check the agent log for errors:
 
    ```
-   Linux:   tail -50 /var/ossec/var/run/wazuh-agent.state 2>/dev/null || tail -50 /var/ossec/logs/ossec.log
+   Linux:   tail -50 /var/ossec/logs/ossec.log
    Windows: Get-Content "C:\Program Files (x86)\ossec-agent\ossec.log" -Tail 50
    ```
    Run service/configuration commands only on your assigned endpoint with
@@ -83,14 +83,17 @@ agent.name: "victim-win-01"
 rule.level: >= 10
 
 # One rule id
-rule.id: 5710
+rule.id: 100700
 
 # Combine
 agent.name: "victim-lin-01" and rule.groups: "sshd"
 
 # Failed logon alerts
-rule.id: 5710 and data.srcip: 192.168.56.50
+data.win.system.eventID: 4625
 ```
+
+Names, addresses and the custom rule ID above are illustrative. Substitute
+your assigned agent/rule; inspect actual decoded field names.
 
 **c) The alert fields panel** — left sidebar. Click any field value to
 filter, or click the ▶ expand arrow on an alert row to see every field. The
@@ -147,13 +150,10 @@ arrived in the dashboard:
 
 ```
 sudo /var/ossec/bin/wazuh-logtest
-Starting Wazuh log test...
-Type one log per line
-
-Paste the permitted sample from your actual selected task.
-Inspect Phase 1 (pre-decoding), Phase 2 (decoded fields)
-and Phase 3 (matched rule).
 ```
+
+Paste the permitted sample from your selected task at the tool's prompt.
+Inspect Phase 1 (pre-decoding), Phase 2 (decoded fields) and Phase 3 (matched rule).
 
 If the fields are missing or incorrectly decoded, resolve collection/decoding
 with the track lead before changing correlation logic. Then verify the card's
@@ -167,7 +167,7 @@ This is the monitoring plan for the day, expressed as "where to look and what
 normal looks like". When something is abnormal you will know it because of
 this section.
 
-### 2.1 Authentication monitoring (challenges W1, L1, W1B, L1B)
+### 2.1 Authentication monitoring (W1B, L1B)
 
 **Where:** Security events, filtered to `rule.groups: authentication_failed`
 or `syslog,sshd` on Linux; `windows` channel on the Windows target.
@@ -183,19 +183,21 @@ not require a successful login afterwards. Keep the published threshold;
 verify its boundary behavior instead of lowering it to make a test pass.
 The bank guide's success-after-failures scenario is supplementary.
 
-### 2.2 Process monitoring — Sysmon / 4688 (W2, W2B)
+### 2.2 Process monitoring — Sysmon / 4688 (W2B)
 
 **Where:** Security events filtered to
-`rule.groups: sysmon` or `data.win.system.eventID: 1`.
+`rule.groups: sysmon` for configured Sysmon events, or the collected
+Security Event 4688. Sysmon process creation uses Event 1; select the actual
+source rather than treating event IDs as interchangeable.
 
-**Watch fields:** `Image` (the binary run), `CommandLine`, `ParentImage`,
-`Hashes`. Anomalies that matter today: PowerShell with encoded commands,
-anything from a temp path, unusual parents (a browser spawning cmd.exe).
+**Watch fields:** the decoded process image, command line and parent context.
+W2B requires the approved download-command family, not an unrelated process
+anomaly. Confirm full command-line and parent collection first.
 
 **The allowlist idea (W2B):** don't write "alert on powershell.exe" — admins
 run PowerShell. Write "alert on powershell.exe whose command line contains a
 download verb". Start narrow, widen only when you confirm no false positives
-on the hardened box.
+in approved benign activity on the assigned endpoint.
 
 ### 2.3 FIM monitoring (W5B, L2B, L3B)
 
@@ -236,22 +238,11 @@ additional hardening or submit SCA evidence unless separately approved.
 **Where:** SCA module. Each agent shows a compliance score with pass/fail
 counts against the loaded policy (CIS benchmark).
 
-**What to do:** open the failing checks, read the *rationale* (each check
-explains why), fix three of them on the OS, wait for the next scan (or set
-`<sca><scan_on_start>yes</scan_on_start>` and restart), confirm the check
-turns green. Screenshots before/after for the submission.
-
-**Custom check:** SCA policies are YAML files in
-`/var/ossec/ruleset/sca/` on the agent. Copy the stock policy, change the
-policy id and name, and add a check:
-
-```yaml
-- id: 99999
-  title: "DVWA default admin password must not be in use"
-  condition: all
-  rules:
-    - 'f:/var/www/html/config/config.inc.php -> !r:^\$db_password\s*=\s*.password.;'
-```
+Read any assigned policy's rationale to understand posture findings.
+There is no requirement to fix three checks, create a custom policy or submit
+SCA screenshots. Optional hardening requires its own approved scope and
+version-matched instructions; do not alter the deliberately vulnerable lab
+or expose configuration secrets for an extra exercise.
 
 ### 2.5 Active response — supplementary, not a current task
 
@@ -263,12 +254,12 @@ without disrupting management access or another team's telemetry.
 
 ### 2.6 MITRE ATT&CK mapping (supplementary investigation context)
 
-The **Mitre** module visualises which techniques your alerts cover. For the
-submission: map each of your rules to its technique by adding the ATT&CK id
-in the rule description, e.g.:
+The **Mitre** module visualises mapped techniques. If you choose to add
+optional context, use an appropriate technique in the rule's `<mitre>`
+element and a description matching its actual behavior, for example:
 
 ```xml
-<description>T1110: Brute force detected (5+ failures then success).</description>
+<description>Repeated authentication failures from one source.</description>
 <mitre><id>T1110</id></mitre>
 ```
 
@@ -287,11 +278,13 @@ a technique label; use the [public rubric](rules.md#judging-criteria).
 | Each Loop 2 (rule) | `wazuh-logtest` first, then live fire, then Discover | Catch XML errors before they cascade |
 | Loop 3 (investigate) | Source event, matched condition, affected endpoint and benign alternatives | Explain what the alert establishes and what remains uncertain |
 | Cross-check | Compare rules against approved benign lab activity | Count false positives without assuming a second hardened machine is supplied |
-| Hour 7 (submission) | Export each fired alert as JSON (Discover → Save → Export) | That JSON is your evidence |
+| Submission | Preserve relevant alert/log exports using the permitted route | Keep required fields, timestamps and task mapping |
 
-**Alert export for the submission:** in Discover, select the relevant alerts
-→ click "Save" (bottom of search bar) → "Export" — produces a CSV/NDJSON you
-include in the team folder alongside the rule XML.
+**Alert export for the submission:** use the installed dashboard's permitted
+event-detail/report/export route, or ask the mentor for the approved alternative.
+Formats and menus depend on version/permissions; saving a search is not
+necessarily exporting its events. Check the saved evidence contains the
+required fields and timestamps, not only a saved query.
 
 ---
 
@@ -299,14 +292,14 @@ include in the team folder alongside the rule XML.
 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
-| Agent grey/never connects | Wrong manager IP, firewall, or wrong key | Verify `WAZUH_MANAGER` in agent config; ping the SIEM IP |
+| Agent grey/never connects | Wrong manager address, enrollment or permitted connectivity | Check the assigned manager address under the agent's client/server settings and its logs; ask the mentor before changing network access |
 | Alerts appear but fields empty (srcip missing) | Decoder didn't parse the log | Paste the line into `wazuh-logtest`; if Phase 2 fails, tell a track lead |
 | Custom rule never fires | Invalid XML, failed deployment or wrong parent/field conditions | Check deployment/log errors through the permitted route; confirm the actual decoded event and parent |
 | Rule fires on everything | Over-broad match (e.g. missing field condition) | Add field filters; test benign lines with `wazuh-logtest` |
 | Active response blocks nothing | Script not enabled or `<location>` wrong | Confirm `firewall-drop` present in ossec.conf; check `/var/ossec/logs/active-responses.log` |
-| FIM events don't arrive | `realtime` missing or path typo | Restart agent; check `ossec.log` for syscheck init lines |
+| FIM events don't arrive | Wrong scope, permissions, scan timing or unsupported realtime mode | Check monitored paths/platform support and `ossec.log`; apply only authorized agent changes |
 | Rule fired but disappeared | Time-range picker | Widen to 24h in Discover |
-| Two teams share rule ids | ID collision | Use your allocated range; renumber and restart |
+| Two teams share rule ids | ID collision | Contact the mentor, use your assigned range and follow the authorized deployment route; do not restart a shared manager independently |
 
 ---
 
@@ -333,7 +326,7 @@ team07_submission/
 │   └── local_rules.xml       ← your full custom ruleset
 ├── alerts/
 │   ├── w1_attack_fired.json  ← exported alerts proving each rule fired
-│   └── w1_hardened_quiet.json← the false-positive test result
+│   └── w1b_benign_results.md ← benign test inputs, timing and observed results
 ├── configs/
 │   ├── ossec_agent.conf.diff ← agent config changes (FIM etc.)
 │   └── other_collection_changes.diff
@@ -352,7 +345,7 @@ team07_submission/
 - Alert fired at HH:MM:SS: <paste the alert JSON>
 - Fields captured: srcip, srcuser, rule.level
 
-### MITRE mapping
+### MITRE mapping (optional)
 - T1110 Brute Force (sub-technique T1110.001 password guessing)
 
 ### Collection and investigation

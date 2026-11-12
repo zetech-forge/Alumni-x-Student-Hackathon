@@ -1,6 +1,7 @@
 ---
 title: Curated Resources
 parent: Machine Learning & Data Science
+grand_parent: Hackathon Tracks
 nav_order: 2
 ---
 
@@ -78,7 +79,7 @@ Local Ollama and compatible local embedding/speech/OCR models are options, subje
 | [geoBoundaries](https://www.geoboundaries.org/) | Dataset | Free | 1, 2 | Open administrative boundaries (districts, regions) for most countries |
 | [NASA MODIS vegetation indices](https://modis.gsfc.nasa.gov/data/dataprod/mod13.php) | Dataset | Free | 1 | NDVI to confirm drought on the ground (stretch goal) |
 | [WMO: Standardized Precipitation Index User Guide](https://library.wmo.int/idurl/4/39629) | Guide | Free | 1 | The official method for SPI (stretch goal) |
-| [WMO: Early Warnings for All](https://wmo.int/earlywarningsforall) | Reference | Free | 1 | Guidance to cite in your playbook, and the role of national warning services |
+| [UNDRR: Early Warnings for All](https://www.undrr.org/implementing-sendai-framework/sendai-framework-action/early-warnings-for-all) | Reference | Free | 1 | Risk knowledge, early-warning pillars and preparedness context for your cited playbook |
 | [UN SDGs](https://sdgs.un.org/goals) | Reference | Free | All | Goals and targets to link your solution to |
 
 ## 4. Open data: malaria and health (Challenge 2)
@@ -140,7 +141,7 @@ Local Ollama and compatible local embedding/speech/OCR models are options, subje
 | [Model Context Protocol](https://modelcontextprotocol.io/) | Specification | Free | 2, 3 | A standard way to connect tools and data |
 | [Ollama](https://ollama.com/) | Tool | Free | All | Run open models on your own laptop |
 | [Sentence Transformers](https://www.sbert.net/) | Library | Free | 2, 3 | Text and image embeddings (including CLIP models) for retrieval |
-| [Chroma](https://docs.trychroma.com/) and [FAISS](https://github.com/facebookresearch/faiss/wiki) | Vector stores | Free | 2, 3 | Store embeddings and filter by metadata such as user role |
+| [Chroma](https://docs.trychroma.com/) and [FAISS](https://github.com/facebookresearch/faiss/wiki) | Vector stores/search libraries | Free | 2, 3 | Store/search embeddings. Chroma supports metadata filters; FAISS alone is not a role-permission system. Enforce authorized candidate scope before retrieval |
 | [Ragas](https://docs.ragas.io/) | Evaluation library | Free | 2, 3 | Score retrieval and answer quality |
 | [Whisper](https://github.com/openai/whisper) and [faster-whisper](https://github.com/SYSTRAN/faster-whisper) | Speech models | Free | 3 | Open speech-to-text, including multilingual models |
 | [jiwer](https://github.com/jitsi/jiwer) | Library | Free | 3 | Compute word error rate for speech transcription |

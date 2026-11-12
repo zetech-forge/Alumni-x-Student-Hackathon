@@ -1,7 +1,7 @@
 ---
 title: Track Rules & How to Compete
 parent: IoT & Robotics
-grandparent: Hackathon Tracks
+grand_parent: Hackathon Tracks
 nav_order: 3
 ---
 

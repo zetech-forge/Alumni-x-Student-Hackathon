@@ -1,6 +1,7 @@
 ---
 title: Challenges
 parent: Machine Learning & Data Science
+grand_parent: Hackathon Tracks
 nav_order: 4
 ---
 
@@ -96,7 +97,7 @@ All three choices are assessed out of **100 points**, with no difficulty multipl
 
 - **Constraints:**
   - Complete within the two-day event window.
-  - **Data**  use publicly available data
+  - **Data:** use publicly available data.
   - This is a **planning-support tool**, not an official warning system. State this in the app and README.
 
 - **Deliverable:** Submit all of the following:
@@ -164,7 +165,7 @@ All three choices are assessed out of **100 points**, with no difficulty multipl
 
 - **Constraints:**
   - Complete within the two-day event window.
-  - **Data **use publicly available data
+  - **Data:** use publicly available data.
   - Only publicly available, aggregated or anonymised data may be used. **No patient-level records.** Do not attempt to re-identify anyone.
   - Predictions are estimates for planning. Do not present a modelled map as a measured one, and do not present a drug-efficacy estimate as a treatment recommendation.
 
@@ -217,7 +218,7 @@ All three choices are assessed out of **100 points**, with no difficulty multipl
      - ask **clarifying questions** about the need (budget, use case, power or capacity, location),
      - **recommend one or more products** and explain the trade-offs in plain language,
      - quote **catalogue prices** from the price table, calculate totals, taxes or running costs **using a code tool** (the model must not do arithmetic), and state clearly that the price is not a binding quote, and
-     - **never reveal internal information** (see step 5).
+     - **never reveal internal information** (see step 6).
   6. **Role-aware access control.** The same system serves both roles, with different permissions. Include at least **internal-only content** (for example cost margins, supplier prices, internal service bulletins, engineer-only repair procedures) and **customer-safe content**. Access control must be applied **before retrieval** (not only by instructing the model). Show that a customer cannot obtain engineer-only or internal data by asking, rephrasing or role-playing.
   7. **Evaluation benchmark.** Build a test set of **at least 60 questions**: at least 20 for engineers, 20 for customers, 10 multimodal (image or audio) and 10 adversarial (see below). Each must have a reference answer and the source page or table row. Report:
      - **answer accuracy** and **citation correctness** (does the cited page really support the answer?),
@@ -242,7 +243,7 @@ All three choices are assessed out of **100 points**, with no difficulty multipl
 
 - **Constraints:**
   - Complete within the two-day event window.
-  - **Data** use publicly available data
+  - **Data:** use publicly available data.
   - Respect licenses and terms of use. Do not copy proprietary manuals you are not allowed to use.
   - Use **synthetic data** for anything that looks like customer, supplier or cost information. Attacks and tests must target only your own system.
   - The assistant is a **decision-support tool**. It does not replace manufacturer documentation, certified technicians or local safety regulations. State this in the app and README.
@@ -269,7 +270,7 @@ The [shared rubric](rules.md#judging-criteria) applies to each challenge. These 
 | Data quality, provenance and validation | 20 | Source/units/coverage records, missing-date/value checks, appropriate aggregation and training-only preprocessing with time-based splits. | Source and geographic/temporal alignment, sampling-bias assumptions, valid spatial joins/projections and leakage-resistant preprocessing/splits. | Licensed document/page provenance, consistent catalogue units/prices, clean image/audio labels and separation of evaluation examples. |
 | Model/system evaluation and baseline comparison | 15 | Historical event checks, both forecast baselines, per-location metrics and probability skill; disclose when the model adds no skill. | Spatial holdouts, prevalence baseline/interval checks, presence-model evaluation, efficacy uncertainty and held-out resistance predictions. | Required 60-question benchmark, speech/image metrics, answer/citation/comparison/calculation correctness and adversarial results before/after defenses. |
 | Responsible AI, safety, privacy and uncertainty | 15 | Logged grounded tool outputs, missing-data behavior, official-warning priority, human approval, bias and uncertainty/limitations. | Safe aggregate data, uncertainty and study context, clinical-advice refusal, missing evidence and human approval; no causal or clinical-validity claims. | Pre-retrieval permissions, adversarial checks, privacy, hallucination/refusal analysis, safety warnings and human hand-off; confidence is not proof of correctness. |
-| Reproducibility and documentation | 10 | README, dependencies, licensed sources, notebooks, five-question agent log, playbook and limitations. | README, dependencies, sources, assumptions, notebooks, six-question agent log, model card and one-command results. | README, dependencies, licensed knowledge base/provenance, benchmark, logs, security/model notes and one-command build/evaluation. |
+| Reproducibility and documentation | 10 | README, dependencies, licensed sources, notebooks, five-question agent log, playbook and limitations. | README, dependencies, sources, assumptions, notebooks, six-question agent log, model card and results rebuilt by one command or a short, clear sequence. | README, dependencies, licensed knowledge base/provenance, benchmark, logs, security/model notes and one-command build/evaluation. |
 | Practical relevance and SDG alignment | 10 | Explain the region, intended planner, relevant SDG and supported preparedness decision without claiming to replace official warnings. | Explain the programme-planning user, relevant SDG and supported decision without individual treatment recommendations. | Explain the engineer/customer need and relevant SDG, with useful supported outputs and limits relative to manufacturer guidance. |
 | **Total per challenge** | **100** | | | |
 

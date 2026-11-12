@@ -1,6 +1,7 @@
 ---
 title: Track Rules & How to Compete
 parent: Machine Learning & Data Science
+grand_parent: Hackathon Tracks
 nav_order: 3
 ---
 
@@ -71,7 +72,7 @@ Submit through the announced event channel by the published code freeze. A compl
 | **Action playbook with citations** | Challenge 1 | Hazard levels and the cited actions the agent is allowed to recommend |
 | **Assumptions file** | Challenge 2 | `ASSUMPTIONS.md`: data biases, covariate choices and modelling assumptions |
 | **Evaluation benchmark, results and security note** | Challenge 3 | 60 or more questions with reference answers, adversarial results before and after defenses, and the access-control note |
-| **One-command run** | Challenges 2 and 3 | A command or short script that rebuilds the main results |
+| **Reproducible rebuild/run** | Challenges 2 and 3 | Challenge 2 permits one command or a short, clear sequence to rebuild main results. Challenge 3 requires its one-command knowledge-base build/evaluation; document app startup separately |
 | **Common submission information** | All | Team details, SDG statement, Alumni Contribution note, AI/external-resource acknowledgments and the required 2-3 minute backup demo video |
 
 **Assessment preparation.** Have the app/notebook, permitted data or retrieval instructions, sample inputs, result tables and agent logs accessible. Include dependency versions and example configuration variables, not API keys or private data. For Challenge 3, have both roles and image/audio examples ready. Be able to rerun the documented evaluation and explain failures.
@@ -90,7 +91,7 @@ All three challenges use this **100-point technical rubric**.
 | **Data quality, provenance and validation** | 20 | Traceable licensed sources, understood units/coverage, appropriate cleaning and joins, missing-value handling and valid preprocessing/evaluation splits. |
 | **Model/system evaluation and baseline comparison** | 15 | Required metrics, appropriate held-out tests and required baseline comparisons; inspect failures rather than reporting only the best aggregate score. |
 | **Responsible AI, safety, privacy and uncertainty** | 15 | Safe data use, bias/uncertainty analysis, grounded claims, required refusals and human oversight; Product Copilot also enforces permissions and tests adversarial inputs. |
-| **Reproducibility and documentation** | 10 | Clear README, dependency versions, data licenses and provenance; results can be rerun. Challenges 2 and 3 include the required one-command run. |
+| **Reproducibility and documentation** | 10 | Clear README, dependency versions, data licenses and provenance; results can be rerun. Challenge 2 permits a command or short sequence; Challenge 3 requires the specified one-command build/evaluation. |
 | **Practical relevance and SDG alignment** | 10 | A specific user and supported decision, a relevant SDG and realistic usefulness/limitations without unverified impact or clinical claims. |
 | **Total** | **100** | **No pitch, slide-design or presentation allocation.** |
 
