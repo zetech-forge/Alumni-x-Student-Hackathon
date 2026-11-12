@@ -12,8 +12,7 @@ The official starter kit now lives in its own repository:
 It contains the Solidity contracts, automated tests, deployment scripts, Commons
 game frontend and server, AI agent, owner controls, and mock paid data API.
 
-**Do not clone the main Alumni-x-Student-Hackathon repository to install the
-kit.** All project files are at the root of the dedicated starter repository.
+All project files are at the root of the dedicated starter repository.
 This page takes you from choosing a challenge to running a demo and creating
 your own team's repository.
 
