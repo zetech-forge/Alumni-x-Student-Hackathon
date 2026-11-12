@@ -7,43 +7,90 @@ nav_order: 2
 
 # Cybersecurity: Curated Resources
 
-Use these defensive references for your selected [task cards](challenges.md), not as a requirement to install every tool. **Interact only with supplied or explicitly authorized lab systems.** A resource describing a technique does not authorize its use against university infrastructure, unrelated public systems or other teams.
+Use references for your **selected cards**, not as a checklist of installations. **Essential** means relevant to that card or assigned setup role; **supplementary** means additional explanation or an alternative source. Documentation is free to read.
 
-## Security monitoring, installation and access
+**Work only on supplied or explicitly authorized lab systems.** Public documentation does not authorize public-target testing. Obtain lab access privately; never publish credentials, private addresses or sensitive records.
 
-| Resource | Use and exercise mapping |
-|---|---|
-| [Wazuh quickstart and sizing](https://documentation.wazuh.com/current/quickstart.html) | Understand the server/indexer/dashboard and installation requirements. All cards; install only when approved, not on the assumption each team must provision a server. |
-| [Wazuh agent installation](https://documentation.wazuh.com/current/installation-guide/wazuh-agent/index.html) | Supported endpoint setup/enrollment. All cards, according to assigned permissions and installed version. |
-| [Wazuh dashboard guide](https://documentation.wazuh.com/current/user-manual/wazuh-dashboard/index.html) | Find agents/alerts, set the time range and inspect event fields. All cards. |
+**Version guidance:** use documentation matching the supplied lab. Wazuh `/current/` and GitHub `master` may differ from its installed release. Ubuntu 24.04, RHEL 9, Apache 2.4 and upstream OpenSSH references below are version-specific examples, not required lab versions. Confirm architecture, versions and permissions before installing or changing anything.
 
-## Log collection and detection rules
+## Wazuh fundamentals
 
-| Resource | Use and exercise mapping |
-|---|---|
-| [Wazuh log-collection configuration](https://documentation.wazuh.com/current/user-manual/capabilities/log-data-collection/configuration.html) | Collect Windows channels and relevant Linux log files. W1B-W4B, L1B, L3B and the approved L4B feed. |
-| [Wazuh decoders](https://documentation.wazuh.com/current/user-manual/ruleset/decoders/index.html) | Understand raw logs versus extracted fields before choosing rule conditions. All cards. |
-| [Custom Wazuh rules](https://documentation.wazuh.com/current/user-manual/ruleset/rules/custom.html) | Rule files, appropriate custom IDs and safe changes. All cards; use the assigned team range/deployment route. |
-| [Testing decoders and rules](https://documentation.wazuh.com/current/user-manual/ruleset/testing.html) | `wazuh-logtest` for permitted samples and correlation checks. All cards; it does not by itself prove endpoint-to-dashboard delivery. |
-| [Wazuh File Integrity Monitoring](https://documentation.wazuh.com/current/user-manual/capabilities/file-integrity/index.html) | Baselines, monitored files/registry and change evidence. W5B, L2B and L3B. |
+| Resource | Official source | Use | Cards | Priority |
+|---|---|---|---|---|
+| [Wazuh architecture](https://documentation.wazuh.com/current/getting-started/architecture.html) | Wazuh | Understand agents, server/manager, indexer and dashboard, and the event-to-alert path. | All | Essential |
+| [Quickstart and deployment sizing](https://documentation.wazuh.com/current/quickstart.html) | Wazuh | Understand central deployment; install only if assigned, not on every participant laptop. | All | Supplementary; essential if deployment is assigned |
+| [Agent installation](https://documentation.wazuh.com/current/installation-guide/wazuh-agent/index.html) | Wazuh | Supported endpoint setup/enrollment when required by the confirmed architecture. | All | Essential if agent setup is assigned |
+| [Dashboard guide](https://documentation.wazuh.com/current/user-manual/wazuh-dashboard/index.html) | Wazuh | Locate assigned endpoints, filter time ranges and inspect alert details. Menus depend on version/role. | All | Essential |
+| [Log-collection configuration](https://documentation.wazuh.com/current/user-manual/capabilities/log-data-collection/configuration.html) | Wazuh | Collect the selected Windows channels, Linux authentication, application or audit records. | W1B-W4B, L1B, L3B-L4B | Essential |
+
+## Wazuh rules and detection engineering
+
+| Resource | Official source | Use | Cards | Priority |
+|---|---|---|---|---|
+| [Custom rule creation](https://documentation.wazuh.com/current/user-manual/ruleset/rules/custom.html) | Wazuh | Rule files, custom IDs and safe extensions to installed rules. Use assigned IDs/deployment permissions. | All | Essential |
+| [Rule syntax and matching](https://documentation.wazuh.com/current/user-manual/ruleset/ruleset-xml-syntax/rules.html) | Wazuh | Parent/field conditions, levels, frequency, timeframe and same-source correlation. | All; especially W1B/L1B | Essential |
+| [Testing decoders and rules](https://documentation.wazuh.com/current/user-manual/ruleset/testing.html) | Wazuh | Use `wazuh-logtest` to inspect decoding and matches; validate observed trigger counts and changed inputs. | All; especially W1B/L1B | Essential |
+| [Decoder concepts](https://documentation.wazuh.com/current/user-manual/ruleset/decoders/index.html) | Wazuh | Understand how source records become fields and investigate missing/incorrect decoding. | All | Supplementary |
+
+**W1B and L1B:** prioritize syntax/correlation and rule testing. Both require **five or more failures from one source within two minutes**. Verify the installed parent and actual boundary behavior; copying a stock rule's frequency does not establish compliance. Sample testing does not prove live endpoint-to-dashboard delivery.
 
 ## Windows and Linux source references
 
-| Resource | Use and exercise mapping |
-|---|---|
-| [Microsoft: Event 4625](https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4625) | Interpret failed-logon fields for W1B. A failed event is not evidence of successful access. |
-| [Microsoft Sysmon](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon) | Process/parent/command-line telemetry where configured for W2B. It is not a mandatory extra installation for every card. |
-| [Ubuntu auditd manual](https://manpages.ubuntu.com/manpages/noble/man8/auditd.8.html) | Understand Linux auditing for L4B's approved feed. Use documentation matching the allocated OS; do not invent or deploy new audit rules on shared endpoints. |
+### Windows security monitoring
 
-## Alert investigation and responsible practice
+| Resource | Official source | Use | Cards | Priority |
+|---|---|---|---|---|
+| [Security Event 4625](https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4625) | Microsoft | Interpret failed-logon account/source fields. Follow the article's Windows applicability notes. | W1B | Essential |
+| [Security Event 4688](https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4688) | Microsoft | Understand process creation, command-line auditing and available creator/parent context. | W2B | Essential if this is the configured source |
+| [Sysmon documentation](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon) | Microsoft Sysinternals | Process creation and parent/command-line telemetry where configured; not a universal extra installation. | W2B | Essential if Sysmon is the configured source |
+| [Windows System rules](https://github.com/wazuh/wazuh/blob/master/ruleset/rules/0590-win-system_rules.xml) | Wazuh project | Inspect the upstream Event 7045 service-installation handling; compare with the installed version, not a copied parent ID. | W3B | Essential |
+| [Defender events and troubleshooting](https://learn.microsoft.com/en-us/defender-endpoint/troubleshoot-microsoft-defender-antivirus) | Microsoft | Interpret 5001 (real-time protection disabled) and 5000 (enabled). Use the collection guide above for the Defender Operational channel. | W4B | Essential |
+| [File Integrity Monitoring](https://documentation.wazuh.com/current/user-manual/capabilities/file-integrity/index.html) | Wazuh | Understand baselines and additions/modifications/deletions on Windows and Linux. | W5B, L2B-L3B | Essential |
+| [syscheck and Windows Registry configuration](https://documentation.wazuh.com/current/user-manual/reference/ossec-conf/syscheck.html#windows-registry) | Wazuh | Distinguish `<directories>` from `<windows_registry>`, Registry views and scheduled scanning. Consult the page's timing options too. | W5B; timing/configuration also L2B-L3B | Essential |
 
-Start with the task's raw event and decoded fields, then ask what the alert establishes, what legitimate activity could explain it and what remains unknown. Preserve endpoint/rule IDs, timestamps, required fields and test context. Redact secrets and sensitive content, not the information necessary to understand the detection.
+Use only a disposable authorized VM for W4B and immediately restore protection. For W5B, use harmless file/value changes; a baseline or first scan is not proof of a new persistence event.
 
-- [Track rules and authorized scope](rules.md): access, selection confirmation, deliverables and the 100-point rubric.
-- [Wazuh analyst playbook](3_WAZUH_MANUAL.md): collection, rule testing, investigation and troubleshooting.
-- [Curriculum](content.md): essential learning and task-specific preparation.
-- [Bank-lab participant guide](1_STUDENT_GUIDE.md): supplementary background, not a second mandatory assignment. Suricata, blocking/SCA and extra simulations are not required by the nine cards.
+### Linux security monitoring
 
-The existing [ransomware-behaviour VM definition](labs/ransomware-sim/Vagrantfile) is an **optional, separate lab artifact**, not the current nine-task installer. Do not run it without Technical Lead approval and verified isolation; neither a private adapter nor the file's comments establish the absence of other network routes. It has not been validated as part of this documentation update.
+| Resource | Official source | Use | Cards | Priority |
+|---|---|---|---|---|
+| [OpenSSH server configuration](https://man.openbsd.org/sshd_config) | OpenSSH/OpenBSD | Logging concepts such as facility and level. The actual authentication file/journal depends on the assigned Linux system. | L1B | Supplementary |
+| [auditd manual](https://manpages.ubuntu.com/manpages/noble/man8/auditd.8.html) | Ubuntu manpages | Understand the audit daemon and configuration context; use the supplied audit feed rather than inventing shared-host rules. | L4B | Essential |
+| [Auditing the system](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/security_hardening/auditing-the-system_security-hardening) | Red Hat, RHEL 9 | Interpret related audit records, syscall results and identities. Adapt concepts to the actual distribution. | L4B | Supplementary |
 
-Documentation access is free. Actual VM/server allocation, permissions and software versions require organizer confirmation; no purchased hosting, offensive toolkit, shared API key or production credential is required.
+Use **log collection** above for L1B's assigned SSH source and **FIM/syscheck** for L2B and L3B. Disable sensitive account-file content diffs; do not export password hashes. For L4B, executable/arguments and effective user are not automatically proof of network success: inspect actual destination/outcome telemetry and explain its limits.
+
+## Web application security monitoring
+
+| Resource | Official source | Use | Cards | Priority |
+|---|---|---|---|---|
+| [DVWA project documentation](https://github.com/digininja/DVWA) | Official DVWA project | Understand the designated training application's setup and upload context. Use the approved instance, not a public target or a new unapproved installation. | L3B-L4B | Essential |
+| [Apache access logs](https://httpd.apache.org/docs/2.4/logs.html#accesslog) | Apache HTTP Server 2.4 | Interpret request paths, methods, status and source information if Apache is the supplied server. | L3B | Essential if Apache is configured |
+| [NGINX access-log module](https://nginx.org/en/docs/http/ngx_http_log_module.html) | NGINX | Equivalent access-log format reference if NGINX is used; not an additional installation requirement. | L3B | Supplementary alternative; essential if NGINX is configured |
+
+For L3B, combine the approved upload directory's FIM records with the configured server logs. Use harmless PHP artifacts and relate file/request evidence by path and time. A request does not prove malicious execution. For L4B, a web access log alone does not establish outbound process identity. Never expose DVWA to the internet.
+
+## Detection validation and investigation
+
+Start with the official **rule-testing** and **dashboard** guides above, then apply this repeatable workflow to each selected card:
+
+1. Record the approved activity, expected event/alert and required fields.
+2. Inspect the raw event, decoded fields and matching rule.
+3. Test the positive case and applicable count/window or scan boundaries.
+4. Repeat with an approved changed indicator and compare benign activity.
+5. Explain missed detections, unintended matches and legitimate reasons for an alert; do not tune away behavior the card requires.
+6. Preserve sanitized records, timestamps, rule/configuration versions and expected/observed results so another authorized person can reproduce the test.
+
+These are validation practices, not extra exercises or permission to test new targets. Redact secrets without removing the context needed to interpret the alert.
+
+## Participant guidance
+
+| Existing guide | Purpose | Cards | Priority |
+|---|---|---|---|
+| [Challenge cards](challenges.md) | Required behavior, telemetry, tests and cleanup. | All selected | Essential |
+| [Track Rules](rules.md) | Authorization, selection, submission evidence and the current 100-point rubric. | All | Essential |
+| [Content & Curriculum](content.md) | Choose relevant modules and bootcamp/preparation priorities. | All | Essential |
+| [Participant guide](1_STUDENT_GUIDE.md) | Follow the practical access-to-evidence workflow. | All selected | Essential |
+| [Wazuh Analyst Playbook](3_WAZUH_MANUAL.md) | Public operating guidance and permitted troubleshooting; not an answer key. | All selected | Supplementary |
+
+Lab setup artifacts and unapproved extra simulations are not participant prerequisites. Ask the Technical Lead for the confirmed access/setup procedure; do not treat a repository artifact as a validated lab.

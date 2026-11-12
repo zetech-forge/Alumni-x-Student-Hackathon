@@ -22,3 +22,4 @@ exclude:
   - node_modules
   - vendor
   - tracks/web3-blockchain/assets
+  - tracks/cybersecurity/labs

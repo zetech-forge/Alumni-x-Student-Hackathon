@@ -13,6 +13,11 @@ everything lives, what good monitoring looks like, and where the official
 documentation is when you need the exact syntax. Keep it open in a browser
 tab next to the dashboard all day.
 
+**Purpose:** public participant operating guidance, not an internal answer
+key or a validated provisioning guide. For the end-to-end participant workflow,
+use the [Participant Guide](1_STUDENT_GUIDE.md). Keep private access details,
+reference solutions and infrastructure reset credentials out of public pages.
+
 **Scope:** use only supplied or explicitly authorized lab systems and the
 selected [nine task cards](challenges.md). Do not test unrelated public systems,
 university infrastructure outside the lab or other teams' systems without
@@ -172,10 +177,9 @@ this section.
 **Where:** Security events, filtered to `rule.groups: authentication_failed`
 or `syslog,sshd` on Linux; `windows` channel on the Windows target.
 
-**Baseline (what normal looks like):** a handful of 4624 successful logons an
-hour on the Windows target from the management IP; SSH logins on Linux from
-the admin workstation only. Record what "normal" looks like in your notes
-during hour one — your false-positive judgement later depends on this.
+**Baseline:** observe approved benign lab activity and record its actual
+accounts, sources and timing. Do not assume a particular successful-logon
+rate, management address or workstation pattern has been supplied.
 
 **Current card outcome:** W1B and L1B require **five or more failures from the
 same lab source within two minutes**, with source IP and username. They do
@@ -209,15 +213,11 @@ changed on monitored paths, and Windows registry changes on monitored keys.
 
 **Configuration lives on the agent**, in `/var/ossec/etc/ossec.conf` (Linux)
 or `C:\Program Files (x86)\ossec-agent\ossec.conf` (Windows), inside
-`<syscheck>`. For L2B, merge the relevant settings into the assigned agent's
-existing configuration rather than duplicating a complete config. Do not
-capture sensitive account-file content diffs:
-
-```xml
-<syscheck>
-  <directories check_all="yes" realtime="yes" report_changes="no">/etc/passwd,/etc/shadow</directories>
-</syscheck>
-```
+`<syscheck>`. Merge authorized settings into the existing configuration
+rather than duplicating a complete config. Develop the card's required
+scope using the official syscheck reference in [Curated Resources](resources.md).
+For sensitive account files, keep content-diff reporting disabled; do not
+export file contents or password hashes.
 
 Apply changes only with permission, then use the selected card's approved
 test. L3B also needs its actual upload-directory/access-log configuration;
@@ -229,6 +229,17 @@ do not assume any arbitrary file change will alert immediately.
 ruleset. Distinguish initial inventory from new changes and compare benign
 activity. File metadata can establish a change without exposing its contents;
 an account-file change or uploaded file is not by itself proof of compromise.
+
+For W5B, distinguish `<directories>` from `<windows_registry>` under
+`<syscheck>`, confirm the assigned Run key/view and document scheduled
+Registry scans. The initial inventory is not automatically a new persistence
+event. Use harmless artifacts and the [card's full requirements](challenges.md).
+
+For W3B/W4B, follow the current System 7045 and Defender Operational
+5001/5000 requirements in the cards; no protection change is allowed outside
+the designated disposable VM. For L4B, confirm the actual supplied audit
+records, effective identity and destination/outcome fields. Executing a
+network client does not by itself prove it established a connection.
 
 ### 2.4 SCA — supplementary hardening, not a current task
 
@@ -296,7 +307,6 @@ required fields and timestamps, not only a saved query.
 | Alerts appear but fields empty (srcip missing) | Decoder didn't parse the log | Paste the line into `wazuh-logtest`; if Phase 2 fails, tell a track lead |
 | Custom rule never fires | Invalid XML, failed deployment or wrong parent/field conditions | Check deployment/log errors through the permitted route; confirm the actual decoded event and parent |
 | Rule fires on everything | Over-broad match (e.g. missing field condition) | Add field filters; test benign lines with `wazuh-logtest` |
-| Active response blocks nothing | Script not enabled or `<location>` wrong | Confirm `firewall-drop` present in ossec.conf; check `/var/ossec/logs/active-responses.log` |
 | FIM events don't arrive | Wrong scope, permissions, scan timing or unsupported realtime mode | Check monitored paths/platform support and `ossec.log`; apply only authorized agent changes |
 | Rule fired but disappeared | Time-range picker | Widen to 24h in Discover |
 | Two teams share rule ids | ID collision | Contact the mentor, use your assigned range and follow the authorized deployment route; do not restart a shared manager independently |
@@ -367,20 +377,20 @@ team07_submission/
 
 **How your evidence supports the public technical rubric:**
 
-| Submission section | Rubric component it earns |
+| Submission section | Current rubric criterion it supports |
 | --- | --- |
-| Required behaviors/fields detected | Detection accuracy and coverage (30 points) |
-| Rule conditions, correlation and false-positive handling | Detection rule quality, specificity and robustness (20 points) |
-| Positive/benign/changed-input results and traceable exports | Validation, testing and evidence quality (15 points) |
-| Event context, significance, legitimate alternatives and uncertainty | Investigation quality and alert interpretation (15 points) |
-| Required channel/FIM/audit settings and functioning collection | Log-source collection and system configuration (10 points) |
-| README, rule/configuration files and repeatable steps | Documentation and reproducibility (10 points) |
-| **Total for the selected task set** | **100 points** |
+| Approved activity, source event and correct alert | Detection functionality and accuracy |
+| Rule conditions and required alert fields | Detection rule quality and required fields |
+| Changed-input results | Generalization and variation testing |
+| Required source settings and functioning collection | Log-source configuration and telemetry |
+| Benign comparisons, repeatability and boundary/timing results | False-positive handling and reliability |
+| Sanitized records, interpretation, README and repeatable steps | Evidence, documentation and reproducibility |
 
-These allocations total **100 points for your selected task set**, not per
-rule or task. Use the [Track Rules](rules.md) for the full rubric, authorized
-scope, score averaging and qualification. Technical demonstrations verify
-evidence; no formal pitch or slides are required.
+Use the current [Track Rules rubric](rules.md#judging-criteria) for point
+allocations. The whole selected set receives one score out of **100**, not
+per-rule scores or an equally weighted per-card average. Individual judges'
+team scores are averaged. Technical demonstrations verify evidence; no
+formal pitch or slides are required.
 
 Keep the README current as you work. Dedicated bank-lab roles are suggestions,
 not extra requirements for the nine cards.

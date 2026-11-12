@@ -49,7 +49,7 @@ There are **nine Wazuh detection exercises**, organized by operating system rath
 | **Windows: five cards (W1B-W5B)** | Failed logons, PowerShell download behavior, service installation, Defender protection changes, and file/registry integrity monitoring. |
 | **Linux: four cards (L1B-L4B)** | SSH failures, account-file changes, web upload/request activity, and outbound web-server connections. |
 
-**Plan to complete two or three exercises properly**, with working detections and clear evidence, rather than rushing through all nine. This is the planning expectation; confirm any formal completion minimum with the Technical Lead. The operating-system selection policy also requires confirmation: do not assume a compulsory Windows/Linux mix or named mandatory card.
+**Complete two or three approved exercises properly**, with working detections and clear evidence, rather than rushing through all nine. The operating-system selection policy still requires Technical Lead confirmation: do not assume a compulsory Windows/Linux mix or named mandatory card.
 
 For each selected exercise:
 
@@ -87,7 +87,7 @@ The hackathon takes place on **12-13 November 2026**:
 
 Your selected exercise set receives **one technical score out of 100**, not 100 per exercise. Approximately **two to three judges** independently assess the implementation, detection rules, alert outputs, configuration and supporting evidence. Their scores are **averaged**, and teams rank by that final average.
 
-The allocation is **30 detection accuracy/coverage + 20 rule quality/robustness + 15 validation/evidence + 15 investigation + 10 collection/configuration + 10 documentation = 100 points**. See the [published rubric and tie-breakers](rules.md#judging-criteria).
+Use the current [100-point rubric](rules.md#judging-criteria) for detection functionality, rule quality/fields, generalization, telemetry, reliability and reproducible evidence, and the [published tie-breakers](rules.md#scoring-and-tie-breakers). The whole selected set is assessed once, not by adding or equally averaging per-exercise scores.
 
 **No formal slide presentation or pitch is required.** Demonstrations and technical questions verify implementation; presentation quality earns no separate marks. The **three highest-scoring teams qualify for the Grand Finale**, and the highest-ranked team receives **Best Cybersecurity Solution**.
 
@@ -99,4 +99,5 @@ Prepare rule/configuration files, task-linked alert/log exports, test results an
 - [Track Rules & How to Compete](rules.md): authorization, task selection, submissions and scoring.
 - [Content & Curriculum](content.md): foundations and task-specific preparation.
 - [Curated Resources](resources.md): official references and configuration guidance.
+- [Cyber Defence Participant Guide](1_STUDENT_GUIDE.md): the practical access-to-evidence workflow for the nine cards.
 - [Wazuh Analyst Playbook](3_WAZUH_MANUAL.md): supporting operating instructions for the assigned environment; supplementary sections do not add mandatory tasks.

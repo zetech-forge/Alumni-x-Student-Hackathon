@@ -13,7 +13,7 @@ Your rules must detect the specified behavior, generate the expected alert, incl
 
 There are **five Windows cards (W1B-W5B)** and **four Linux cards (L1B-L4B)**, not difficulty tiers. Allow **30-40 minutes per exercise after the lab is operational**, with additional time for investigation, evidence and cleanup. Teams are encouraged to complete **two or three exercises properly** rather than rush through nine.
 
-**Selection policy:** the formal completion minimum, any mandatory cards and whether teams may mix operating systems or must remain within one category require Technical Lead confirmation. The [recommended pairings](#recommended-pairings) are optional suggestions, not selection restrictions or evidence that a policy has been approved. Follow the [published selection guidance](rules.md#task-selection-and-confirmation) and confirm conditions before committing to a task set.
+**Selection policy:** complete **two or three approved cards**, as specified in the Track Rules. Any mandatory cards and whether teams may mix operating systems or must remain within one category still require Technical Lead confirmation. The [recommended pairings](#recommended-pairings) are optional suggestions, not selection restrictions or evidence that a platform policy has been approved. Follow the [published selection guidance](rules.md#task-selection-and-confirmation) before committing to a task set.
 
 **Authorized scope:** use only the designated isolated lab, disposable VMs, supplied systems and explicitly authorized targets. University infrastructure outside the lab, unrelated internet systems and other teams' systems without permission are prohibited. Use harmless test artifacts, protect credentials and follow the approved restoration procedure.
 
@@ -327,12 +327,12 @@ The selected task set is assessed **once out of 100 points**, not 100 per card. 
 
 | Criterion | Points |
 |---|---:|
-| Detection accuracy and coverage | 30 |
-| Detection rule quality, specificity and robustness | 20 |
-| Validation, testing and evidence quality | 15 |
-| Investigation quality and alert interpretation | 15 |
-| Log-source collection and system configuration | 10 |
-| Documentation and reproducibility | 10 |
+| Detection functionality and accuracy | 35 |
+| Detection rule quality and required fields | 20 |
+| Generalization and variation testing | 15 |
+| Log-source configuration and telemetry | 10 |
+| False-positive handling and reliability | 10 |
+| Evidence, documentation and reproducibility | 10 |
 | **Total for the selected task set** | **100** |
 
-Approximately **two to three judges** may assess each team independently. Their scores are **averaged**, teams rank by the final average, and the **top three teams qualify for the Grand Finale**. See the [Track Rules](rules.md#judging-criteria) for the full rubric and [scoring and tie-breakers](rules.md#scoring-and-tie-breakers) for ranking.
+Each judge applies the rubric once across the whole approved selection, not by adding or equally averaging task scores. Approximately **two to three judges** may assess each team independently. Their team scores are **averaged**, teams rank by the final average, and the **top three teams qualify for the Grand Finale**. See the [Track Rules](rules.md#judging-criteria) for the full rubric and [scoring and tie-breakers](rules.md#scoring-and-tie-breakers) for ranking.

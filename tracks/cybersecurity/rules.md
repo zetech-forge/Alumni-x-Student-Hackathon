@@ -173,4 +173,4 @@ The **top three teams qualify for the Grand Finale**. The highest-ranked team re
 - **Day 1:** attend the introduction/bootcamp and briefing, confirm task-selection conditions and lab access, verify sources and develop the first working detections.
 - **Day 2:** complete implementation, validate positive/benign/changed-input behavior, preserve evidence, restore temporary changes and prepare for technical inspection before the announced freeze.
 
-Use the [curriculum](content.md), [curated resources](resources.md) and [Wazuh Analyst Playbook](3_WAZUH_MANUAL.md) for support. Supporting material does not expand the authorized scope or add mandatory exercises.
+Use the public [Participant Guide](1_STUDENT_GUIDE.md), [curriculum](content.md), [curated resources](resources.md) and [Wazuh Analyst Playbook](3_WAZUH_MANUAL.md) for support. Supporting material does not expand the authorized scope or add mandatory exercises.
