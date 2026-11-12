@@ -7,10 +7,71 @@ has_children: true
 
 # Web3 & Blockchain
 
-A blockchain is a shared record that many computers keep in sync, so no single party can quietly change it. A smart contract is a small program that lives on that record and runs exactly as written. In this track you build one, and your rules are enforced by the chain itself, not by a server you control.
+Web3 development connects applications to shared blockchain state and
+wallet-based transactions. A blockchain maintains a record across computers;
+a **smart contract** is a program on that chain that enforces rules for its
+stored data and assets. In this track, you write or extend contracts, connect
+them to a user interface or agent, and test who can do what.
 
-This track is for beginners. You need basic programming in any language and nothing else. Most participants are new to blockchain, and the Day 1 bootcamp teaches enough to start. Challenges A and B need no blockchain experience. Challenge C suits teams where someone has already written a smart contract or called an AI model's API.
+Your two-day prototype must address a real problem linked to a UN Sustainable
+Development Goal. Explain why a blockchain is useful, which rules it enforces,
+and what still depends on trust outside the chain. All work uses practice
+funds in the approved sandbox, never real money or mainnet.
 
-You will practice writing smart contracts in Solidity, testing that your rules cannot be broken, and showing your work live. You will also practice explaining why a problem needs a blockchain at all, and linking your solution to a UN Sustainable Development Goal.
+## Who this track is for
 
-Each team picks one of three challenges in [Challenges](challenges.md) and builds it over two days. On Day 2 you demo live and pitch. Judges will call your contract directly and try to break its rules, so build rules that hold. See [Track Rules & How to Compete](rules.md) for the details, [Content & Curriculum](content.md) to prepare before the event, and [Starter Kits](starter-kits.md) for the tools you will use.
+The track offers entry points for beginners and experienced developers. Basic
+programming in any language is the minimum starting point; choose a challenge
+that fits your team's experience. The Day 1 bootcamp introduces the core
+concepts, but the more advanced challenges require greater familiarity with
+code, testing and APIs.
+
+**Each team selects ONE challenge** and develops it across both days:
+
+| Challenge | Level | What you will build | Recommended preparation |
+| --- | --- | --- | --- |
+| **The Pledge** | **Beginner** | A personal-goal commitment backed by test ETH, with referee confirmation and charity settlement. | Basic programming; no prior blockchain experience. Remix provides a browser-only route. |
+| **The Commons** | **Intermediate** | An original resource-governance mechanism added to a working multiplayer harvesting simulation. | Comfortable editing code and using a terminal; basic Solidity and tests are helpful. |
+| **Leashed Agent** | **Advanced** | A useful agent payment workflow constrained by a policy-controlled wallet, including owner approval and adversarial tests. | Solidity transactions and JavaScript/API experience within the team. |
+
+You are not expected to rebuild supplied infrastructure. The
+[challenge specifications](challenges.md) distinguish starter functionality,
+required team contributions, acceptance tests and optional extensions.
+
+## Languages, tools and starting point
+
+The official pathway uses **Solidity** for contracts, **Remix IDE** for the
+beginner browser workflow, and **Hardhat** for local compilation, testing and
+deployment. The dedicated kit includes JavaScript frontend/agent code,
+TypeScript scripts, Solidity tests and Node.js tests.
+
+Challenges B and C use **Node.js 22.13 or later**, npm, Git, an editor and a
+terminal. Challenge C supports Ollama, an approved model service, or the
+provided mock fallback; a paid AI account is not required.
+
+Use the dedicated [Web3 Starter Kit](https://github.com/zetech-forge/web3_starter-kit),
+not a clone of the main hackathon repository. See [Starter Kits](starter-kits.md)
+for setup and [Content & Curriculum](content.md) for preparation. Alternative
+EVM-compatible tools must meet the same assessment and sandbox conditions in
+the [track rules](rules.md).
+
+## How you will be assessed
+
+**Stage 1: Track-Level Judging.** All Web3 teams receive a technical assessment
+out of **100 points**, using the approved challenge-specific checkpoints.
+Judges inspect functionality, on-chain enforcement, tests, security, code,
+documentation and problem relevance. You may demonstrate the implementation
+and answer short technical questions. **No formal slide presentation or pitch
+is required, and no presentation marks are included.**
+
+The top **three Web3 teams** qualify for the Grand Finale. The highest-ranked
+Web3 team receives **Best Web3 & Blockchain Solution**.
+
+**Stage 2: Grand Finale Pitch & Awards Judging.** The top three teams from each
+of five tracks form **15 finalists**. Each completes **From Prototype to
+Real-World Impact**, worth an additional **30 points**. The combined maximum is
+**130**, normalized as **(Combined Score / 130) * 100**.
+
+The Grand Finale determines **Overall Hackathon Winner**, **Most Innovative
+Solution**, **Best Social Impact Solution**, and **Best Pitch & Presentation**.
+See [Track Rules & How to Compete](rules.md) for scoring, submissions and safety.
