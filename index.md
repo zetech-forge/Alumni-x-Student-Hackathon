@@ -19,6 +19,18 @@ A two-day collaborative innovation sprint bringing Zetech students and alumni to
 
 </div>
 
+<section class="ztf-registration-banner" aria-labelledby="team-registration" markdown="1">
+
+## Register your team
+{: #team-registration }
+
+Taking part in Zetech Forge 2026? Submit your team's registration using the
+official form below. Coordinate with your team lead to register your team.
+
+[Register Your Team](https://forms.gle/htDLkTUr8Ure5DEf9){: .btn .btn-primary }
+
+</section>
+
 ## Why this hackathon?
 
 <div class="ztf-cards ztf-cards--3" markdown="1">
